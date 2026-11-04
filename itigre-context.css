@@ -14,6 +14,7 @@
 .it-context-note{margin:1.25rem 0;padding:1rem 1.2rem;border-left:3px solid var(--cloth-deep,#8a3e17);background:var(--wash,#f4f1ea)}
 .it-context-sources{font-size:.85rem}
 .it-context-end{margin-bottom:0;padding-top:1rem;border-top:1px dashed var(--cloth-line,#c7b6a5)}
+.it-historical-notice{font-family:system-ui,"Microsoft JhengHei",sans-serif;font-size:.92rem;line-height:1.8;margin:1rem 0;padding:.8rem 1rem;border-left:3px solid var(--cloth-deep,#8a3e17);background:var(--wash,#f4f1ea);overflow-wrap:anywhere}.it-historical-notice p{margin:.35rem 0 0}
 .it-path-hub{max-width:62rem;margin:auto;padding:clamp(1rem,4vw,3rem)}
 .it-path-hub .it-path-nav{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
 .it-path-hub .it-path-intro{max-width:45rem}
