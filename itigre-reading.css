@@ -50,3 +50,7 @@ html.itigre-skin .itigre-site{background-color:var(--cloth);background-image:var
 
 .itigre-site .long-read-grid h3{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}.itigre-site .long-read-grid article>p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;overflow:hidden}
 
+
+.itigre-site .itigre-preferences{margin-block-start:3rem;padding-block:1rem;border-top:1px solid #c7b6a5}.itigre-site .itigre-preferences .itigre-palette{margin:0!important;max-width:24rem}.itigre-site .itigre-preferences .itigre-palette summary{text-align:left;min-height:44px;padding:.5rem 0!important}.itigre-site .itigre-preferences .itigre-palette>div{margin-top:.5rem}
+
+.itigre-preferences nav{display:flex;gap:1rem;margin-bottom:.5rem;font-size:.9rem}

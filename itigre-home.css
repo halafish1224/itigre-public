@@ -29,3 +29,5 @@
 @media(max-width:760px){.itigre-home .home-start{display:none}.itigre-home .site-intro{gap:0}.itigre-home .home-specials{margin-block:1rem 2rem}}
 @media(max-width:540px){.itigre-home .home-specials{grid-template-columns:1fr 1fr;padding:1rem;gap:.5rem}.itigre-home .home-specials h2{font-size:1.05rem}.itigre-home .home-specials>a>span{font-size:1.2rem}.itigre-home .home-specials>a>strong{font-size:.9rem}.itigre-home .home-specials>a>small{font-size:.72rem}.itigre-home .home-section-heading h2{font-size:1.4rem}}
 
+
+.itigre-home .home-archive-entry{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-block:2.5rem;padding:1.5rem;border-block:1px solid #c7b6a5;background:#f4f1ea}.itigre-home .home-archive-entry h2{margin:.3rem 0;font-size:1.35rem}.itigre-home .home-archive-entry p{font-size:.95rem;color:#625952}.itigre-home .home-archive-entry>a{flex-shrink:0;min-height:44px;display:flex;align-items:center}@media(max-width:700px){.itigre-home .home-archive-entry{display:block;padding:1rem}.itigre-home .home-archive-entry>a{width:fit-content}}
