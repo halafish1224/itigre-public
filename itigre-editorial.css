@@ -1,0 +1,45 @@
+/* Shared editorial layer, scoped to ITIGRE. Seven palettes keep dark reading text. */
+html.itigre-skin{--reading-ink:#36312b;--reading-muted:#665d53;--reading-heading:var(--cloth-deep);--reading-link:var(--cloth-deep);--editorial-line:#d8c9bb;--ink:var(--reading-ink);--muted:var(--reading-muted);--line:var(--editorial-line)}
+html.itigre-skin[data-cloth="seigaiha"]{--reading-ink:#29323a;--reading-muted:#586570;--editorial-line:#c7d2da}
+html.itigre-skin[data-cloth="ichimatsu"]{--reading-ink:#30353a;--reading-muted:#5c6368;--editorial-line:#cdd2d5}
+html.itigre-skin[data-cloth="yagasuri"]{--reading-ink:#293328;--reading-muted:#5c6658;--editorial-line:#cbd4c4}
+html.itigre-skin[data-cloth="asanoha"]{--reading-ink:#392f2a;--reading-muted:#6b5b52;--editorial-line:#dfc9bd}
+html.itigre-skin[data-cloth="tatewaku"]{--reading-ink:#342f38;--reading-muted:#665c6b;--editorial-line:#d7cbd9}
+html.itigre-skin[data-cloth="shima"]{--reading-ink:#303235;--reading-muted:#606266;--editorial-line:#cccece}
+.itigre-site{color:var(--reading-ink)!important}
+.itigre-site :where(article,.body,.content,.post-body,.it-path-hub,.it-reading-context){color:var(--reading-ink)!important}
+.itigre-site :where(h1,h2,h3,h4,h5,h6){color:var(--reading-heading)!important}
+.itigre-site :where(a){color:var(--reading-link)!important}
+.itigre-site :where(time,figcaption,.eyebrow,.archive-eyebrow,.it-context-kicker,.it-path-caption,.archive-count){color:var(--reading-muted)!important}
+.itigre-site article :where(p,li,td,blockquote):not([style*="background"]){color:inherit!important}
+.itigre-site :where(article,blockquote,details,.it-context-note,.it-historical-notice,.it-reading-context,.it-path-card,.home-story,.subject-grid a){border-color:var(--editorial-line)!important}
+.itigre-site :where(blockquote,.it-context-note,.it-historical-notice){border-left-color:var(--cloth-deep)!important}
+.itigre-site .site-intro{border-top-color:#9b491f;border-bottom-color:var(--editorial-line)}
+.itigre-site .site-intro h1{color:#2c2c2c!important}
+.itigre-site a:hover{text-decoration-thickness:2px;text-underline-offset:.28em}
+.itigre-site :where(a,summary,select,button):focus-visible{outline-color:var(--cloth-deep)!important;outline-offset:4px}
+.itigre-site .itigre-masthead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 0 1rem;border-bottom:1px solid var(--editorial-line);font-family:system-ui,"Microsoft JhengHei",sans-serif;color:var(--reading-ink)}
+.itigre-site .itigre-wordmark{display:inline-flex;align-items:baseline;font:600 1.65rem/1.2 Georgia,"Noto Serif TC",serif;letter-spacing:.01em;text-decoration:none;color:#9b491f!important;white-space:nowrap}
+.itigre-site .itigre-wordmark span{font-size:.8em;color:#303235}
+.itigre-site .itigre-primary{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:clamp(.6rem,2vw,1.5rem);margin:0;padding:0;border:0;background:none}
+.itigre-site .itigre-primary a{font-size:.83rem;letter-spacing:.035em;padding:.35rem 0;border:0;background:none;min-height:44px;text-decoration:none;white-space:nowrap}
+.itigre-site .itigre-breadcrumb{margin:0 0 clamp(1.5rem,4vw,2.8rem);padding:.85rem 0 0;border:0;font-family:system-ui,"Microsoft JhengHei",sans-serif}
+.itigre-site .itigre-breadcrumb ol{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem .65rem;list-style:none;margin:0;padding:0}
+.itigre-site .itigre-breadcrumb li{display:flex;align-items:baseline;gap:.65rem;padding:0;margin:0;border:0;background:none;font-size:.75rem;line-height:1.8;min-width:0;color:var(--reading-muted)}
+.itigre-site .itigre-breadcrumb li+li::before{content:"/";color:var(--reading-muted);opacity:.65}
+.itigre-site .itigre-breadcrumb a{display:inline-flex;align-items:center;min-height:28px;text-decoration:none;color:var(--reading-muted)!important}
+.itigre-site .itigre-breadcrumb [aria-current]{overflow-wrap:anywhere}
+.itigre-site .itigre-preferences{position:relative;margin-top:clamp(3rem,7vw,5rem);padding:1.5rem 0 .5rem;border-top:1px solid var(--editorial-line);font-family:system-ui,"Microsoft JhengHei",sans-serif}
+.itigre-site .itigre-footer-tools{display:flex;flex-flow:row nowrap;align-items:flex-start;justify-content:center;gap:clamp(.5rem,3vw,1.5rem);min-height:44px}
+.itigre-site .itigre-archive-link,.itigre-site .itigre-preferences .itigre-palette summary{display:flex;align-items:center;min-height:44px;padding:.5rem 0!important;font-size:.85rem;line-height:1.5;text-decoration:none;color:var(--reading-link)!important;white-space:nowrap}
+.itigre-site .itigre-preferences .itigre-palette{position:static;margin:0!important;border:0!important;padding:0;background:none!important;max-width:none;flex:0 0 auto}
+.itigre-site .itigre-preferences .itigre-palette summary{list-style:none;cursor:pointer;text-align:left}
+.itigre-site .itigre-preferences .itigre-palette summary::-webkit-details-marker{display:none}
+.itigre-site .itigre-preferences .itigre-palette summary::after{content:"＋";font-size:.75rem;margin-left:.4rem}
+.itigre-site .itigre-preferences .itigre-palette[open] summary::after{content:"−"}
+.itigre-site .itigre-preferences .itigre-palette>div{position:absolute;left:50%;right:auto;transform:translateX(-50%);bottom:calc(100% + .6rem);z-index:60;width:min(20rem,calc(100vw - 3rem));max-height:65svh;overflow:auto;padding:1rem;border:1px solid var(--editorial-line);background:var(--paper);box-shadow:0 8px 26px #25252518;margin:0;white-space:normal}
+.itigre-site .itigre-preferences .itigre-palette select{border-color:var(--cloth-deep);color:var(--reading-ink)}
+.itigre-site .itigre-copyright{font-size:.69rem;letter-spacing:.045em;line-height:1.8;text-align:center;margin:1rem 0 0;color:var(--reading-muted)!important}
+@media(max-width:560px){.itigre-site .itigre-masthead{align-items:flex-start;gap:.5rem;padding:.8rem 0}.itigre-site .itigre-wordmark{font-size:1.4rem;padding-top:.65rem}.itigre-site .itigre-primary{gap:0 .8rem;max-width:13rem}.itigre-site .itigre-primary a{font-size:.75rem}.itigre-site .itigre-breadcrumb{margin-bottom:1.8rem}.itigre-site .itigre-footer-tools{gap:clamp(.5rem,3vw,1.5rem)}.itigre-site .itigre-copyright{letter-spacing:.015em;font-size:.65rem}}
+@media(max-width:360px){.itigre-site .itigre-primary{gap:0 .65rem;max-width:11rem}.itigre-site .itigre-wordmark{font-size:1.25rem}}
+.itigre-site .itigre-journal-related{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--editorial-line);font-family:system-ui,"Microsoft JhengHei",sans-serif}.itigre-site .itigre-journal-related ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;list-style:none;padding:0}.itigre-site .itigre-journal-related li{display:block;padding:1rem;border:1px solid var(--editorial-line);background:var(--wash);min-width:0}.itigre-site .itigre-journal-related small{display:block;margin-top:.5rem;font-size:.8rem;color:var(--reading-muted)}@media(max-width:600px){.itigre-site .itigre-journal-related ul{grid-template-columns:minmax(0,1fr)}}
