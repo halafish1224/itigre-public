@@ -1,0 +1,137 @@
+#canon-r7-guide{
+    --primary: #0f172a;
+    --surface: #ffffff;
+    --background: #f8fafc;
+    --border: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --c1: #ea580c;
+    --c1-bg: #fff7ed;
+    --c2: #9333ea;
+    --c2-bg: #faf5ff;
+    --c3: #0284c7;
+    --c3-bg: #f0f9ff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
+  }#canon-r7-guide *{ box-sizing: border-box; margin: 0; padding: 0; }#canon-r7-guide{
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-main);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    padding-bottom: 80px;
+    -webkit-font-smoothing: antialiased;
+  }#canon-r7-guide .container{ max-width: 860px; margin: 0 auto; padding: 0 20px; }#canon-r7-guide .hero{
+    margin: 40px 0;
+    padding: 40px;
+    background: linear-gradient(135deg, var(--primary) 0%, #334155 100%);
+    border-radius: var(--radius-lg);
+    color: white;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    position: relative;
+    overflow: hidden;
+  }#canon-r7-guide .hero h1{ font-size: 28px; margin-bottom: 8px; position: relative; z-index: 2; letter-spacing: -0.025em; }#canon-r7-guide .hero p{ color: #cbd5e1; font-size: 15px; position: relative; z-index: 2; }#canon-r7-guide .hero::after{
+    content: ''; position: absolute; top: -50%; right: -10%; width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }#canon-r7-guide .nav-sticky{
+    position: sticky; top: 16px; z-index: 50;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 10px; border-radius: var(--radius-md);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    display: flex; gap: 10px; margin-bottom: 40px;
+  }#canon-r7-guide .nav-btn{
+    flex: 1; padding: 12px 16px; text-decoration: none;
+    border-radius: var(--radius-sm); font-weight: 600; font-size: 14px;
+    display: flex; flex-direction: column; gap: 4px;
+    transition: var(--transition); border: 1px solid transparent;
+    cursor: pointer;
+  }#canon-r7-guide .nav-btn span{ font-size: 12px; font-weight: normal; opacity: 0.8; }#canon-r7-guide .nav-btn.c1{ background: var(--c1-bg); color: var(--c1); border-color: #ffedd5; }#canon-r7-guide .nav-btn.c2{ background: var(--c2-bg); color: var(--c2); border-color: #f3e8ff; }#canon-r7-guide .nav-btn.c3{ background: var(--c3-bg); color: var(--c3); border-color: #e0f2fe; }#canon-r7-guide .nav-btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }#canon-r7-guide .nav-btn:focus-visible{ outline: 2px solid var(--primary); outline-offset: 2px; }#canon-r7-guide .section-title{ font-size: 20px; margin-bottom: 20px; font-weight: 700; color: var(--primary); }#canon-r7-guide .card-grid{ display: grid; gap: 24px; margin-bottom: 40px; }#canon-r7-guide .card{
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-md); padding: 24px;
+    transition: var(--transition);
+    opacity: 0; transform: translateY(20px);
+  }#canon-r7-guide .card.visible{ opacity: 1; transform: translateY(0); }#canon-r7-guide .card:hover{ box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05); border-color: #cbd5e1; }#canon-r7-guide .accordion-group{ display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }#canon-r7-guide details{
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); overflow: hidden;
+    transition: var(--transition);
+  }#canon-r7-guide details[open]{ border-color: #94a3b8; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05); }#canon-r7-guide summary{
+    padding: 16px; font-weight: 600; cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--primary); user-select: none;
+  }#canon-r7-guide summary::-webkit-details-marker{ display: none; }#canon-r7-guide summary::after{ content: '+'; font-size: 20px; color: var(--text-muted); transition: transform 0.3s; }#canon-r7-guide details[open] summary::after{ content: '−'; transform: rotate(180deg); }#canon-r7-guide .details-content{ padding: 0 16px 16px; color: var(--text-muted); font-size: 14px; }#canon-r7-guide .details-content strong{ color: var(--primary); }#canon-r7-guide .param-table-wrapper{ overflow-x: auto; margin-bottom: 40px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--surface); }#canon-r7-guide .param-table{ width: 100%; border-collapse: collapse; min-width: 600px; }#canon-r7-guide .param-table th,#canon-r7-guide .param-table td{ padding: 16px; border-bottom: 1px solid var(--border); text-align: left; font-size: 14px; }#canon-r7-guide .param-table th{ background: #f8fafc; font-weight: 600; color: var(--text-muted); text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; }#canon-r7-guide .param-table tr:last-child td{ border-bottom: none; }#canon-r7-guide .param-table tbody tr{ transition: background-color 0.2s; }#canon-r7-guide .param-table tbody tr:hover{ background-color: #f1f5f9; }#canon-r7-guide .badge{ display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }#canon-r7-guide .badge.old{ background: #f1f5f9; color: #64748b; }#canon-r7-guide .badge.new{ background: #fef2f2; color: #b91c1c; margin-bottom: 6px;}#canon-r7-guide .mode-header{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }#canon-r7-guide .mode-title{ font-size: 18px; font-weight: 700; color: var(--primary); }#canon-r7-guide .mode-tag{ padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; color: white; }#canon-r7-guide .mode-tag.c1{ background: var(--c1); }#canon-r7-guide .mode-tag.c2{ background: var(--c2); }#canon-r7-guide .mode-tag.c3{ background: var(--c3); }#canon-r7-guide .data-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }#canon-r7-guide .data-item{ background: var(--background); padding: 14px; border-radius: var(--radius-sm); border: 1px solid #f1f5f9; }#canon-r7-guide .data-label{ display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;}#canon-r7-guide .data-value{ font-size: 14px; font-weight: 600; color: var(--text-main); }#canon-r7-guide .callout{
+    padding: 16px 20px; border-radius: var(--radius-sm); font-size: 14px;
+    display: flex; gap: 12px; align-items: flex-start;
+    background: #f8fafc; border: 1px solid #e2e8f0;
+    position: relative; overflow: hidden;
+  }#canon-r7-guide .callout::before{ content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }#canon-r7-guide .callout.c1::before{ background: var(--c1); }#canon-r7-guide .callout.c2::before{ background: var(--c2); }#canon-r7-guide .callout.c3::before{ background: var(--c3); }#canon-r7-guide .callout.info::before{ background: #3b82f6; }#canon-r7-guide .callout p{ margin: 0; color: #334155; }#canon-r7-guide .callout strong{ color: var(--primary); }@media (max-width: 640px){#canon-r7-guide .nav-sticky{ flex-direction: row; flex-wrap: nowrap; overflow-x: auto; padding: 12px; scroll-snap-type: x mandatory; border-radius: 0; margin: 0 -20px 32px -20px; border-left: none; border-right: none;}#canon-r7-guide .nav-btn{ scroll-snap-align: center; flex: 0 0 85%; }#canon-r7-guide .hero{ padding: 32px 20px; border-radius: var(--radius-md); }}
+#r7-article{max-width:70rem!important;margin:auto;padding:clamp(1rem,3vw,2.5rem)!important;min-width:0}
+#canon-r7-guide{--c1:#b74308;--c2:#7e22ce;--c3:#036487;--text-muted:#526178;font-family:system-ui,"Microsoft JhengHei",sans-serif;color:#0f172a!important;line-height:1.75;isolation:isolate}
+#canon-r7-guide [hidden]{display:none!important}
+#canon-r7-guide .container{max-width:none;padding:0}
+#canon-r7-guide .hero{min-height:300px;padding:clamp(1.5rem,5vw,3.5rem);margin:1.5rem 0 1rem;background:radial-gradient(ellipse at 80% 10%,#344e77 0,transparent 50%),linear-gradient(125deg,#0b1220,#172a43);color:#fff!important;isolation:isolate}
+#canon-r7-guide .hero h1{font-family:system-ui,sans-serif;font-size:clamp(1.8rem,4.8vw,3.1rem);max-width:70%;color:#fff!important;line-height:1.2;letter-spacing:-.035em;margin:.9rem 0 1.2rem}
+#canon-r7-guide .hero p{max-width:70%;color:#d0dfef!important;font-weight:400;line-height:1.7}
+#canon-r7-guide .r7-title-sub{font-size:.7em;font-weight:500;letter-spacing:.06em}
+#canon-r7-guide .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#9bc8ff08 1px,transparent 1px),linear-gradient(90deg,#9bc8ff08 1px,transparent 1px);background-size:28px 28px;z-index:-1;mask-image:linear-gradient(90deg,transparent,#000)}
+#canon-r7-guide .r7-kicker{font:600 .65rem/1.4 ui-monospace,monospace;letter-spacing:.16em;margin:0 0 .6rem}
+#canon-r7-guide .r7-optics{position:absolute;right:4%;top:50%;width:25%;transform:translateY(-50%);text-align:center;color:#b1c7df}
+#canon-r7-guide .r7-optics small{display:block;font:500 .55rem/1.4 ui-monospace,monospace;letter-spacing:.12em;margin-top:1rem}
+#canon-r7-guide .r7-lens{position:relative;aspect-ratio:1;border-radius:50%;border:1px solid #9cc3e85c;display:grid;place-items:center;background:repeating-conic-gradient(#9ec6ed4d 0deg 1deg,transparent 1deg 9deg);box-shadow:0 0 0 8px #a6cfff08,0 0 50px #55b3ff22}
+#canon-r7-guide .r7-lens i{position:absolute;inset:15%;border:1px solid #73d3f399;border-radius:50%;background:radial-gradient(circle at 35% 30%,#7396b5aa,transparent 35%),radial-gradient(circle,#121827 10%,#27405b 55%,#080f20 70%);box-shadow:0 0 0 8px #0b1529,0 0 0 9px #7797b04d}
+#canon-r7-guide .r7-lens span{position:relative;font:600 1rem ui-monospace,monospace;letter-spacing:.16em;color:#c7e9ff}
+#canon-r7-guide h2,#canon-r7-guide h3{color:#132238!important;font-family:inherit;letter-spacing:-.025em}
+#canon-r7-guide a{color:#075985!important}
+#canon-r7-guide .card{opacity:1;transform:none;color:#17253b!important;transition:box-shadow .22s,border-color .22s;scroll-margin-top:150px;margin-top:0;border-color:#d6e1ed!important}
+#canon-r7-guide .hero.card{color:#fff!important}
+#canon-r7-guide .card.r7-enter{animation:r7-arrive .45s ease-out both}
+#canon-r7-guide .card.r7-active{box-shadow:0 0 0 3px #38bdf82b,0 15px 40px #1e46691a;border-color:#0284c7!important}
+#canon-r7-guide .nav-sticky{top:.5rem;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 2rem;overflow:visible;border-radius:16px;background:#fffffff0}
+#canon-r7-guide .nav-btn{min-width:0;min-height:70px;padding:.7rem .8rem;text-decoration:none;line-height:1.5;position:relative;gap:0}
+#canon-r7-guide .nav-btn b{font:700 .8rem ui-monospace,monospace;letter-spacing:.1em}
+#canon-r7-guide .nav-btn span{font-size:.7rem;opacity:1}
+#canon-r7-guide .nav-btn.c1{color:var(--c1)!important}
+#canon-r7-guide .nav-btn.c2{color:var(--c2)!important}
+#canon-r7-guide .nav-btn.c3{color:var(--c3)!important}
+#canon-r7-guide .nav-btn[aria-current="location"]{box-shadow:inset 0 0 0 2px currentColor}
+#canon-r7-guide :is(a,button,select,summary,textarea,[tabindex]):focus-visible{outline:3px solid #036487!important;outline-offset:4px}
+#canon-r7-guide .r7-console{display:grid;grid-template-columns:1fr 1.2fr;gap:1.2rem;padding:clamp(1rem,3vw,1.8rem);background:#edf3f9;border:1px solid #d7e2ee;border-radius:20px;margin-bottom:2.5rem}
+#canon-r7-guide .r7-console h2{font-size:1.6rem;margin:0 0 .5rem}
+#canon-r7-guide .r7-console p{font-size:.9rem;margin:.5rem 0}
+#canon-r7-guide .r7-controls label{font-size:.8rem;font-weight:600;display:block}
+#canon-r7-guide select,#canon-r7-guide textarea{width:100%;padding:.7rem;background:white;border:1px solid #91a6bc;border-radius:9px;color:#132238;font-size:.95rem;min-height:44px}
+#canon-r7-guide .r7-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}
+#canon-r7-guide button{font-family:inherit;font-weight:600;font-size:.8rem;line-height:1.5;padding:.65rem .85rem;border:1px solid #24405e;border-radius:9px;background:#163450;color:#fff;cursor:pointer;min-height:44px}
+#canon-r7-guide #r7-reset{background:white;color:#163450}
+#canon-r7-guide .r7-result{grid-column:1/-1;padding:1.3rem;background:#fff;border-radius:12px;border-left:4px solid var(--c1);box-shadow:0 4px 20px #27486b09}
+#canon-r7-guide #r7-result-mode{font:700 .75rem ui-monospace,monospace;color:var(--c1)}
+#canon-r7-guide .r7-result[data-mode="c2"]{border-left-color:var(--c2)}
+#canon-r7-guide .r7-result[data-mode="c3"]{border-left-color:var(--c3)}
+#canon-r7-guide .r7-result[data-mode="c2"] #r7-result-mode{color:var(--c2)}
+#canon-r7-guide .r7-result[data-mode="c3"] #r7-result-mode{color:var(--c3)}
+#canon-r7-guide .r7-result h3{font-size:1.2rem;margin:.5rem 0}
+#canon-r7-guide #r7-result-settings{font:600 .95rem/1.8 ui-monospace,system-ui,sans-serif}
+#canon-r7-guide #r7-result-link{display:inline-block;margin-top:.4rem;min-height:44px;padding:.5rem 0}
+#canon-r7-guide .data-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+#canon-r7-guide .mode-header{gap:1rem;flex-wrap:wrap}
+#canon-r7-guide .mode-title{margin:0}
+#canon-r7-guide .mode-tag{white-space:nowrap}
+#canon-r7-guide .param-table{display:table;margin:0}
+#canon-r7-guide caption{caption-side:top;text-align:left;padding:1rem;color:#35445a;font-size:.85rem}
+#canon-r7-guide .param-table-wrapper{overscroll-behavior-inline:contain}
+#canon-r7-guide .details-content{color:#435269;font-size:.95rem}
+#canon-r7-guide summary{min-height:52px;gap:1rem}
+#canon-r7-guide .r7-sources{padding-left:1.3rem;margin:1rem 0}
+#canon-r7-guide .r7-sources li{padding:.3rem 0}
+#canon-r7-guide .r7-note{font-size:.8rem;color:#526178;margin:1rem 0}
+#canon-r7-guide .r7-original{margin:2rem 0}
+#canon-r7-guide .r7-original>div,#canon-r7-guide .r7-original>p{padding:0 1rem 1rem}
+#canon-r7-guide .r7-original-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.95rem}
+@keyframes r7-arrive{from{translate:0 12px}to{translate:0 0}}
+@media(max-width:640px){#canon-r7-guide .hero{min-height:250px}#canon-r7-guide .hero h1{font-size:1.9rem;max-width:75%}#canon-r7-guide .hero p{max-width:80%;font-size:.8rem}#canon-r7-guide .r7-optics{right:5%;top:30%;width:20%}#canon-r7-guide .r7-optics small{display:none}#canon-r7-guide .nav-sticky{gap:.3rem;padding:.4rem;margin:0 0 1.5rem;top:.25rem}#canon-r7-guide .nav-btn{padding:.6rem .4rem;font-size:.75rem;min-height:65px}#canon-r7-guide .nav-btn span{display:none}#canon-r7-guide .r7-console{grid-template-columns:minmax(0,1fr)}#canon-r7-guide .card{padding:1rem;scroll-margin-top:110px}#canon-r7-guide .r7-lens span{font-size:.7rem}#canon-r7-guide .r7-result{padding:1rem}}
+@media(prefers-reduced-motion:reduce){#canon-r7-guide *,#canon-r7-guide *::before,#canon-r7-guide *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
