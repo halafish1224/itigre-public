@@ -33,6 +33,7 @@ collections:
   - name: posts
     label: 新文章管理
     folder: src/content/posts
+    extension: md
     create: true
     delete: false
     fields:
