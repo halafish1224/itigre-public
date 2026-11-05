@@ -1,0 +1,26 @@
+
+backend:
+  name: github
+  repo: halafish1224/itigre-astro
+
+media_folder: /public/images
+public_folder: /images
+
+media_libraries:
+  all:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 75
+        width: 1200
+        height: 1200
+
+collections:
+  - name: posts
+    label: 文章管理
+    folder: /src/content/blog
+    create: true
+    fields:
+      - { name: title, label: 文章標題, widget: string }
+      - { name: date, label: 發布日期, widget: datetime }
+      - { name: body, label: 文章內容, widget: richtext }
