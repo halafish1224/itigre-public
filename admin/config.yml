@@ -6,11 +6,16 @@ backend:
   auth_methods:
     - oauth
 
+app_title: ITIGRE 文章管理
+site_url: https://itigre.com
+display_url: https://itigre.com
+
 publish_mode:
   type: editorial_workflow
   stages:
     - draft
-    - pending_review
+  direct_publish: false
+  allow_incomplete_drafts: true
 
 media_folder: public/images
 public_folder: /images
@@ -26,12 +31,52 @@ media_libraries:
 
 collections:
   - name: posts
-    label: 文章管理
-    folder: src/content/blog
+    label: 新文章管理
+    folder: src/content/posts
     create: true
-    publish: false
     delete: false
     fields:
-      - { name: title, label: 文章標題, widget: string }
-      - { name: date, label: 發布日期, widget: datetime }
-      - { name: body, label: 文章內容, widget: richtext }
+      - { name: title, label: 文章標題, widget: string, required: true }
+      - { name: date, label: 發布日期, widget: datetime, required: true }
+      - { name: summary, label: 文章摘要, widget: text }
+      - name: category
+        label: 文章分類
+        widget: select
+        options:
+          - 生活隨筆
+          - 旅行紀錄
+          - 音樂現場
+          - 棒球紀實
+          - 攝影筆記
+          - 閱讀筆記
+          - 知識整理
+      - name: tags
+        label: 標籤
+        widget: list
+        field: { name: tag, label: 標籤, widget: string }
+      - name: topics
+        label: 主題
+        widget: list
+        field: { name: topic, label: 主題, widget: string }
+      - name: people
+        label: 人物
+        widget: list
+        field: { name: person, label: 人物, widget: string }
+      - name: places
+        label: 地點
+        widget: list
+        field: { name: place, label: 地點, widget: string }
+      - name: events
+        label: 事件
+        widget: list
+        field: { name: event, label: 事件, widget: string }
+      - name: related_posts
+        label: 相關文章 Slug
+        widget: list
+        field: { name: slug, label: Slug, widget: string }
+      - { name: cover_image, label: 封面圖片, widget: image, required: false }
+      - { name: cover_alt, label: 圖片替代文字, widget: string, required: false }
+      - { name: cover_caption, label: 圖片說明, widget: string, required: false }
+      - { name: seo_title, label: SEO 標題, widget: string, required: false }
+      - { name: seo_description, label: SEO 描述, widget: text, required: false }
+      - { name: body, label: 文章內容, widget: richtext, required: true }
