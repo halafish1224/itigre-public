@@ -10,12 +10,8 @@ site_url: https://itigre.com
 display_url: https://itigre.com
 
 publish_mode:
-  type: editorial_workflow
-  stages:
-    - draft
-    - pending_review
-    - pending_publish
-  direct_publish: false
+  type: preview
+  direct_publish: true
   allow_incomplete_drafts: true
 
 media_folder: public/images
