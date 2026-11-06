@@ -3,7 +3,8 @@ backend:
   name: github
   repo: halafish1224/itigre-astro
   branch: main
-  base_url: https://sveltia-cms-auth.halafish.workers.dev
+  auth_methods:
+    - token
 
 media_folder: public/images
 public_folder: /images
