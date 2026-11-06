@@ -2,8 +2,10 @@
 backend:
   name: github
   repo: halafish1224/itigre-astro
+  branch: main
+  base_url: https://sveltia-cms-auth.halafish.workers.dev
 
-media_folder: /public/images
+media_folder: public/images
 public_folder: /images
 
 media_libraries:
@@ -18,7 +20,7 @@ media_libraries:
 collections:
   - name: posts
     label: 文章管理
-    folder: /src/content/blog
+    folder: src/content/blog
     create: true
     fields:
       - { name: title, label: 文章標題, widget: string }
