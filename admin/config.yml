@@ -138,7 +138,7 @@ collections:
       - { name: body, label: 原始文章內容（AI 不得改寫）, widget: richtext, required: true }
 
   - name: legacy_edits
-    label: 舊文章修訂草稿
+    label: 舊文章修訂（草稿／公開）
     folder: src/content/legacy-edits
     extension: md
     create: true
@@ -147,9 +147,9 @@ collections:
       - { name: title, label: 原文章標題, widget: string, required: true }
       - { name: original_path, label: 原始文章路徑（post/文章ID/slug）, widget: string, required: true }
       - { name: original_date, label: 原始發表日期, widget: datetime, required: false }
-      - { name: edit_status, label: 修訂狀態, widget: select, default: draft, options: [draft, reviewed, published] }
+      - { name: edit_status, label: 網站顯示狀態（published 公開／draft 草稿）, widget: select, default: published, options: [published, draft, reviewed] }
       - { name: edit_note, label: 修訂說明, widget: text, required: false }
-      - { name: body, label: 修訂草稿（不會覆蓋原文或自動發布）, widget: markdown, required: true }
+      - { name: body, label: 修訂內容（published 且正式發布後取代原網址正文）, widget: markdown, required: true }
 
   - name: knowledge_notes
     label: 知識補充與更新
