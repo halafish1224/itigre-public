@@ -143,12 +143,11 @@ collections:
     extension: md
     create: true
     delete: false
-    publish: false
     fields:
       - { name: title, label: 原文章標題, widget: string, required: true }
       - { name: original_path, label: 原始文章路徑（post/文章ID/slug）, widget: string, required: true }
       - { name: original_date, label: 原始發表日期, widget: datetime, required: false }
-      - { name: edit_status, label: 修訂狀態, widget: select, default: draft, options: [draft, reviewed, approved] }
+      - { name: edit_status, label: 修訂狀態, widget: select, default: draft, options: [draft, reviewed, published] }
       - { name: edit_note, label: 修訂說明, widget: text, required: false }
       - { name: body, label: 修訂草稿（不會覆蓋原文或自動發布）, widget: markdown, required: true }
 
