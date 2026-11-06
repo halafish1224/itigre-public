@@ -1,10 +1,22 @@
-
 backend:
   name: github
   repo: halafish1224/itigre-astro
   branch: main
   auth_methods:
     - token
+
+app_title: ITIGRE 文章管理
+site_url: https://itigre.com
+display_url: https://itigre.com
+
+publish_mode:
+  type: editorial_workflow
+  stages:
+    - draft
+    - pending_review
+    - pending_publish
+  direct_publish: false
+  allow_incomplete_drafts: true
 
 media_folder: public/images
 public_folder: /images
@@ -20,10 +32,203 @@ media_libraries:
 
 collections:
   - name: posts
-    label: 文章管理
-    folder: src/content/blog
+    label: 新文章管理
+    folder: src/content/posts
+    extension: md
     create: true
+    delete: false
     fields:
-      - { name: title, label: 文章標題, widget: string }
-      - { name: date, label: 發布日期, widget: datetime }
-      - { name: body, label: 文章內容, widget: richtext }
+      - { name: title, label: 文章標題, widget: string, required: true }
+      - { name: date, label: 發布日期, widget: datetime, required: true }
+      - { name: summary, label: 文章摘要, widget: text }
+      - name: category
+        label: 文章分類
+        widget: select
+        options:
+          - 生活隨筆
+          - 旅行紀錄
+          - 音樂現場
+          - 棒球紀實
+          - 攝影筆記
+          - 閱讀筆記
+          - 知識整理
+      - name: tags
+        label: 標籤
+        widget: list
+        field: { name: tag, label: 標籤, widget: string }
+      - name: topics
+        label: 主題
+        widget: list
+        field: { name: topic, label: 主題, widget: string }
+      - name: people
+        label: 人物
+        widget: list
+        field: { name: person, label: 人物, widget: string }
+      - name: places
+        label: 地點
+        widget: list
+        field: { name: place, label: 地點, widget: string }
+      - name: events
+        label: 事件
+        widget: list
+        field: { name: event, label: 事件, widget: string }
+      - name: related_posts
+        label: 人工指定相關文章 Slug（優先顯示）
+        widget: list
+        field: { name: slug, label: CMS 文章 Slug, widget: string }
+      - name: related_archive_paths
+        label: 人工指定典藏文章路徑（優先顯示）
+        widget: list
+        field: { name: path, label: 典藏路徑，例如 post/123/文章名稱, widget: string }
+      - name: excluded_related_posts
+        label: 排除 CMS 關聯文章 Slug
+        widget: list
+        field: { name: slug, label: Slug, widget: string }
+      - name: excluded_archive_paths
+        label: 排除典藏文章路徑
+        widget: list
+        field: { name: path, label: 典藏路徑, widget: string }
+      - { name: cover_image, label: 封面圖片, widget: image, required: false }
+      - { name: cover_alt, label: 圖片替代文字, widget: string, required: false }
+      - { name: cover_caption, label: 圖片說明, widget: string, required: false }
+      - { name: seo_title, label: SEO 標題, widget: string, required: false }
+      - { name: seo_description, label: SEO 描述, widget: text, required: false }
+      - { name: ai_review_summary, label: AI 查證提示摘要（僅供編輯參考）, widget: text, required: false }
+      - { name: ai_review_checked_at, label: AI 最近分析時間, widget: datetime, required: false }
+      - { name: ai_review_signature, label: AI 內容指紋（系統欄位）, widget: hidden, required: false }
+      - name: ai_review_items
+        label: AI 待確認項目（不是錯誤判定；不可直接公開）
+        widget: list
+        summary: '{{review_type}} · {{claim}}'
+        collapsed: true
+        fields:
+          - { name: claim, label: 原文中的待查證敘述, widget: text, required: true }
+          - name: review_type
+            label: 查證類型
+            widget: select
+            options:
+              - { label: 日期／時間, value: date_or_timeline }
+              - { label: 人物身分, value: person_or_identity }
+              - { label: 地點／店家, value: place_or_business }
+              - { label: 價格／營業資訊, value: price_or_hours }
+              - { label: 賽事／事件結果, value: event_or_result }
+              - { label: 歷史事實, value: historical_fact }
+              - { label: 其他事實, value: other_fact }
+          - { name: reason, label: 為何需要確認, widget: text, required: true }
+          - { name: suggested_check, label: 建議查證方向, widget: text, required: false }
+          - name: status
+            label: 人工處理狀態
+            widget: select
+            default: pending_source
+            options:
+              - { label: 待找權威來源, value: pending_source }
+              - { label: 待我確認, value: pending_user }
+              - { label: 已核准（尚未公開）, value: approved }
+              - { label: 退回重查, value: returned }
+              - { label: 忽略, value: ignored }
+          - name: evidence_level
+            label: 證據等級
+            widget: select
+            default: none
+            options:
+              - { label: 尚無可靠來源, value: none }
+              - { label: 一般來源／待交叉查證, value: limited }
+              - { label: 官方或權威來源, value: authoritative }
+              - { label: 多個權威來源一致, value: corroborated }
+          - { name: source_label, label: 來源名稱（人工填寫）, widget: string, required: false }
+          - { name: source_url, label: 來源網址（人工填寫）, widget: string, required: false }
+          - { name: confidence, label: AI 判斷信心（不代表事實正確）, widget: string, required: false }
+          - { name: reviewer_note, label: 人工判斷／修改意見, widget: text, required: false }
+      - { name: body, label: 原始文章內容（AI 不得改寫）, widget: richtext, required: true }
+
+  - name: knowledge_notes
+    label: 知識補充與更新
+    folder: src/content/knowledge-notes
+    extension: md
+    create: true
+    delete: false
+    fields:
+      - { name: title, label: 補充標題, widget: string, required: true }
+      - name: target_type
+        label: 關聯文章類型
+        widget: select
+        options:
+          - { label: 新 CMS 文章, value: new }
+          - { label: 舊典藏文章, value: archive }
+      - { name: target_slug, label: 新文章 Slug（新 CMS 文章使用）, widget: string, required: false }
+      - { name: target_path, label: 典藏文章路徑（舊文章使用）, widget: string, required: false }
+      - name: kind
+        label: 補充類型
+        widget: select
+        options:
+          - { label: 背景知識, value: background }
+          - { label: 後續更新, value: update }
+          - { label: 補充說明, value: clarification }
+      - { name: checked_at, label: 查證日期, widget: datetime, required: false }
+      - name: status
+        label: 查證狀態
+        widget: select
+        default: draft
+        options:
+          - { label: 草稿, value: draft }
+          - { label: 待查證, value: needs_review }
+          - { label: 已核實（經站主核准後公開）, value: verified }
+      - { name: source_label, label: 資料來源名稱, widget: string, required: false }
+      - { name: source_url, label: 資料來源網址, widget: string, required: false }
+      - { name: body, label: 補充內容, widget: richtext, required: true }
+
+  - name: review_inbox
+    label: 待人工確認｜Review Inbox
+    folder: src/content/review-inbox
+    extension: md
+    create: true
+    delete: false
+    publish: false
+    summary: '{{title}} · {{review_type}} · {{status}}'
+    fields:
+      - { name: title, label: 待確認事項標題, widget: string, required: true }
+      - name: target_type
+        label: 原文章類型
+        widget: select
+        options:
+          - { label: 新 CMS 文章, value: new }
+          - { label: 舊典藏文章, value: archive }
+      - { name: target_slug, label: 原文章 Slug（新文章）, widget: string, required: false }
+      - { name: target_path, label: 原文章典藏路徑（舊文章）, widget: string, required: false }
+      - name: review_type
+        label: 確認原因
+        widget: select
+        options:
+          - { label: 缺少權威來源, value: source_needed }
+          - { label: 資料互相矛盾, value: conflicting_info }
+          - { label: AI 推論／解讀, value: ai_inference }
+          - { label: 等待人工核准, value: approval_needed }
+          - { label: 原文可能有誤, value: possible_correction }
+      - name: status
+        label: 處理狀態
+        widget: select
+        default: pending_user
+        options:
+          - { label: 待找來源, value: pending_source }
+          - { label: 待你確認, value: pending_user }
+          - { label: 已核准（尚未公開）, value: approved }
+          - { label: 已退回重查, value: returned }
+          - { label: 已忽略, value: ignored }
+      - { name: ai_summary, label: AI 發現與原因, widget: text, required: true }
+      - { name: proposed_content, label: AI 建議補充內容（不會自動公開）, widget: text, required: false }
+      - { name: source_label, label: 來源名稱, widget: string, required: false }
+      - { name: source_url, label: 來源網址, widget: string, required: false }
+      - { name: checked_at, label: 查證日期, widget: datetime, required: false }
+      - name: evidence_level
+        label: 證據等級
+        widget: select
+        options:
+          - { label: 尚無可靠來源, value: none }
+          - { label: 一般來源／待交叉查證, value: limited }
+          - { label: 官方或權威來源, value: authoritative }
+          - { label: 多個權威來源一致, value: corroborated }
+      - { name: confidence, label: AI 信心說明（僅供參考）, widget: string, required: false }
+      - { name: reviewer_note, label: 你的判斷／修改意見, widget: text, required: false }
+      - { name: decision_at, label: 人工決定日期, widget: datetime, required: false }
+      - { name: linked_note_slug, label: 核准後建立的 Knowledge Note Slug, widget: string, required: false }
+      - { name: original_preservation, label: 原文保護規則, widget: hidden, default: preserve }
