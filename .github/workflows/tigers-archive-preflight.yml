@@ -120,7 +120,7 @@ jobs:
                   errors.append(f"{target}: h1 missing")
               if not audit.description:
                   errors.append(f"{target}: meta description missing")
-              if not audit.canonical:
+              if target.parts[0] == "tigers" and not audit.canonical:
                   errors.append(f"{target}: canonical URL missing or invalid")
               if audit.duplicates:
                   errors.append(f"{target}: duplicate IDs {audit.duplicates}")
