@@ -141,6 +141,6 @@ jobs:
           test -f CNAME
           test -f post/new/mercuries-tigers-ten-years/index.html
           tar --dereference --hard-dereference -cf "$RUNNER_TEMP/site.tar" --exclude=.git --exclude=.github .
-          tar -tf "$RUNNER_TEMP/site.tar" | grep -Fx "index.html"
-          tar -tf "$RUNNER_TEMP/site.tar" | grep -Fx "post/new/mercuries-tigers-ten-years/index.html"
+          tar -tf "$RUNNER_TEMP/site.tar" | sed "s#^\\./##" | grep -Fx "index.html"
+          tar -tf "$RUNNER_TEMP/site.tar" | sed "s#^\\./##" | grep -Fx "post/new/mercuries-tigers-ten-years/index.html"
           echo "PASS: static site artifact contains the homepage and Tigers article."
