@@ -1,0 +1,146 @@
+name: Static site deployment preflight
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "post/new/mercuries-tigers-ten-years/index.html"
+      - ".github/workflows/static-site-preflight.yml"
+  push:
+    branches: [main]
+    paths:
+      - "post/new/mercuries-tigers-ten-years/index.html"
+      - ".github/workflows/static-site-preflight.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: static-site-preflight-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate article and Pages artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Validate HTML, metadata, and local links
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlsplit, unquote
+          import sys
+
+          target = Path("post/new/mercuries-tigers-ten-years/index.html")
+          if not target.is_file():
+              sys.exit(f"Missing published article: {target}")
+
+          source = target.read_text(encoding="utf-8")
+
+          class Audit(HTMLParser):
+              def __init__(self):
+                  super().__init__(convert_charrefs=True)
+                  self.ids = set()
+                  self.duplicates = []
+                  self.links = []
+                  self.title_depth = 0
+                  self.title_text = []
+                  self.has_html = False
+                  self.has_body = False
+                  self.has_article = False
+                  self.has_h1 = False
+                  self.has_lang = False
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "html":
+                      self.has_html = True
+                      self.has_lang = attrs.get("lang") == "zh-Hant"
+                  if tag == "body":
+                      self.has_body = True
+                  if tag == "article":
+                      self.has_article = True
+                  if tag == "h1":
+                      self.has_h1 = True
+                  if tag == "title":
+                      self.title_depth += 1
+                  if "id" in attrs:
+                      value = attrs["id"]
+                      if value in self.ids:
+                          self.duplicates.append(value)
+                      self.ids.add(value)
+                  for key in ("href", "src"):
+                      value = attrs.get(key)
+                      if value:
+                          self.links.append(value)
+
+              def handle_endtag(self, tag):
+                  if tag == "title" and self.title_depth:
+                      self.title_depth -= 1
+
+              def handle_data(self, data):
+                  if self.title_depth:
+                      self.title_text.append(data)
+
+          audit = Audit()
+          audit.feed(source)
+          audit.close()
+
+          errors = []
+          if not source.lstrip().lower().startswith("<!doctype html>"):
+              errors.append("HTML5 doctype is missing")
+          if not audit.has_html or not audit.has_lang:
+              errors.append("html lang must be zh-Hant")
+          if not audit.has_body or not audit.has_article or not audit.has_h1:
+              errors.append("body/article/h1 structure is incomplete")
+          if not "".join(audit.title_text).strip():
+              errors.append("document title is missing")
+          if audit.duplicates:
+              errors.append("duplicate IDs: " + ", ".join(audit.duplicates))
+
+          for required in (
+              "1999年11月8日三商虎宣布解散前數日成立",
+              "網路虎迷聯誼會",
+              "林信彰",
+              "飄揚在夜空中的藍絲帶",
+          ):
+              if required not in source:
+                  errors.append(f"required editorial text missing: {required}")
+
+          for link in audit.links:
+              parts = urlsplit(link)
+              if parts.scheme or parts.netloc or not parts.path:
+                  continue
+              path = unquote(parts.path)
+              if path.startswith("/"):
+                  path = path.lstrip("/")
+              else:
+                  path = (target.parent / path).as_posix()
+              candidate = Path(path)
+              if path.endswith("/"):
+                  candidate = candidate / "index.html"
+              elif not candidate.suffix:
+                  candidate = candidate / "index.html"
+              if not candidate.is_file():
+                  errors.append(f"broken local link/asset: {link}")
+
+          if errors:
+              print("\n".join(f"ERROR: {item}" for item in errors))
+              sys.exit(1)
+
+          print(f"PASS: HTML parsed; {len(audit.links)} links/assets checked; {len(audit.ids)} unique IDs.")
+          PY
+
+      - name: Verify GitHub Pages packaging
+        run: |
+          test -f index.html
+          test -f CNAME
+          test -f post/new/mercuries-tigers-ten-years/index.html
+          tar --dereference --hard-dereference -cf "$RUNNER_TEMP/site.tar" --exclude=.git --exclude=.github .
+          tar -tf "$RUNNER_TEMP/site.tar" | sed "s#^\\./##" | grep -Fx "index.html"
+          tar -tf "$RUNNER_TEMP/site.tar" | sed "s#^\\./##" | grep -Fx "post/new/mercuries-tigers-ten-years/index.html"
+          echo "PASS: static site artifact contains the homepage and Tigers article."
