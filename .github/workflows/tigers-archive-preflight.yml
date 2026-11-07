@@ -1,0 +1,165 @@
+name: Tigers archive preflight
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tigers/players/**"
+      - "tigers/records/**"
+      - "post/new/mercuries-tigers-ten-years/index.html"
+      - ".github/workflows/tigers-archive-preflight.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tigers/players/**"
+      - "tigers/records/**"
+      - "post/new/mercuries-tigers-ten-years/index.html"
+      - ".github/workflows/tigers-archive-preflight.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tigers-archive-preflight-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate Tigers player and record pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Validate HTML, metadata, structured data, and internal links
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlsplit, unquote
+          import json
+          import sys
+
+          targets = sorted(Path("tigers").rglob("*.html"))
+          article = Path("post/new/mercuries-tigers-ten-years/index.html")
+          if article.is_file():
+              targets.append(article)
+          if not targets:
+              sys.exit("No Tigers archive HTML files found")
+
+          class Audit(HTMLParser):
+              def __init__(self):
+                  super().__init__(convert_charrefs=True)
+                  self.lang = None
+                  self.title = []
+                  self.title_depth = 0
+                  self.h1_count = 0
+                  self.description = False
+                  self.canonical = False
+                  self.links = []
+                  self.ids = set()
+                  self.duplicates = []
+                  self.jsonld = []
+                  self.jsonld_depth = 0
+                  self.jsonld_buffer = []
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == "html":
+                      self.lang = attrs.get("lang")
+                  if tag == "title":
+                      self.title_depth += 1
+                  if tag == "h1":
+                      self.h1_count += 1
+                  if tag == "meta" and attrs.get("name", "").lower() == "description" and attrs.get("content", "").strip():
+                      self.description = True
+                  if tag == "link" and attrs.get("rel", "").lower() == "canonical" and attrs.get("href", "").startswith("https://itigre.com/"):
+                      self.canonical = True
+                  if tag == "script" and attrs.get("type", "").lower() == "application/ld+json":
+                      self.jsonld_depth += 1
+                      self.jsonld_buffer = []
+                  if "id" in attrs:
+                      value = attrs["id"]
+                      if value in self.ids:
+                          self.duplicates.append(value)
+                      self.ids.add(value)
+                  for key in ("href", "src"):
+                      value = attrs.get(key)
+                      if value:
+                          self.links.append(value)
+
+              def handle_endtag(self, tag):
+                  if tag == "title" and self.title_depth:
+                      self.title_depth -= 1
+                  if tag == "script" and self.jsonld_depth:
+                      self.jsonld.append("".join(self.jsonld_buffer))
+                      self.jsonld_depth -= 1
+                      self.jsonld_buffer = []
+
+              def handle_data(self, data):
+                  if self.title_depth:
+                      self.title.append(data)
+                  if self.jsonld_depth:
+                      self.jsonld_buffer.append(data)
+
+          errors = []
+          checked_links = 0
+          for target in targets:
+              source = target.read_text(encoding="utf-8")
+              audit = Audit()
+              audit.feed(source)
+              audit.close()
+
+              if not source.lstrip().lower().startswith("<!doctype html>"):
+                  errors.append(f"{target}: HTML5 doctype missing")
+              if audit.lang != "zh-Hant":
+                  errors.append(f"{target}: html lang must be zh-Hant")
+              if not "".join(audit.title).strip():
+                  errors.append(f"{target}: title missing")
+              if audit.h1_count < 1:
+                  errors.append(f"{target}: h1 missing")
+              if not audit.description:
+                  errors.append(f"{target}: meta description missing")
+              if not audit.canonical:
+                  errors.append(f"{target}: canonical URL missing or invalid")
+              if audit.duplicates:
+                  errors.append(f"{target}: duplicate IDs {audit.duplicates}")
+
+              for raw in audit.jsonld:
+                  try:
+                      json.loads(raw)
+                  except Exception as exc:
+                      errors.append(f"{target}: invalid JSON-LD ({exc})")
+
+              for link in audit.links:
+                  parts = urlsplit(link)
+                  if parts.scheme or parts.netloc or not parts.path:
+                      continue
+                  path = unquote(parts.path)
+                  if path.startswith("/"):
+                      path = path.lstrip("/")
+                  else:
+                      path = (target.parent / path).as_posix()
+                  candidate = Path(path)
+                  if path.endswith("/"):
+                      candidate = candidate / "index.html"
+                  elif not candidate.suffix:
+                      candidate = candidate / "index.html"
+                  if not candidate.is_file():
+                      errors.append(f"{target}: broken local link/asset {link}")
+                  checked_links += 1
+
+              if target.name == "index.html" and target.parent == Path("tigers/players"):
+                  if "球員點將錄" not in source or "隊史紀錄王" not in source:
+                      errors.append(f"{target}: player directory navigation missing")
+              if target == Path("tigers/records/index.html"):
+                  for term in ("勝投王", "奪三振王", "全壘打王", "盜壘王", "防禦率王"):
+                      if term not in source:
+                          errors.append(f"{target}: record category missing: {term}")
+
+          if errors:
+              print("\n".join("ERROR: " + item for item in errors))
+              sys.exit(1)
+
+          print(f"PASS: {len(targets)} HTML pages validated; {checked_links} local links/assets checked.")
+          PY
