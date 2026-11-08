@@ -6,6 +6,7 @@ on:
     paths:
       - "tigers/players/**"
       - "tigers/coaches/**"
+      - "tigers/seasons/**"
       - "tigers/records/**"
       - "post/new/mercuries-tigers-ten-years/index.html"
       - ".github/workflows/tigers-archive-preflight.yml"
@@ -14,6 +15,7 @@ on:
     paths:
       - "tigers/players/**"
       - "tigers/coaches/**"
+      - "tigers/seasons/**"
       - "tigers/records/**"
       - "post/new/mercuries-tigers-ten-years/index.html"
       - ".github/workflows/tigers-archive-preflight.yml"
