@@ -57,3 +57,18 @@ a:focus-visible{outline:3px solid #e0b760;outline-offset:3px}
 .position-heading{grid-column:1/-1;display:flex;align-items:baseline;gap:.85rem;margin:1.4rem 0 .05rem;padding:.8rem 1rem;border:1px solid #c7d2df;border-left:5px solid var(--gold);background:linear-gradient(100deg,#dce6f0 0%,#f8f6ef 75%);color:#102943;font:800 1.35rem/1.2 'Noto Serif TC',serif;letter-spacing:.06em;box-shadow:0 5px 16px #071a2e0a}
 .position-heading span{color:#657486;font:750 .68rem/1.2 system-ui,-apple-system,'Noto Sans TC',sans-serif;letter-spacing:.15em}
 @media(max-width:520px){.position-heading{gap:.55rem;margin-top:1rem;padding:.7rem .75rem;font-size:1.18rem}.position-heading span{font-size:.58rem;letter-spacing:.1em}}
+
+/* Alumni reading paths: blue-and-white scorebook panels, scoped to the topic sections. */
+.topic-links{justify-content:flex-start;margin-bottom:1rem;border-bottom:0}
+.topic-links a{border:1px solid #b9cada;background:#fffdf8}
+.alumni-feature{scroll-margin-top:1.5rem;border-top:5px solid var(--blue);background:linear-gradient(135deg,#fffdf8,#edf4fb)}
+.alumni-feature .player-number{color:#385575;font-weight:800;letter-spacing:.1em}
+.alumni-feature h2{margin-top:.6rem}
+.alumni-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.5rem 0}
+.alumni-paths article{min-width:0;padding:1.2rem;border:1px solid #cad7e6;border-left:4px solid var(--blue);background:#fffdf8}
+.alumni-paths h3{margin:.4rem 0;font-size:1.2rem;line-height:1.5}
+.alumni-paths h3 a{color:#123e70;text-decoration:none}
+.alumni-paths h3 a:hover{text-decoration:underline}
+.alumni-paths .alumni-period{margin:0;color:#52657a;font-size:.78rem;font-weight:750;letter-spacing:.04em}
+.story h2[id]{scroll-margin-top:1.5rem}
+@media(max-width:600px){.alumni-paths{grid-template-columns:minmax(0,1fr)}.alumni-paths article{padding:1rem}.topic-links a{width:100%}}
