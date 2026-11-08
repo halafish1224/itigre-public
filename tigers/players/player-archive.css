@@ -52,3 +52,8 @@ a:focus-visible{outline:3px solid #e0b760;outline-offset:3px}
 @media(max-width:720px){.hero{min-height:350px}.roster-hero{min-height:410px}.card{min-height:0}}
 @media(max-width:520px){nav{justify-content:flex-start}.hero{padding:1.5rem 1.25rem}.roster-hero h1{font-size:clamp(2.65rem,11vw,3.8rem)}.count{align-items:center}.count span{max-width:18ch;line-height:1.5}}
 @media(prefers-reduced-motion:reduce){nav a,footer a,.card,.card h2 a{transition:none}.card:hover{transform:none}}
+
+/* Position sections on the Tigers player archive */
+.position-heading{grid-column:1/-1;display:flex;align-items:baseline;gap:.85rem;margin:1.4rem 0 .05rem;padding:.8rem 1rem;border:1px solid #c7d2df;border-left:5px solid var(--gold);background:linear-gradient(100deg,#dce6f0 0%,#f8f6ef 75%);color:#102943;font:800 1.35rem/1.2 'Noto Serif TC',serif;letter-spacing:.06em;box-shadow:0 5px 16px #071a2e0a}
+.position-heading span{color:#657486;font:750 .68rem/1.2 system-ui,-apple-system,'Noto Sans TC',sans-serif;letter-spacing:.15em}
+@media(max-width:520px){.position-heading{gap:.55rem;margin-top:1rem;padding:.7rem .75rem;font-size:1.18rem}.position-heading span{font-size:.58rem;letter-spacing:.1em}}
