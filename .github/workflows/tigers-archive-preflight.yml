@@ -8,6 +8,7 @@ on:
       - "tigers/coaches/**"
       - "tigers/seasons/**"
       - "tigers/records/**"
+      - "tigers/games/**"
       - "post/new/mercuries-tigers-ten-years/index.html"
       - ".github/workflows/tigers-archive-preflight.yml"
   push:
@@ -17,6 +18,7 @@ on:
       - "tigers/coaches/**"
       - "tigers/seasons/**"
       - "tigers/records/**"
+      - "tigers/games/**"
       - "post/new/mercuries-tigers-ten-years/index.html"
       - ".github/workflows/tigers-archive-preflight.yml"
 
