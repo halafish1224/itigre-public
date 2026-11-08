@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'ITIGRE Caveat';
+  src: url('/styles/caveat-digits.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+002C, U+0030-0039;
+}
+
+.itigre-reading-count-relative { position: relative; }
+
+.itigre-reading-rule {
+  margin-block: 0 .6rem;
+  border-block-start: 2px solid var(--reading-rule-color, currentColor);
+}
+
+.itigre-reading-count {
+  position: absolute;
+  z-index: 4;
+  inset-inline-end: .65rem;
+  padding: 0 .24rem;
+  border-radius: 2px;
+  background: var(--reading-count-paper, #fffdf7);
+  color: var(--reading-count-color, currentColor);
+  font: 600 6pt/1 'ITIGRE Caveat', 'Bradley Hand', 'Segoe Print', cursive;
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: .025em;
+}
+
+.itigre-reading-count[hidden] { display: none; }
+.itigre-reading-count--top { inset-block-start: 0; transform: translateY(-65%); }
+.itigre-reading-count--bottom { inset-block-end: 0; }
