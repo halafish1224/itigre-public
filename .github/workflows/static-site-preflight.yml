@@ -103,7 +103,8 @@ jobs:
               errors.append("duplicate IDs: " + ", ".join(audit.duplicates))
 
           for required in (
-              "1999年11月8日三商虎宣布解散前數日成立",
+              "成立於三商虎宣布解散前數日",
+              "1999年11月8日",
               "網路虎迷聯誼會",
               "林信彰",
               "飄揚在夜空中的藍絲帶",

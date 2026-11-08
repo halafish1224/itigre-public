@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://itigre.com/sitemap.xml
+Sitemap: https://itigre.com/tigers/sitemap.xml
