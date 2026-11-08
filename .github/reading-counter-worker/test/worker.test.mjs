@@ -85,7 +85,7 @@ test('invalid or foreign-origin POST is rejected', async () => {
   assert.equal((await worker.fetch(makePost(sessionA, 'https://untrusted.invalid'), env)).status, 403);
   assert.equal((await worker.fetch(makePost(sessionA, 'https://itigre.com', 'unsafe'), env)).status, 400);
   assert.equal((await worker.fetch(makePost('bad-session'), env)).status, 400);
-  assert.equal(env.counts.size, 0);
+  assert.equal(env.DB.counts.size, 0);
 });
 
 test('health checks schema and expired tokens can be cleaned', async () => {
