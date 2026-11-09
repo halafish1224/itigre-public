@@ -1,51 +1,43 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { DatabaseSync } from 'node:sqlite';
 import worker from '../src/index.js';
 import { addReadingCounter } from '../../scripts/inject-reading-counter.mjs';
 
+const migration = readFileSync(new URL('../migrations/0001_initial.sql', import.meta.url), 'utf8');
+
 class MemoryD1 {
-  constructor() { this.counts = new Map(); this.sessions = new Map(); }
+  constructor() {
+    this.sqlite = new DatabaseSync(':memory:');
+    this.sqlite.exec(migration);
+  }
+
   prepare(sql) {
-    const db = this;
-    function first(params) {
-      if (sql.includes('sqlite_master')) return Promise.resolve({ name: 'page_counts' });
-      if (sql.includes('SELECT view_count')) {
-        const n = db.counts.get(params[0]);
-        return Promise.resolve(n === undefined ? null : { view_count: n });
-      }
-      throw new Error('Unexpected first: ' + sql);
+    const statement = this.sqlite.prepare(sql);
+    const bind = (...params) => ({
+      first: () => statement.get(...params),
+      run: () => statement.run(...params),
+      all: () => statement.all(...params),
+      reads: statement.columns().length > 0,
+    });
+    return { first: () => bind().first(), bind };
+  }
+
+  async batch(statements) {
+    this.sqlite.exec('BEGIN');
+    try {
+      const results = statements.map(statement => {
+        if (statement.reads) return { results: statement.all() };
+        statement.run();
+        return { results: [] };
+      });
+      this.sqlite.exec('COMMIT');
+      return results;
+    } catch (error) {
+      this.sqlite.exec('ROLLBACK');
+      throw error;
     }
-    function run(params) {
-      if (sql.startsWith('INSERT OR IGNORE INTO page_counts')) {
-        const had = db.counts.has(params[0]);
-        if (!had) db.counts.set(params[0], 0);
-        return Promise.resolve({ meta: { changes: had ? 0 : 1 } });
-      }
-      if (sql.startsWith('INSERT OR IGNORE INTO page_sessions')) {
-        const [key, id, at] = params;
-        const composite = key + ':' + id;
-        const had = db.sessions.has(composite);
-        if (!had) db.sessions.set(composite, at);
-        return Promise.resolve({ meta: { changes: had ? 0 : 1 } });
-      }
-      if (sql.startsWith('UPDATE page_counts')) {
-        const key = params[0];
-        db.counts.set(key, db.counts.get(key) + 1);
-        return Promise.resolve({ meta: { changes: 1 } });
-      }
-      if (sql.startsWith('DELETE FROM page_sessions')) {
-        let removed = 0;
-        for (const [key, at] of db.sessions) {
-          if (at < params[0]) { db.sessions.delete(key); removed++; }
-        }
-        return Promise.resolve({ meta: { changes: removed } });
-      }
-      throw new Error('Unexpected run: ' + sql);
-    }
-    return {
-      first: () => first([]),
-      bind: (...params) => ({ first: () => first(params), run: () => run(params) }),
-    };
   }
 }
 
@@ -85,17 +77,36 @@ test('invalid or foreign-origin POST is rejected', async () => {
   assert.equal((await worker.fetch(makePost(sessionA, 'https://untrusted.invalid'), env)).status, 403);
   assert.equal((await worker.fetch(makePost(sessionA, 'https://itigre.com', 'unsafe'), env)).status, 400);
   assert.equal((await worker.fetch(makePost('bad-session'), env)).status, 400);
-  assert.equal(env.DB.counts.size, 0);
+  assert.equal(env.DB.sqlite.prepare('SELECT COUNT(*) AS n FROM page_counts').get().n, 0);
 });
 
 test('health checks schema and expired tokens can be cleaned', async () => {
   const env = { DB: new MemoryD1() };
   assert.equal((await worker.fetch(new Request('https://counter.example/v1/health'), env)).status, 200);
   await worker.fetch(makePost(sessionA), env);
-  env.DB.sessions.set(pageKey + ':' + sessionA, 1);
+  env.DB.sqlite.exec('UPDATE page_sessions SET seen_at = 1');
   await worker.scheduled({}, env);
-  assert.equal(env.DB.sessions.size, 0);
-  assert.equal(env.DB.counts.get(pageKey), 1);
+  assert.equal(env.DB.sqlite.prepare('SELECT COUNT(*) AS n FROM page_sessions').get().n, 0);
+  assert.equal(env.DB.sqlite.prepare('SELECT view_count FROM page_counts').get().view_count, 1);
+  env.DB.sqlite.exec('DROP TABLE page_sessions');
+  assert.equal((await worker.fetch(new Request('https://counter.example/v1/health'), env)).status, 503);
+});
+
+test('a failed increment rolls back the session and a concurrent retry counts once', async () => {
+  const env = { DB: new MemoryD1() };
+  env.DB.sqlite.exec(`
+    CREATE TRIGGER reject_increment BEFORE UPDATE ON page_counts
+    BEGIN SELECT RAISE(ABORT, 'temporary write failure'); END;
+  `);
+  assert.equal((await worker.fetch(makePost(sessionA), env)).status, 503);
+  assert.equal(env.DB.sqlite.prepare('SELECT COUNT(*) AS n FROM page_sessions').get().n, 0);
+  env.DB.sqlite.exec('DROP TRIGGER reject_increment');
+
+  const retries = await Promise.all([
+    worker.fetch(makePost(sessionA), env),
+    worker.fetch(makePost(sessionA), env),
+  ]);
+  assert.deepEqual(await Promise.all(retries.map(count)), [1, 1]);
 });
 
 test('injector defaults to legacy but supports explicit opt-in', () => {

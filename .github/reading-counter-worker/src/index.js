@@ -26,10 +26,11 @@ export default {
     const origin = request.headers.get('Origin') || '';
     if (url.pathname === '/v1/health' && request.method === 'GET') {
       try {
-        const table = await env.DB.prepare(
-          "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'page_counts'"
+        const schema = await env.DB.prepare(
+          "SELECT COUNT(*) AS tables FROM sqlite_master WHERE type = 'table' AND name IN ('page_counts', 'page_sessions')"
         ).first();
-        return reply({ ok: Boolean(table) }, table ? 200 : 503, origin);
+        const ok = schema?.tables === 2;
+        return reply({ ok }, ok ? 200 : 503, origin);
       } catch {
         return reply({ ok: false }, 503, origin);
       }
@@ -84,20 +85,21 @@ export default {
 
     try {
       const now = Math.floor(Date.now() / 1000);
-      await env.DB.prepare(
-        'INSERT OR IGNORE INTO page_counts (page_key, view_count) VALUES (?, 0)'
-      ).bind(pageKey).run();
-      const inserted = await env.DB.prepare(
-        'INSERT OR IGNORE INTO page_sessions (page_key, session_id, seen_at) VALUES (?, ?, ?)'
-      ).bind(pageKey, sessionId, now).run();
-      if (inserted.meta?.changes === 1) {
-        await env.DB.prepare(
-          'UPDATE page_counts SET view_count = view_count + 1, updated_at = CURRENT_TIMESTAMP WHERE page_key = ?'
-        ).bind(pageKey).run();
-      }
-      const row = await env.DB.prepare(
-        'SELECT view_count FROM page_counts WHERE page_key = ?'
-      ).bind(pageKey).first();
+      // D1 executes the batch in one transaction. changes() refers to the
+      // preceding session insert and is zero for an already counted session.
+      const [, , , result] = await env.DB.batch([
+        env.DB.prepare(
+          'INSERT OR IGNORE INTO page_counts (page_key, view_count) VALUES (?, 0)'
+        ).bind(pageKey),
+        env.DB.prepare(
+          'INSERT OR IGNORE INTO page_sessions (page_key, session_id, seen_at) VALUES (?, ?, ?)'
+        ).bind(pageKey, sessionId, now),
+        env.DB.prepare(
+          'UPDATE page_counts SET view_count = view_count + 1, updated_at = CURRENT_TIMESTAMP WHERE page_key = ? AND changes() = 1'
+        ).bind(pageKey),
+        env.DB.prepare('SELECT view_count FROM page_counts WHERE page_key = ?').bind(pageKey),
+      ]);
+      const [row] = result.results;
       return reply({ num: row?.view_count || 0 }, 200, origin);
     } catch {
       return reply({ error: 'unavailable' }, 503, origin);
