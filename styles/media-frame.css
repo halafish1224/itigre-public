@@ -1,0 +1,107 @@
+/* ITIGRE editorial media. Nine SVG slices keep the corners and pen width
+   independent of aspect ratio. The painted band sits outside the media box. */
+:root {
+  --itigre-frame-depth: 12px;
+  --itigre-frame-pen-a: url("./media-frame-a.svg");
+  --itigre-frame-pen-b: url("./media-frame-b.svg");
+  --itigre-frame-pen-c: url("./media-frame-c.svg");
+}
+
+:where(figure:nth-of-type(even), .npf_row:nth-of-type(even),
+       .npf_col:nth-of-type(even), .has-image:nth-of-type(even),
+       .journal-body > p:nth-of-type(even), .body-text > a:nth-of-type(even),
+       [data-media-frame="ink"]) {
+  --itigre-frame-pen: var(--itigre-frame-pen-b);
+}
+
+:where(.cover, .itigre-tigers-cover, .tigers-illustration, [data-media-frame="blue"]) {
+  --itigre-frame-pen: var(--itigre-frame-pen-c);
+}
+
+/* Known clipping windows get the frame on the window, outside the crop. */
+body :is(
+  :where(main, article, .body-text) :is(
+    img:not([width="0"], [height="0"], [width="1"], [height="1"], .icon, .emoji),
+    video,
+    iframe:is(
+      [src*="youtube.com/embed/"], [src*="youtube-nocookie.com/embed/"],
+      [src*="player.vimeo.com/"], [src*="player.twitch.tv/"],
+      [src*="player.bilibili.com/"], [src*="nicovideo.jp/"],
+      [src*="dailymotion.com/embed/"], [src*="tumblr.com/video"],
+      [src*="facebook.com/plugins/video.php"], .tumblr_video_iframe
+    )
+  ):not(:where(.ith-photo-window *, .sport-visual *, .itu-fb-viewport *,
+               .home-story-image *, [data-media-frame="window"] *,
+               [style*="overflow: hidden"]:has(> iframe[src*="youtube.com/embed/"]) *)),
+  .ith-photo-window,
+  .sport-visual:has(img),
+  .home-story-image:has(img),
+  .itu-fb-viewport:has(> iframe[src*="facebook.com/plugins/video.php"]),
+  [style*="overflow: hidden"]:has(> iframe[src*="youtube.com/embed/"]),
+  [data-media-frame="window"],
+  .itigre-photo-dialog > img
+):not(:where(nav *, footer *, .itigre-masthead *, .itigre-preferences *,
+             [data-media-frame="off"], [data-media-frame="off"] *)) {
+  /* Legacy templates use inline borders and shadows. Keep their box geometry. */
+  border-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-image: var(--itigre-frame-pen, var(--itigre-frame-pen-a))
+    16 / var(--itigre-frame-depth) / var(--itigre-frame-depth) stretch !important;
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    transition: border-image-outset 260ms cubic-bezier(.25, .8, .25, 1);
+
+    &:is(:hover, :focus-visible) {
+      /* Move the painted edge only. The media and its hit area stay in place. */
+      border-image-outset: var(--itigre-frame-depth)
+        calc(var(--itigre-frame-depth) + 2px)
+        calc(var(--itigre-frame-depth) + 2px)
+        var(--itigre-frame-depth) !important;
+    }
+  }
+}
+
+body :where(main, article, .body-text) :where(img, video, iframe) {
+  max-inline-size: 100%;
+}
+
+body :where(main, article, .body-text) :where(img, video) {
+  block-size: auto;
+}
+
+body :where(main, article, .body-text) :where(iframe:is(
+  [src*="youtube.com/embed/"], [src*="youtube-nocookie.com/embed/"],
+  [src*="player.vimeo.com/"], [src*="dailymotion.com/embed/"]
+):not([style*="position"])) {
+  display: block;
+  inline-size: min(100%, 960px);
+  block-size: auto;
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+}
+
+/* Neutralize the drawn edges on earlier wrappers while preserving captions,
+   photo preview behavior, and any spacing already built into those templates. */
+body :is(.itigre-photo-frame, figure.tigers-illustration, figure.itigre-tigers-cover) {
+  border-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body :is(.itigre-photo-frame, figure.tigers-illustration, figure.itigre-tigers-cover)::before {
+  content: none !important;
+}
+
+@media (max-width: 640px) {
+  :root { --itigre-frame-depth: 9px; }
+}
+
+@media (forced-colors: active) {
+  :root {
+    --itigre-frame-pen-a: none;
+    --itigre-frame-pen-b: none;
+    --itigre-frame-pen-c: none;
+  }
+}

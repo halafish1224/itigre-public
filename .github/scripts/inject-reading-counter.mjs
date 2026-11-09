@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { addMediaFrames } from './media-frame-styles.mjs';
 
 function counterAssets(endpoint, d1Endpoint) {
   const target = d1Endpoint || endpoint;
@@ -42,7 +43,7 @@ async function apply(directory, relative = '') {
     if (entry.isDirectory()) changed += await apply(file, path.join(relative, name));
     else if (entry.isFile() && /\.html?$/i.test(name)) {
       const original = await readFile(file, 'utf8');
-      const updated = addReadingCounter(original);
+      const updated = addMediaFrames(addReadingCounter(original));
       if (updated !== original) {
         await writeFile(file, updated, 'utf8');
         changed++;
@@ -53,5 +54,5 @@ async function apply(directory, relative = '') {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  console.log('Reading counter added to', await apply(process.argv[2] || '.'), 'HTML pages');
+  console.log('Shared site assets updated on', await apply(process.argv[2] || '.'), 'HTML pages');
 }
