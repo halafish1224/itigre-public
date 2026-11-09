@@ -13,8 +13,9 @@ function counterAssets(endpoint, d1Endpoint) {
     throw new Error('The D1 counter endpoint must end in /v1/count.');
   }
   const mode = d1Endpoint ? ' data-reading-counter-mode="d1"' : '';
+  const scriptVersion = d1Endpoint ? '?v=d1' : '';
   const safeUrl = url.href.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
-  return '<link rel="stylesheet" id="itigre-reading-count-css" href="/styles/reading-counter.css"><script id="itigre-reading-count-js" src="/styles/reading-counter.js" data-reading-counter-endpoint="' + safeUrl + '"' + mode + ' defer></script>';
+  return '<link rel="stylesheet" id="itigre-reading-count-css" href="/styles/reading-counter.css"><script id="itigre-reading-count-js" src="/styles/reading-counter.js' + scriptVersion + '" data-reading-counter-endpoint="' + safeUrl + '"' + mode + ' defer></script>';
 }
 
 export function addReadingCounter(

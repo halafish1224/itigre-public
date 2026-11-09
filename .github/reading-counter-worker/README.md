@@ -1,6 +1,6 @@
 # ITIGRE reading counter (Cloudflare Worker + D1)
 
-This is an opt-in replacement for the existing Moe Counter endpoint. It is **not** live until the Cloudflare D1 database is provisioned and the GitHub Pages endpoint variable is switched.
+GitHub Pages uses the production Cloudflare D1 counter by default. The owner approved starting a new count at cutover because the legacy service rejected the site's identifier and no historical values could be verified.
 
 ## Privacy and counting
 
@@ -18,13 +18,13 @@ This is an opt-in replacement for the existing Moe Counter endpoint. It is **not
 3. In this directory, copy `wrangler.toml.example` to `wrangler.toml`, substitute the real D1 database UUID for `REPLACE_WITH_D1_DATABASE_ID` (never paste an API token in the repository).
 4. Run `npx wrangler d1 migrations apply itigre-reading-counter --remote`.
 5. Deploy with `npx wrangler deploy` from this directory, or connect this directory as a Worker project to Cloudflare Builds. Verify `https://<actual-worker-host>/v1/health` returns `{"ok":true}`.
-6. In GitHub repository **Settings → Secrets and variables → Actions → Variables**, configure `ITIGRE_READING_COUNTER_D1_ENDPOINT` as `https://<actual-worker-host>/v1/count` (must be HTTPS; no query or fragment).
-7. Trigger the `Deploy ITIGRE to GitHub Pages` workflow. The HTML injection switches to the D1 API only when that variable is nonempty; with it unset the legacy Moe Counter remains active.
+6. If using a different verified Worker, set the GitHub Actions variable `ITIGRE_READING_COUNTER_D1_ENDPOINT` to its HTTPS `/v1/count` URL without a query or fragment.
+7. Trigger the `Deploy ITIGRE to GitHub Pages` workflow. With no override, it injects the production D1 endpoint.
 8. Confirm the number appears on the homepage and at least two articles, each has its own total, and refreshing within the same tab does not increase the count. Verify mobile layout.
 
 ### Rollback
 
-Remove the GitHub Actions repository variable `ITIGRE_READING_COUNTER_D1_ENDPOINT` (or clear its value), then rerun the GitHub Pages deployment. The legacy counter will become active again. Do not delete the D1 database: rollback must preserve data.
+Set the GitHub Actions repository variable `ITIGRE_READING_COUNTER_MODE` to `legacy` and rerun the GitHub Pages deployment to use the legacy transport. Keep the D1 database and its counts. To resume D1, clear the mode variable and rerun the workflow.
 
 ### Historical counts
 
