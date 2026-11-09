@@ -1,7 +1,7 @@
 /* ITIGRE editorial media. Nine SVG slices keep the corners and pen width
    independent of aspect ratio. The painted band sits outside the media box. */
 :root {
-  --itigre-frame-depth: 10px;
+  --itigre-frame-depth: 12px;
   --itigre-frame-pen-a: url("./media-frame-a.svg");
   --itigre-frame-pen-b: url("./media-frame-b.svg");
   --itigre-frame-pen-c: url("./media-frame-c.svg");
@@ -48,6 +48,18 @@ body :is(
   box-shadow: none !important;
   border-image: var(--itigre-frame-pen, var(--itigre-frame-pen-a))
     16 / var(--itigre-frame-depth) / var(--itigre-frame-depth) stretch !important;
+
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    transition: border-image-outset 260ms cubic-bezier(.25, .8, .25, 1);
+
+    &:is(:hover, :focus-visible) {
+      /* Move the painted edge only. The media and its hit area stay in place. */
+      border-image-outset: var(--itigre-frame-depth)
+        calc(var(--itigre-frame-depth) + 2px)
+        calc(var(--itigre-frame-depth) + 2px)
+        var(--itigre-frame-depth) !important;
+    }
+  }
 }
 
 body :where(main, article, .body-text) :where(img, video, iframe) {
@@ -83,7 +95,7 @@ body :is(.itigre-photo-frame, figure.tigers-illustration, figure.itigre-tigers-c
 }
 
 @media (max-width: 640px) {
-  :root { --itigre-frame-depth: 8px; }
+  :root { --itigre-frame-depth: 9px; }
 }
 
 @media (forced-colors: active) {
