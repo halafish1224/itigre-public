@@ -2,6 +2,7 @@
   'use strict';
   const marker = 'itigre-reading-count';
   const endpoint = document.currentScript?.dataset.readingCounterEndpoint;
+  const d1Mode = document.currentScript?.dataset.readingCounterMode === 'd1';
   if (!endpoint || !globalThis.crypto?.subtle || document.querySelector('.' + marker)) return;
 
   function edge(element) {
@@ -93,8 +94,32 @@
   crypto.subtle.digest('SHA-256', new TextEncoder().encode('itigre.com' + pageKey()))
     .then(digest => {
       const key = Array.from(new Uint8Array(digest).slice(0, 16), byte => byte.toString(16).padStart(2, '0')).join('');
-      return fetch(endpoint + key, {
-        credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store'
+      if (!d1Mode) {
+        return fetch(endpoint + key, {
+          credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store'
+        });
+      }
+
+      // One anonymous, page-specific visit ID per browser tab. No cookies or IP storage.
+      const storageKey = 'itigre-reading-session:' + key;
+      let sessionId;
+      try {
+        sessionId = sessionStorage.getItem(storageKey);
+        if (!sessionId) {
+          sessionId = crypto.randomUUID();
+          sessionStorage.setItem(storageKey, sessionId);
+        }
+      } catch {
+        sessionId = crypto.randomUUID();
+      }
+      return fetch(endpoint, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        referrerPolicy: 'no-referrer',
+        cache: 'no-store',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ pageKey: key, sessionId })
       });
     })
     .then(response => {

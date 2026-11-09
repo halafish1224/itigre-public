@@ -28,6 +28,7 @@ jobs:
       - name: Attach reading counter to public pages
         env:
           ITIGRE_READING_COUNTER_ENDPOINT: ${{ vars.ITIGRE_READING_COUNTER_ENDPOINT || 'https://count.getloli.com/record/@itigre-' }}
+          ITIGRE_READING_COUNTER_D1_ENDPOINT: ${{ vars.ITIGRE_READING_COUNTER_MODE != 'legacy' && (vars.ITIGRE_READING_COUNTER_D1_ENDPOINT || 'https://itigre-reading-counter.halafish.workers.dev/v1/count') || '' }}
         run: node .github/scripts/inject-reading-counter.mjs
       - name: Package static site for Pages
         run: |
