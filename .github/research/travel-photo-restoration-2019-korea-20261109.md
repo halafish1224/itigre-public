@@ -12,7 +12,7 @@
 |---|---|---|
 | 184912353517 | https://www.instagram.com/p/BxgwqFTH05S/ | 滿足五香豬腳的切片豬腳與芝麻醬汁 |
 | 184931987132 | https://www.instagram.com/p/Bxi9LJ-HR4D/ | 2019 年 5 月首爾往釜山的 KTX 車票 |
-| 184936683722 | https://www.instagram.com/p/BxjbfB2nTLE/ | 釜山凡胎手工炸醬麵用餐時拍下的醬汁麵食 |
+| 184936683722 | https://www.instagram.com/p/BxjbfB2nTLE/ | 釜山凡胎手工炸醬麵餐桌上的餐點、洋蔥與醬汁 |
 | 184954516847 | https://www.instagram.com/p/BxldcFGnCUP/ | 釜山 PO TID 咖啡廳的磚牆店面與亮燈入口 |
 | 184956103557 | https://www.instagram.com/p/BxloK5VnAW2/ | 海田烤腸餐桌上鋪滿蔥花的烤腸 |
 | 184981086812 | https://www.instagram.com/p/BxoXJyhntqs/ | 釜山雙胞胎豬肉湯飯的湯飯、切片肉與小菜 |
