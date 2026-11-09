@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="120" viewBox="0 0 160 120">
+  <defs><path id="edge" d="M17 7C37 7 53 9 70 8S109 7 143 9C149 9 152 11 152 17C152 32 151 48 152 66S152 93 153 104C153 109 151 111 143 111C125 110 109 113 92 112S52 111 17 112C10 112 7 109 7 104C8 87 8 77 7.5 62S9 34 8 17C8 10 11 7 17 7Z"/></defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#edge" stroke="#fff9ed" stroke-width="8.5"/>
+    <use href="#edge" stroke="#243e55" stroke-width="3.8"/>
+    <path d="M20 4.5C32 4.5 46 5.5 58 6M109 115C119 115 130 114 141 114" stroke="#243e55" stroke-width="1.25" opacity=".54"/>
+  </g>
+</svg>
