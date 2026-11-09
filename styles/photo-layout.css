@@ -1,0 +1,71 @@
+/* Layout only. The existing SVG ink borders and lightbox remain unchanged. */
+body main figure.itigre-reading-photo {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  margin: 1.75rem auto;
+}
+body main figure.itigre-reading-photo[data-photo-shape="landscape"] {
+  inline-size: 100%;
+  margin-inline: 0;
+}
+body main figure.itigre-reading-photo[data-photo-shape="portrait"] {
+  inline-size: min(100%, 32rem);
+}
+body main figure.itigre-reading-photo > .itigre-photo-frame {
+  box-sizing: border-box;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  margin: 0;
+}
+body main figure.itigre-reading-photo img {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  max-block-size: none;
+  block-size: auto;
+  object-fit: contain;
+  margin: 0 auto !important;
+}
+body main .itigre-wide-photo-frame {
+  box-sizing: border-box;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  margin-inline: auto;
+}
+body main img.itigre-wide-photo {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  max-block-size: none;
+  block-size: auto;
+  margin-inline: auto;
+}
+body main figure.itigre-reading-photo figcaption {
+  margin-block-start: .9rem;
+  font-size: .85rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+body main .itigre-photo-gallery {
+  display: grid;
+  grid-template-columns: var(--photo-columns, minmax(0, 1fr) minmax(0, 1fr));
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  align-items: start;
+  margin-block: 2rem;
+  white-space: normal;
+}
+body main .itigre-photo-gallery > figure.itigre-reading-photo {
+  inline-size: 100%;
+  min-inline-size: 0;
+  margin: 0;
+}
+body main .itigre-photo-gallery--lead > figure:first-of-type {
+  grid-column: 1 / -1;
+}
+@media (max-width: 600px) {
+  body main .itigre-photo-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}
