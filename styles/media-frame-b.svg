@@ -1,8 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="120" viewBox="0 0 160 120">
-  <defs><path id="edge" d="M17 9C35 8 47 9 66 8S110 9 143 7.5C148 7 151 9 151 16C151 31 153 47 152 65S154 87 152 104C152 110 149 113 143 113C126 113 107 111 91 111.5S52 112 17 111C11 112 8 110 8 104C8 89 9 75 8 58S8 29 8 16C8 11 11 9 17 9Z"/></defs>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <use href="#edge" stroke="#fffaf1" stroke-width="8"/>
-    <use href="#edge" stroke="#303137" stroke-width="3.3"/>
-    <path d="M19 114C34 114 42 115 54 114.8M154 19C154 26 155 34 155 41" stroke="#303137" stroke-width="1.25" opacity=".51"/>
-  </g>
+  <path d="M17 9C35 6 53 11 73 9S113 11 143 7Q153 6 151 17C150 33 155 48 153 64S153 89 153 104Q153 113 141 114C121 110 108 115 88 112S53 112 16 110Q7 111 7 103C11 88 7 73 9 54S6 32 7 17Q6 10 17 9Z" fill="none" stroke="#fffaf1" stroke-width="8" stroke-linejoin="round"/>
+  <path fill="#303137" fill-rule="evenodd" d="M17 7C35 3 53 10 73 7S114 10 143 5Q156 4 153 17C152 33 158 48 156 64S154 89 155 104Q155 116 141 116C121 112 108 117 87 114S53 114 16 112Q5 113 5 103C9 88 4 73 7 54S3 32 5 17Q4 8 17 7Z M17 11C34 9 54 13 74 11S112 13 143 10Q150 9 148 17C147 33 151 48 150 64S152 89 151 104Q151 111 141 112C121 107 108 112 88 110S53 110 16 108Q9 109 9 103C13 88 10 73 11 54S9 32 10 17Q10 12 17 11Z"/>
+  <path d="M19 115c12-.5 22 1.5 36 1M146.5 23c-.5 8 .5 15 1.5 23" fill="none" stroke="#303137" stroke-width="1.45" stroke-linecap="round" opacity=".61"/>
 </svg>
