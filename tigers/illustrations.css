@@ -1,0 +1,8 @@
+/* Hand-drawn editorial frames for user-provided Tigers illustrations. */
+figure.tigers-illustration{position:relative;isolation:isolate;box-sizing:border-box;width:calc(100% - 1rem);max-width:880px;margin:clamp(1.5rem,4vw,2.5rem) auto;padding:clamp(6px,1.2vw,10px);background:#fffaf0;border:1.5px solid #203d60;border-radius:1.5% .6% 1.2% .8% / .6% 1.3% .7% 1.1%;box-shadow:3px 4px 0 #0b1f3617}
+figure.tigers-illustration::before{content:"";position:absolute;inset:-4px 1px -3px -3px;border:1px solid #3e526590;border-radius:.6% 1.4% .8% 1.2% / 1.2% .7% 1.3% .5%;transform:rotate(.25deg);pointer-events:none}
+figure.tigers-illustration img{display:block;width:100%;max-width:100%;height:auto;object-fit:contain;margin:0;border:0;outline:0;box-shadow:none;border-radius:0}
+figure.tigers-illustration figcaption{margin:0;padding:.6rem .3rem .15rem;color:#526273;font:400 .8rem/1.75 system-ui,-apple-system,"Noto Sans TC",sans-serif;text-align:center}
+figure.tigers-illustration--panorama{max-width:960px}
+@media(max-width:540px){figure.tigers-illustration{width:calc(100% - .5rem);margin-block:1.5rem}figure.tigers-illustration figcaption{text-align:left;font-size:.75rem}}
+@media(prefers-reduced-motion:reduce){figure.tigers-illustration::before{transform:none}}
