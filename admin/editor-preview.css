@@ -1,0 +1,54 @@
+/* ITIGRE CMS preview only. Mirrors the standard Astro article typography.
+   Kept separate from the admin interface; Sveltia loads it inside its preview iframe. */
+:root { color-scheme: light; }
+html { background: #f4f1ea; }
+body {
+  box-sizing: border-box;
+  max-width: 52rem;
+  margin: 1rem auto;
+  padding: clamp(1.15rem, 4vw, 2.75rem);
+  border: 1px solid #ded3c5;
+  border-top: 5px solid #9b491f;
+  background: #fffdf8;
+  color: #2c2c2c;
+  font: 400 1rem/1.85 system-ui, -apple-system, "Noto Sans TC", sans-serif;
+  overflow-wrap: anywhere;
+}
+body * { box-sizing: border-box; }
+body :is(h1, h2, h3, h4) {
+  font-family: "Noto Serif TC", "PMingLiU", serif;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+body h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+body h2 { margin-top: 2rem; font-size: 1.55rem; }
+body h3 { margin-top: 1.6rem; font-size: 1.23rem; }
+body p { margin: 1rem 0; }
+body a { color: #803712; text-underline-offset: .2em; overflow-wrap: anywhere; }
+body :is(img, video) {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.6rem auto;
+  border: 10px solid transparent;
+  border-image: url("/styles/media-frame-a.svg") 16 / 10px / 8px stretch;
+}
+body figure { max-width: 100%; margin: 1.7rem auto; }
+body figcaption { color: #625952; font-size: .85rem; line-height: 1.7; }
+body blockquote {
+  margin: 1.5rem 0;
+  padding: .65rem 1.2rem;
+  border-left: 4px solid #9b491f;
+  background: #f4f1ea;
+}
+body :is(pre, code) { overflow-wrap: normal; }
+body pre { max-width: 100%; overflow-x: auto; padding: 1rem; background: #282625; color: #fffdf8; border-radius: 4px; }
+body pre code { color: inherit; }
+body table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+body th, body td { padding: .6rem .75rem; border: 1px solid #ded3c5; text-align: left; }
+body th { background: #f4f1ea; }
+body hr { margin: 2rem 0; border: 0; border-top: 1px solid #c7b6a5; }
+@media (max-width: 600px) {
+  body { margin: 0; padding: 1.15rem; border-left: 0; border-right: 0; }
+  body :is(img, video) { border-width: 8px; border-image-width: 8px; border-image-outset: 6px; }
+}
