@@ -72,7 +72,7 @@ collections:
           - 閱讀筆記
           - 知識整理
       - name: tags
-        label: 標籤
+        label: 標籤（可輸入 #東京、#M2M 等）
         widget: list
         field: { name: tag, label: 標籤, widget: string }
       - name: topics
@@ -110,6 +110,19 @@ collections:
       - { name: cover_image, label: 封面圖片, widget: image, required: false }
       - { name: cover_alt, label: 圖片替代文字, widget: string, required: false }
       - { name: cover_caption, label: 圖片說明, widget: string, required: false }
+      - name: gallery
+        label: 文章照片集（多張、可調整順序）
+        widget: list
+        required: false
+        collapsed: true
+        summary: '{{caption}}'
+        thumbnail: image
+        hint: "可一次加入多張照片，手機用上移／下移排序，桌面可拖曳。照片會顯示於內文後方；要插在段落中請用內文的圖片工具。"
+        fields:
+          - { name: image, label: 照片, widget: image, required: true }
+          - { name: alt, label: 圖片替代文字, widget: string, required: false }
+          - { name: caption, label: 照片說明（選填）, widget: text, required: false }
+
       - { name: seo_title, label: SEO 標題, widget: string, required: false }
       - { name: seo_description, label: SEO 描述, widget: text, required: false }
       - { name: ai_review_summary, label: AI 查證提示摘要（僅供編輯參考）, widget: text, required: false }
@@ -158,7 +171,7 @@ collections:
           - { name: source_url, label: 來源網址（人工填寫）, widget: string, required: false }
           - { name: confidence, label: AI 判斷信心（不代表事實正確）, widget: string, required: false }
           - { name: reviewer_note, label: 人工判斷／修改意見, widget: text, required: false }
-      - { name: body, label: 原始文章內容（AI 不得改寫）, widget: richtext, required: true, hint: "儲存會保留草稿；選擇「儲存並發布」才會啟動網站更新。發佈結果請以 GitHub Actions 完成後的正式頁面為準。" }
+      - { name: body, label: 文章正文（可貼網址、插入照片；#標籤會進入關聯索引）, widget: richtext, required: true, hint: "儲存會保留草稿；選擇「儲存並發布」才會啟動網站更新。發佈結果請以 GitHub Actions 完成後的正式頁面為準。" }
 
   - name: legacy_edits
     label: 舊文章修訂（草稿／公開）
@@ -170,9 +183,9 @@ collections:
       - { name: title, label: 原文章標題, widget: string, required: true }
       - { name: original_path, label: 原始文章路徑（post/文章ID/slug）, widget: string, required: true }
       - { name: original_date, label: 原始發表日期, widget: datetime, required: false }
-      - { name: edit_status, label: 網站顯示狀態（published 公開／draft 草稿）, widget: select, default: published, options: [published, draft, reviewed], hint: "只有 published 的修訂內容會在網站部署後取代原文；draft 與 reviewed 保留原文顯示。" }
+      - { name: edit_status, label: 網站顯示狀態（published 公開／draft 草稿）, widget: select, default: draft, options: [published, draft, reviewed], hint: "只有 published 的修訂內容會在網站部署後取代原文；draft 與 reviewed 保留原文顯示。" }
       - { name: edit_note, label: 修訂說明, widget: text, required: false }
-      - { name: body, label: 修訂內容（published 且正式發布後取代原網址正文）, widget: markdown, required: true }
+      - { name: body, label: 修訂內容（原文請先保留；可以切換視覺／Markdown 編輯）, widget: markdown, required: true, hint: "保留舊文段落、圖片與原始網址，確認無誤再將狀態改成 published。含複雜 HTML 的原文請使用原始 Markdown 模式。" }
 
   - name: knowledge_notes
     label: 知識補充與更新
