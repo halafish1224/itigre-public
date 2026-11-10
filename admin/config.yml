@@ -5,6 +5,11 @@ backend:
   auth_methods:
     - token
 
+field_defaults:
+  richtext:
+    modes: [rich_text, raw]
+    editor_components: [code-block, image, table, hr]
+
 app_title: ITIGRE 文章管理
 site_url: https://itigre.com
 display_url: https://itigre.com
