@@ -20,6 +20,13 @@
   }
 
   function firstImage(doc, pageUrl) {
+    const preview = doc.querySelector('meta[property="og:image"]')?.getAttribute('content');
+    if (preview) {
+      try {
+        const url = new URL(preview, pageUrl);
+        if (url.protocol === 'https:' && url.hostname === 'res.cloudinary.com') return url.href;
+      } catch { /* Use the article image below when metadata is malformed. */ }
+    }
     const root = doc.querySelector('article .journal-body, .journal-body, .post-body, .body-text, .entry-content, article, main');
     if (!root) return '';
     for (const img of root.querySelectorAll('img')) {
