@@ -40,7 +40,25 @@ collections:
     delete: false
     fields:
       - { name: title, label: 文章標題, widget: string, required: true }
-      - { name: date, label: 發布日期, widget: datetime, required: true }
+      - { name: date, label: 文章日期（頁面顯示用，不代表預約時間）, widget: datetime, required: true }
+      - name: publication_mode
+        label: 文章公開方式
+        widget: select
+        default: now
+        required: true
+        options:
+          - { label: 立即公開, value: now }
+          - { label: 預約公開, value: scheduled }
+          - { label: 草稿（不公開）, value: draft }
+        hint: "立即公開：儲存並發布後開始建置。預約公開：填寫下面的台灣時間後按「儲存並發布」完成預約，網站到期後才公開。草稿：選草稿並按「儲存」，保留編輯紀錄；即使誤按發布，草稿也不會出現在網站。"
+      - name: publish_at
+        label: 預約公開時間（台灣時間 UTC+8；僅預約公開時使用）
+        widget: datetime
+        required: false
+        input_timezone: Asia/Taipei
+        output_utc: true
+        step: 60
+        hint: "使用台灣時間設定預約。只在公開方式選「預約公開」時生效；預約卻未填時間會保持隱藏，請勿用文章日期代替。"
       - { name: summary, label: 文章摘要, widget: text }
       - name: category
         label: 文章分類
