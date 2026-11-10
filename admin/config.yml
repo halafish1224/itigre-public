@@ -140,7 +140,7 @@ collections:
           - { name: source_url, label: 來源網址（人工填寫）, widget: string, required: false }
           - { name: confidence, label: AI 判斷信心（不代表事實正確）, widget: string, required: false }
           - { name: reviewer_note, label: 人工判斷／修改意見, widget: text, required: false }
-      - { name: body, label: 原始文章內容（AI 不得改寫）, widget: richtext, required: true }
+      - { name: body, label: 原始文章內容（AI 不得改寫）, widget: richtext, required: true, hint: "儲存會保留草稿；選擇「儲存並發布」才會啟動網站更新。發佈結果請以 GitHub Actions 完成後的正式頁面為準。" }
 
   - name: legacy_edits
     label: 舊文章修訂（草稿／公開）
@@ -152,7 +152,7 @@ collections:
       - { name: title, label: 原文章標題, widget: string, required: true }
       - { name: original_path, label: 原始文章路徑（post/文章ID/slug）, widget: string, required: true }
       - { name: original_date, label: 原始發表日期, widget: datetime, required: false }
-      - { name: edit_status, label: 網站顯示狀態（published 公開／draft 草稿）, widget: select, default: published, options: [published, draft, reviewed] }
+      - { name: edit_status, label: 網站顯示狀態（published 公開／draft 草稿）, widget: select, default: published, options: [published, draft, reviewed], hint: "只有 published 的修訂內容會在網站部署後取代原文；draft 與 reviewed 保留原文顯示。" }
       - { name: edit_note, label: 修訂說明, widget: text, required: false }
       - { name: body, label: 修訂內容（published 且正式發布後取代原網址正文）, widget: markdown, required: true }
 
