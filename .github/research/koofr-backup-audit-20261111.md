@@ -22,6 +22,12 @@ The `Instagram Archived Posts` folder currently contains 30 files: 23 JPG images
 - One 1080 × 1080 backup image was visually verified as the uncropped original of the surviving Instagram preview used by this article.
 - All three originals were copied to Cloudinary under `itigre/halafish/koofr-178756580097-*` before being referenced by the article.
 
+### Tumblr post 179172879202 — 終於見到桑德斯上校
+
+- Backup timestamp: `2018-10-18 06.37.53`.
+- The backup is a KFC tiny-planet scene showing the store and Colonel Sanders figure; the surviving preview for the same article shows the same store and figure from conventional angles.
+- Article date, subject, venue, and surviving preview all agree. The original was copied to Cloudinary as `itigre/halafish/koofr-179172879202-01` before publication.
+
 ## Deferred candidates
 
 The following groups share dates or visual clues with existing articles but do not yet meet the same-image verification threshold. They must not be published without another confirming signal (surviving preview crop, caption/permalink metadata, or manual confirmation).
