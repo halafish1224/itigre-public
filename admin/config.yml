@@ -34,14 +34,68 @@ media_libraries:
         height: 1200
 
 collections:
-  - name: posts
-    label: 新文章管理
+  - name: posts_html
+    label: 寫新文章
+    label_singular: 文章
     folder: src/content/posts
     extension: md
     create: true
     delete: false
+    filter: { field: editor_format, value: html }
     fields:
+      - { name: editor_format, widget: hidden, default: html }
+      - { name: title, label: 標題, widget: string, required: true }
+      - name: body
+        label: 正文
+        widget: richtext
+        format: html
+        required: true
+        sanitize_preview: true
+        hint: 用工具列切換視覺編輯與 HTML，點眼睛開啟即時預覽。
+      - name: tags
+        label: 標籤
+        widget: list
+        required: false
+        hint: 可加東京、M2M 等標籤，也可以直接在正文寫 #東京。
+      - name: publication_mode
+        label: 發布方式
+        widget: select
+        default: now
+        required: true
+        options:
+          - { label: 立即公開, value: now }
+          - { label: 預約公開, value: scheduled }
+          - { label: 草稿（不公開）, value: draft }
+        hint: 選「儲存並發布」即可立即公開或完成預約。寫到一半可選草稿。
+      - name: publish_at
+        label: 預約時間（台灣時間）
+        widget: datetime
+        required: false
+        input_timezone: Asia/Taipei
+        output_utc: true
+        step: 60
+        hint: 選「預約公開」時填寫。
+      - name: date
+        label: 文章日期
+        widget: datetime
+        type: date
+        default: '{{now}}'
+        input_timezone: Asia/Taipei
+        required: true
+      - { name: cover_image, label: 封面圖片, widget: image, required: false }
+      - { name: summary, label: 摘要, widget: text, required: false }
+
+  - name: posts
+    label: 既有文章（Markdown）
+    folder: src/content/posts
+    extension: md
+    create: false
+    filter: { field: editor_format, value: null }
+    delete: false
+    fields:
+      - { name: editor_format, widget: hidden }
       - { name: title, label: 文章標題, widget: string, required: true }
+      - { name: body, label: 文章正文（可貼網址、插入照片；#標籤會進入關聯索引）, widget: richtext, required: true, hint: "儲存會保留草稿；選擇「儲存並發布」才會啟動網站更新。發佈結果請以 GitHub Actions 完成後的正式頁面為準。" }
       - { name: date, label: 文章日期（頁面顯示用，不代表預約時間）, widget: datetime, required: true }
       - name: publication_mode
         label: 文章公開方式
@@ -61,10 +115,11 @@ collections:
         output_utc: true
         step: 60
         hint: "使用台灣時間設定預約。只在公開方式選「預約公開」時生效；預約卻未填時間會保持隱藏，請勿用文章日期代替。"
-      - { name: summary, label: 文章摘要, widget: text }
+      - { name: summary, label: 文章摘要, widget: text, required: false }
       - name: category
         label: 文章分類
         widget: select
+        required: false
         options:
           - 生活隨筆
           - 旅行紀錄
@@ -76,38 +131,47 @@ collections:
       - name: tags
         label: 標籤（可輸入 #東京、#M2M 等）
         widget: list
+        required: false
         field: { name: tag, label: 標籤, widget: string }
       - name: topics
         label: 主題
         widget: list
+        required: false
         field: { name: topic, label: 主題, widget: string }
       - name: people
         label: 人物
         widget: list
+        required: false
         field: { name: person, label: 人物, widget: string }
       - name: places
         label: 地點
         widget: list
+        required: false
         field: { name: place, label: 地點, widget: string }
       - name: events
         label: 事件
         widget: list
+        required: false
         field: { name: event, label: 事件, widget: string }
       - name: related_posts
         label: 人工指定相關文章 Slug（優先顯示）
         widget: list
+        required: false
         field: { name: slug, label: CMS 文章 Slug, widget: string }
       - name: related_archive_paths
         label: 人工指定典藏文章路徑（優先顯示）
         widget: list
+        required: false
         field: { name: path, label: 典藏路徑，例如 post/123/文章名稱, widget: string }
       - name: excluded_related_posts
         label: 排除 CMS 關聯文章 Slug
         widget: list
+        required: false
         field: { name: slug, label: Slug, widget: string }
       - name: excluded_archive_paths
         label: 排除典藏文章路徑
         widget: list
+        required: false
         field: { name: path, label: 典藏路徑, widget: string }
       - { name: cover_image, label: 封面圖片, widget: image, required: false }
       - { name: cover_alt, label: 圖片替代文字, widget: string, required: false }
@@ -133,6 +197,7 @@ collections:
       - name: ai_review_items
         label: AI 待確認項目（不是錯誤判定；不可直接公開）
         widget: list
+        required: false
         summary: '{{review_type}} · {{claim}}'
         collapsed: true
         fields:
@@ -173,7 +238,6 @@ collections:
           - { name: source_url, label: 來源網址（人工填寫）, widget: string, required: false }
           - { name: confidence, label: AI 判斷信心（不代表事實正確）, widget: string, required: false }
           - { name: reviewer_note, label: 人工判斷／修改意見, widget: text, required: false }
-      - { name: body, label: 文章正文（可貼網址、插入照片；#標籤會進入關聯索引）, widget: richtext, required: true, hint: "儲存會保留草稿；選擇「儲存並發布」才會啟動網站更新。發佈結果請以 GitHub Actions 完成後的正式頁面為準。" }
 
   - name: legacy_edits
     label: 舊文章修訂（草稿／公開）
