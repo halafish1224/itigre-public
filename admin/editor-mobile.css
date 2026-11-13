@@ -1,0 +1,44 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.itigre-editor-options {
+  display: block;
+  min-height: 44px;
+  margin: 0 0 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.itigre-editor-options::before {
+  content: "▸ ";
+}
+
+.itigre-editor-options[aria-expanded="true"]::before {
+  content: "▾ ";
+}
+
+/* Keep fields mounted and use their top-level keys so nested photo controls
+   and the full-article preview keep their original behavior. */
+:has(> .itigre-editor-options[aria-expanded="false"])
+  > section[data-key-path]:not([data-key-path="title"], [data-key-path="body"], [data-key-path="tags"], [data-key-path="cover_image"], [data-key-path="gallery"], [data-key-path="gallery_images"], [data-key-path="publication_mode"], [data-key-path="publish_at"], :has([aria-invalid="true"])) {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  section[data-key-path] :is(input, textarea, select, [contenteditable="true"]) {
+    font-size: max(16px, 1rem);
+  }
+}
