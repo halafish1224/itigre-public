@@ -42,6 +42,7 @@ collections:
     create: true
     delete: false
     filter: { field: editor_format, value: html }
+    slug: { template: "{{title}}", editable: [create] }
     fields:
       - { name: editor_format, widget: hidden, default: html }
       - { name: title, label: 標題, widget: string, required: true }
@@ -51,7 +52,14 @@ collections:
         format: html
         required: true
         sanitize_preview: true
-        hint: 用工具列切換視覺編輯與 HTML，點眼睛開啟即時預覽。
+        hint: 可切換視覺編輯、HTML 與即時預覽。含自訂樣式或嵌入內容時，請用 HTML 模式修改。
+      - { name: cover_image, label: 封面圖片, widget: image, required: false }
+      - name: gallery_images
+        label: 文章照片（可一次選取多張）
+        widget: image
+        multiple: true
+        required: false
+        hint: 照片依此順序顯示在內文下方。手機用上移／下移，桌面可拖曳。已有 Cloudinary 圖片時，可從「瀏覽」輸入圖片網址。
       - name: tags
         label: 標籤
         widget: list
@@ -82,7 +90,6 @@ collections:
         default: '{{now}}'
         input_timezone: Asia/Taipei
         required: true
-      - { name: cover_image, label: 封面圖片, widget: image, required: false }
       - { name: summary, label: 摘要, widget: text, required: false }
 
   - name: posts
@@ -91,12 +98,41 @@ collections:
     extension: md
     create: false
     filter: { field: editor_format, value: null }
+    slug: { template: "{{title}}", editable: false }
     delete: false
     fields:
       - { name: editor_format, widget: hidden }
       - { name: title, label: 文章標題, widget: string, required: true }
-      - { name: body, label: 文章正文（可貼網址、插入照片；#標籤會進入關聯索引）, widget: richtext, required: true, hint: "儲存會保留草稿；選擇「儲存並發布」才會啟動網站更新。發佈結果請以 GitHub Actions 完成後的正式頁面為準。" }
-      - { name: date, label: 文章日期（頁面顯示用，不代表預約時間）, widget: datetime, required: true }
+      - name: body
+        label: 正文
+        widget: richtext
+        required: true
+        modes: [raw, rich_text]
+        hint: 舊文預設以 Markdown 原始碼開啟。若有自訂 HTML、嵌入內容或原圖屬性，請用原始碼修改並預覽。
+      - { name: cover_image, label: 封面圖片, widget: image, required: false }
+      - name: gallery_images
+        label: 文章照片（可一次選取多張）
+        widget: image
+        multiple: true
+        required: false
+        hint: 照片依此順序顯示在內文下方。手機用上移／下移，桌面可拖曳。已有 Cloudinary 圖片時，可從「瀏覽」輸入圖片網址。
+      - name: gallery
+        label: 原有照片集與個別圖說
+        widget: list
+        required: false
+        collapsed: true
+        summary: '{{caption}}'
+        thumbnail: image
+        hint: "在此編輯原有照片、替代文字與圖說。批次加入的照片接續在原有照片之後。"
+        fields:
+          - { name: image, label: 照片, widget: image, required: true }
+          - { name: alt, label: 圖片替代文字, widget: string, required: false }
+          - { name: caption, label: 照片說明（選填）, widget: text, required: false }
+      - name: tags
+        label: 標籤（可輸入 #東京、#M2M 等）
+        widget: list
+        required: false
+        field: { name: tag, label: 標籤, widget: string }
       - name: publication_mode
         label: 文章公開方式
         widget: select
@@ -115,6 +151,7 @@ collections:
         output_utc: true
         step: 60
         hint: "使用台灣時間設定預約。只在公開方式選「預約公開」時生效；預約卻未填時間會保持隱藏，請勿用文章日期代替。"
+      - { name: date, label: 文章日期（頁面顯示用，不代表預約時間）, widget: datetime, required: true }
       - { name: summary, label: 文章摘要, widget: text, required: false }
       - name: category
         label: 文章分類
@@ -128,11 +165,6 @@ collections:
           - 攝影筆記
           - 閱讀筆記
           - 知識整理
-      - name: tags
-        label: 標籤（可輸入 #東京、#M2M 等）
-        widget: list
-        required: false
-        field: { name: tag, label: 標籤, widget: string }
       - name: topics
         label: 主題
         widget: list
@@ -173,27 +205,13 @@ collections:
         widget: list
         required: false
         field: { name: path, label: 典藏路徑, widget: string }
-      - { name: cover_image, label: 封面圖片, widget: image, required: false }
       - { name: cover_alt, label: 圖片替代文字, widget: string, required: false }
       - { name: cover_caption, label: 圖片說明, widget: string, required: false }
-      - name: gallery
-        label: 文章照片集（多張、可調整順序）
-        widget: list
-        required: false
-        collapsed: true
-        summary: '{{caption}}'
-        thumbnail: image
-        hint: "可一次加入多張照片，手機用上移／下移排序，桌面可拖曳。照片會顯示於內文後方；要插在段落中請用內文的圖片工具。"
-        fields:
-          - { name: image, label: 照片, widget: image, required: true }
-          - { name: alt, label: 圖片替代文字, widget: string, required: false }
-          - { name: caption, label: 照片說明（選填）, widget: text, required: false }
-
       - { name: seo_title, label: SEO 標題, widget: string, required: false }
       - { name: seo_description, label: SEO 描述, widget: text, required: false }
       - { name: ai_review_summary, label: AI 查證提示摘要（僅供編輯參考）, widget: text, required: false }
       - { name: ai_review_checked_at, label: AI 最近分析時間, widget: datetime, required: false }
-      - { name: ai_review_signature, label: AI 內容指紋（系統欄位）, widget: hidden, required: false }
+      - { name: ai_review_signature, label: AI 內容指紋（系統欄位）, widget: hidden }
       - name: ai_review_items
         label: AI 待確認項目（不是錯誤判定；不可直接公開）
         widget: list
@@ -243,6 +261,7 @@ collections:
     label: 舊文章修訂（草稿／公開）
     folder: src/content/legacy-edits
     extension: md
+    slug: { template: "{{title}}", editable: [create] }
     create: true
     delete: false
     fields:
@@ -251,7 +270,7 @@ collections:
       - { name: original_date, label: 原始發表日期, widget: datetime, required: false }
       - { name: edit_status, label: 網站顯示狀態（published 公開／draft 草稿）, widget: select, default: draft, options: [published, draft, reviewed], hint: "只有 published 的修訂內容會在網站部署後取代原文；draft 與 reviewed 保留原文顯示。" }
       - { name: edit_note, label: 修訂說明, widget: text, required: false }
-      - { name: body, label: 修訂內容（原文請先保留；可以切換視覺／Markdown 編輯）, widget: markdown, required: true, hint: "保留舊文段落、圖片與原始網址，確認無誤再將狀態改成 published。含複雜 HTML 的原文請使用原始 Markdown 模式。" }
+      - { name: body, label: 修訂內容（原文請先保留；可以切換視覺／Markdown 編輯）, widget: markdown, required: true, modes: [raw, rich_text], hint: "保留舊文段落、圖片與原始網址，確認無誤再將狀態改成 published。含複雜 HTML 的原文請使用原始 Markdown 模式。" }
 
   - name: knowledge_notes
     label: 知識補充與更新
