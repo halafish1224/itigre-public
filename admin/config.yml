@@ -25,6 +25,11 @@ media_folder: public/images
 public_folder: /images
 
 media_libraries:
+  cloudinary:
+    config:
+      cloud_name: dshfj9ace
+      api_key: "636948943645752"
+    use_transformations: false
   all:
     transformations:
       raster_image:
