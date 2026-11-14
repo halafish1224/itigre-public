@@ -59,7 +59,7 @@ collections:
         widget: image
         multiple: true
         required: false
-        hint: 照片依此順序顯示在內文下方。手機用上移／下移，桌面可拖曳。已有 Cloudinary 圖片時，可從「瀏覽」輸入圖片網址。
+        hint: 照片依此順序顯示在內文下方。手機用上移／下移，桌面可拖曳。在「瀏覽」可選擇 Cloudinary，或輸入現有圖片網址。
       - name: tags
         label: 標籤
         widget: list
@@ -91,6 +91,16 @@ collections:
         input_timezone: Asia/Taipei
         required: true
       - { name: summary, label: 摘要, widget: text, required: false }
+      - { name: seo_title, label: SEO Title, widget: string, required: false }
+      - { name: seo_description, label: Meta Description, widget: text, required: false }
+      - name: seo_canonical
+        label: Canonical
+        widget: string
+        required: false
+        hint: 可留空。系統會使用本篇原始正式網址。
+      - { name: og_title, label: 社群分享標題, widget: string, required: false }
+      - { name: og_description, label: 社群分享摘要, widget: text, required: false }
+      - { name: seo_image, label: 社群分享圖片, widget: image, required: false }
 
   - name: posts
     label: 既有文章（Markdown）
@@ -115,7 +125,7 @@ collections:
         widget: image
         multiple: true
         required: false
-        hint: 照片依此順序顯示在內文下方。手機用上移／下移，桌面可拖曳。已有 Cloudinary 圖片時，可從「瀏覽」輸入圖片網址。
+        hint: 照片依此順序顯示在內文下方。手機用上移／下移，桌面可拖曳。在「瀏覽」可選擇 Cloudinary，或輸入現有圖片網址。
       - name: gallery
         label: 原有照片集與個別圖說
         widget: list
@@ -207,8 +217,16 @@ collections:
         field: { name: path, label: 典藏路徑, widget: string }
       - { name: cover_alt, label: 圖片替代文字, widget: string, required: false }
       - { name: cover_caption, label: 圖片說明, widget: string, required: false }
-      - { name: seo_title, label: SEO 標題, widget: string, required: false }
-      - { name: seo_description, label: SEO 描述, widget: text, required: false }
+      - { name: seo_title, label: SEO Title, widget: string, required: false }
+      - { name: seo_description, label: Meta Description, widget: text, required: false }
+      - name: seo_canonical
+        label: Canonical
+        widget: string
+        required: false
+        hint: 可留空。系統會使用本篇原始正式網址。
+      - { name: og_title, label: 社群分享標題, widget: string, required: false }
+      - { name: og_description, label: 社群分享摘要, widget: text, required: false }
+      - { name: seo_image, label: 社群分享圖片, widget: image, required: false }
       - { name: ai_review_summary, label: AI 查證提示摘要（僅供編輯參考）, widget: text, required: false }
       - { name: ai_review_checked_at, label: AI 最近分析時間, widget: datetime, required: false }
       - { name: ai_review_signature, label: AI 內容指紋（系統欄位）, widget: hidden }
@@ -363,3 +381,76 @@ collections:
       - { name: decision_at, label: 人工決定日期, widget: datetime, required: false }
       - { name: linked_note_slug, label: 核准後建立的 Knowledge Note Slug, widget: string, required: false }
       - { name: original_preservation, label: 原文保護規則, widget: hidden, default: preserve }
+
+  - name: site_settings
+    label: 首頁與網站設定
+    files:
+      - name: home
+        label: 首頁設定
+        file: src/content/site-settings/home.json
+        format: json
+        fields:
+          - { name: title, label: 首頁主標題（H1）, widget: string, required: false }
+          - { name: intro, label: 首頁介紹, widget: text, required: false }
+          - { name: intro_detail, label: 介紹補充, widget: text, required: false }
+          - { name: hero_image, label: 首頁主視覺, widget: image, required: false }
+          - { name: hero_alt, label: 主視覺替代文字, widget: string, required: false }
+          - name: featured
+            label: 精選文章（依清單順序）
+            widget: list
+            required: false
+            summary: '{{path}}'
+            hint: 新文章可搜尋標題。典藏與整理記事使用已公開的站內路徑。
+            fields:
+              - { name: post, label: CMS 新文章, widget: relation, collection: posts_html, search_fields: [title, '{{slug}}'], value_field: '{{slug}}', display_fields: [title], required: false }
+              - { name: path, label: 站內文章路徑, widget: string, required: false }
+          - name: sections
+            label: 首頁區塊（依清單順序）
+            widget: list
+            required: false
+            summary: '{{section}}'
+            hint: 未列出的區塊沿用預設順序及顯示狀態，並排在所選區塊後方。取消顯示即可隱藏。
+            fields:
+              - name: section
+                label: 區塊
+                widget: select
+                options:
+                  - { label: 三商虎專題, value: tigers_feature }
+                  - { label: 典藏介紹, value: archive_intro }
+                  - { label: 虎衣策展, value: tigers_curation }
+                  - { label: 精選文章, value: featured }
+                  - { label: 最新文章, value: latest }
+                  - { label: 找故事導覽, value: archive_browser }
+              - { name: visible, label: 顯示, widget: boolean, default: true }
+          - name: navigation
+            label: 首頁導覽選單
+            widget: list
+            required: false
+            summary: '{{label}}'
+            hint: 請輸入以 / 開頭的站內路徑，例如 /reading-guide/#travel。
+            fields:
+              - { name: label, label: 選單文字, widget: string }
+              - { name: detail, label: 小字, widget: string, required: false }
+              - { name: url, label: 站內路徑, widget: string, pattern: ['^/(?!/).*$', 請輸入站內路徑] }
+
+      - name: seo
+        label: SEO／GEO 設定
+        file: src/content/site-settings/seo.json
+        format: json
+        fields:
+          - { name: site_name, label: 網站名稱, widget: string, required: false }
+          - { name: site_description, label: 網站主題與描述, widget: text, required: false }
+          - { name: author_name, label: 作者名稱, widget: string, required: false }
+          - { name: author_url, label: 作者介紹頁網址, widget: string, required: false }
+          - { name: site_image, label: 網站預設社群分享圖片, widget: image, required: false }
+          - name: home
+            label: 首頁 SEO 與社群
+            widget: object
+            required: false
+            fields:
+              - { name: seo_title, label: 首頁 SEO Title, widget: string, required: false }
+              - { name: seo_description, label: 首頁 Meta Description, widget: text, required: false }
+              - { name: seo_canonical, label: 首頁 Canonical, widget: string, required: false, hint: 可留空。系統會使用正式首頁網址。 }
+              - { name: og_title, label: 首頁社群分享標題, widget: string, required: false }
+              - { name: og_description, label: 首頁社群分享摘要, widget: text, required: false }
+              - { name: seo_image, label: 首頁社群分享圖片, widget: image, required: false }
