@@ -40,7 +40,7 @@ a.itg-guide-card:focus-visible {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 1.5px solid #71675c;
-  border-radius: 13px 8px 12px 7px / 9px 12px 8px 13px;
+  border-radius: 2px;
   background: #f1ece3;
 }
 .itg-guide-thumb img {
@@ -54,10 +54,12 @@ a.itg-guide-card:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: repeating-linear-gradient(-33deg,#f0e9de 0 7px,#eee5d8 7px 8px);
-  color: #95836f;
-  font: 600 1.15rem/1 system-ui, sans-serif;
-  letter-spacing: .15em;
+  position: relative;
+}
+.itg-guide-thumb--empty img,
+.itg-guide-inline-thumb--empty img {
+  position: absolute;
+  inset: 0;
 }
 .itg-guide-card-title {
   display: block;
@@ -92,7 +94,7 @@ a.itg-guide-inline {
   height: 30px;
   overflow: hidden;
   border: 1px solid #a99b86;
-  border-radius: 6px 4px 7px 5px;
+  border-radius: 2px;
   background: #f1ece3;
 }
 .itg-guide-inline-thumb img {
@@ -103,6 +105,7 @@ a.itg-guide-inline {
   object-fit: cover;
 }
 .itg-guide-inline-thumb--empty {
+  position: relative;
   align-items: center;
   justify-content: center;
   font: 600 .7rem/1 system-ui, sans-serif;
