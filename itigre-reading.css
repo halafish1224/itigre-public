@@ -54,3 +54,10 @@ html.itigre-skin .itigre-site{background-color:var(--cloth);background-image:var
 .itigre-site .itigre-preferences{margin-block-start:3rem;padding-block:1rem;border-top:1px solid #c7b6a5}.itigre-site .itigre-preferences .itigre-palette{margin:0!important;max-width:24rem}.itigre-site .itigre-preferences .itigre-palette summary{text-align:left;min-height:44px;padding:.5rem 0!important}.itigre-site .itigre-preferences .itigre-palette>div{margin-top:.5rem}
 
 .itigre-preferences nav{display:flex;gap:1rem;margin-bottom:.5rem;font-size:.9rem}
+
+.itigre-site :where(article .body,article .content,article .post-body,article .journal-body,article .article-body) :where(img:not(.itigre-photo),video,iframe[src*="youtube"],iframe[src*="youtu.be"],iframe[src*="vimeo"]) {
+  display:block;
+  max-inline-size:100%;
+  margin:1.4rem auto;
+}
+.itigre-site :where(article .body,article .content,article .post-body,article .journal-body,article .article-body) :where(video,iframe) {block-size:auto}

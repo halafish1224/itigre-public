@@ -1,5 +1,7 @@
 /* Progressive thumbnails for reading-guide articles.
    Fetch only links that scroll into view; never fetch the whole archive. */
+import { categoryFor, categoryArtwork } from './category-art.js';
+
 (() => {
   'use strict';
 
@@ -70,7 +72,8 @@
         image.decoding = 'async';
         image.addEventListener('load', () => {
           task.thumb.classList.remove('itg-guide-thumb--empty', 'itg-guide-inline-thumb--empty');
-          for (const node of task.thumb.querySelectorAll('span')) node.remove();
+          task.thumb.removeAttribute('aria-hidden');
+          for (const node of task.thumb.querySelectorAll('svg, span')) node.remove();
           if (task.thumb.classList.contains('itg-guide-inline-thumb')) {
             task.thumb.textContent = '';
             task.thumb.append(image);
@@ -107,6 +110,9 @@
   function decorate(anchor, small = false) {
     const url = articleUrl(anchor.getAttribute('href'));
     if (!url) return;
+    const section = anchor.closest('.guide-topic, details');
+    const context = section?.querySelector('h3, summary')?.textContent || '';
+    const artwork = categoryArtwork(categoryFor(anchor.textContent, context));
 
     if (small) {
       if (anchor.classList.contains('itg-guide-inline')) {
@@ -116,7 +122,7 @@
       }
       const thumb = document.createElement('span');
       thumb.className = 'itg-guide-inline-thumb itg-guide-inline-thumb--empty';
-      thumb.textContent = 'IT';
+      thumb.innerHTML = artwork;
       thumb.setAttribute('aria-hidden', 'true');
       thumb.dataset.mediaFrame = 'off';
       thumb.dataset.photoLayout = 'off';
@@ -135,9 +141,7 @@
     thumb.setAttribute('aria-hidden', 'true');
     thumb.dataset.mediaFrame = 'off';
     thumb.dataset.photoLayout = 'off';
-    const mark = document.createElement('span');
-    mark.textContent = 'IT';
-    thumb.append(mark);
+    thumb.innerHTML = artwork;
     const title = document.createElement('span');
     title.className = 'itg-guide-card-title';
     while (anchor.firstChild) title.append(anchor.firstChild);
