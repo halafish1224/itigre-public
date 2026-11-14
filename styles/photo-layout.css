@@ -1,4 +1,4 @@
-/* Layout only. The existing SVG ink borders and lightbox remain unchanged. */
+/* Shared reading presentation. Preserve the existing ink borders and lightbox. */
 body main figure.itigre-reading-photo {
   box-sizing: border-box;
   min-inline-size: 0;
@@ -69,3 +69,95 @@ body main .itigre-photo-gallery--lead > figure:first-of-type {
     gap: 1.75rem;
   }
 }
+
+/* A fallback and its loaded photo occupy the same 4:3 window, including older
+   homepage builds with a different Astro scope. Never stack them vertically. */
+body .latest span.entry-thumb {
+  display: block; position: relative; isolation: isolate;
+  aspect-ratio: 4 / 3; overflow: hidden; width: 100%; height: auto;
+}
+body .latest span.entry-thumb > svg,
+body .latest span.entry-thumb > img.entry-photo {
+  position: absolute; inset: 0; display: block;
+  width: 100%; height: 100%; block-size: 100%; margin: 0;
+}
+body .latest span.entry-thumb > img.entry-photo { object-fit: cover; z-index: 1; }
+body .latest span.entry-thumb > img.entry-photo[hidden] { display: none; }
+body .latest span.entry-thumb[data-preview-ready] > svg { visibility: hidden; }
+
+body.cms-reading { background: #f4f1e8; color: #26383b; }
+body.cms-reading main:not(.tigers-page) { max-width: 66rem; padding: clamp(1rem, 4vw, 3rem); }
+body.cms-reading main:not(.tigers-page) > article {
+  padding: clamp(1.2rem, 5vw, 4rem); margin-top: 1.5rem;
+  background: #fffdf7; border: 1px solid #ded8cb; border-top: 5px solid #b96740;
+}
+body.cms-reading main:not(.tigers-page) article > header {
+  max-width: 44rem; margin: 0 auto 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #ded8cb;
+}
+body.cms-reading main:not(.tigers-page) h1 {
+  font-size: clamp(2rem, 4.8vw, 3.5rem); line-height: 1.4;
+  letter-spacing: .015em; text-wrap: balance; color: #20353d;
+}
+body.cms-reading .summary { font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.85; color: #625d52; }
+body.cms-reading .eyebrow { color: #9c4d2b; letter-spacing: .18em; font-weight: 750; }
+body.cms-reading .site-nav a,
+body.cms-reading .cms-reading-actions a,
+body.cms-reading .cms-reading-end > a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; max-width: 100%; padding: .6rem 1rem;
+  border: 1px solid #a6b0a7; border-radius: 3px;
+  background: #fffdf7; color: #294e49; text-decoration: none;
+  font: 650 .9rem/1.5 system-ui, sans-serif; overflow-wrap: anywhere;
+}
+body.cms-reading a:hover { text-decoration-thickness: 2px; }
+body.cms-reading :is(a, summary):focus-visible { outline: 3px solid #b45d32; outline-offset: 4px; }
+body.cms-reading .site-nav a:hover,
+body.cms-reading .cms-reading-actions a:hover,
+body.cms-reading .cms-reading-end > a:hover { background: #eaf0e8; border-color: #47685b; }
+body.cms-reading .cms-reading-actions a.cms-reading-primary {
+  background: #294e49; color: #fffdf7; border-color: #294e49;
+}
+body.cms-reading main:not(.tigers-page) .cover { width: 100%; margin: 2rem auto; }
+body.cms-reading main:not(.tigers-page) .cover img { width: 100%; max-height: 36rem; object-fit: contain; }
+body.cms-reading .cms-reading-nav {
+  max-width: 44rem; margin: 2.5rem auto; padding: clamp(1rem, 3vw, 1.75rem);
+  background: #f0f0e7; border-block: 1px solid #c8cdbf;
+}
+body.cms-reading .cms-reading-label { margin: 0 0 .75rem; color: #576b5e; font-size: .8rem; letter-spacing: .13em; font-weight: 750; }
+body.cms-reading .cms-reading-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+body.cms-reading .cms-reading-nav details { margin-top: 1rem; border-top: 1px solid #d5d9cd; }
+body.cms-reading .cms-reading-nav summary { padding: .7rem 0; cursor: pointer; font-size: .9rem; font-weight: 650; }
+body.cms-reading .cms-reading-nav ol { margin: .2rem 0 0; padding-left: 1.5rem; }
+body.cms-reading .cms-reading-nav li { padding: .15rem 0; color: #9c4d2b; }
+body.cms-reading .cms-reading-nav li a { display: inline-block; padding: .35rem .25rem; color: #294e49; text-decoration-color: #aebcae; }
+body.cms-reading main:not(.tigers-page) .article-body {
+  max-width: 42rem; margin-inline: auto; font-size: clamp(1.05rem, 1.8vw, 1.16rem); line-height: 2;
+}
+body.cms-reading .article-body p { margin-block: 0 1.4em; }
+body.cms-reading main:not(.tigers-page) .article-body h2 {
+  margin: 3rem 0 1.25rem; padding-top: 1rem; border-top: 1px solid #d8dbce;
+  font: 650 clamp(1.35rem, 3vw, 1.8rem)/1.55 "Noto Serif TC", "PMingLiU", serif;
+  color: #294e49; text-wrap: balance;
+}
+body.cms-reading .article-body h3 { margin-top: 2rem; line-height: 1.6; color: #294e49; }
+body.cms-reading .article-body a { color: #9c4829; text-decoration-thickness: 1px; text-underline-offset: .25em; }
+body.cms-reading .article-body blockquote { margin: 2rem 0; padding: 1rem 1.25rem; border-left: 3px solid #bd8055; background: #f5eee1; }
+body.cms-reading :is(.article-body, .it-gallery, .related, .article-body h2)[id] { scroll-margin-top: 1.5rem; }
+body.cms-reading .cms-reading-reference { margin: 2.5rem 0; padding: 1.25rem; background: #f2eee3; border-left: 3px solid #b96740; }
+body.cms-reading .cms-reading-reference a { display: block; padding-block: .6rem; font-weight: 650; }
+body.cms-reading .it-gallery { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 2px solid #294e49; }
+body.cms-reading .it-gallery > h2 { margin-bottom: .5rem; color: #294e49; font-family: "Noto Serif TC", "PMingLiU", serif; }
+body.cms-reading .cms-gallery-intro { margin: 0 0 2rem; color: #706d60; font-size: .9rem; }
+body.cms-reading .related ul { display: grid; gap: .75rem; }
+body.cms-reading .related li { display: block; padding: 1rem 1.2rem; background: #f3f1e8; border: 1px solid #d8dccf; }
+body.cms-reading .related li a { display: block; min-height: 44px; font-weight: 650; color: #294e49; }
+body.cms-reading .related li span { display: block; margin-top: .35rem; }
+body.cms-reading .cms-reading-end { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #c8cdbf; }
+body.cms-reading .cms-reading-end p { flex-basis: 100%; margin: 0 0 .3rem; font-family: "Noto Serif TC", "PMingLiU", serif; color: #596651; }
+@media (max-width: 600px) {
+  body.cms-reading main:not(.tigers-page) { padding: .75rem; }
+  body.cms-reading main:not(.tigers-page) > article { padding: 1.25rem; }
+  body.cms-reading .cms-reading-actions a { flex: 1 1 auto; }
+  body.cms-reading .cms-reading-end > a { flex: 1 1 100%; }
+}
+
