@@ -1,4 +1,9 @@
 (() => {
+  const catalog = document.createElement('a');
+  catalog.href = '/admin/archive.html';
+  catalog.textContent = '全站舊文搜尋';
+  catalog.style.cssText = 'position:fixed;right:12px;bottom:12px;z-index:1000;padding:10px 14px;background:#fff9f1;color:#803712;border:1px solid #c7b6a5;border-radius:6px;font:16px system-ui';
+  document.body.append(catalog);
   let scheduled = false;
 
   function addAdvancedOptions() {

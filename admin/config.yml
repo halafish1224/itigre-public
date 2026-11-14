@@ -281,7 +281,9 @@ collections:
           - { name: reviewer_note, label: 人工判斷／修改意見, widget: text, required: false }
 
   - name: legacy_edits
-    label: 舊文章修訂（草稿／公開）
+    label: 舊文章（原網址編輯）
+    summary: '{{title}} · {{original_path}} · {{original_date}}'
+    search_fields: [title, original_path, original_date, tags, body]
     folder: src/content/legacy-edits
     extension: md
     slug: { template: "{{title}}", editable: [create] }
@@ -289,9 +291,21 @@ collections:
     delete: false
     fields:
       - { name: title, label: 原文章標題, widget: string, required: true }
-      - { name: original_path, label: 原始文章路徑（post/文章ID/slug）, widget: string, required: true }
-      - { name: original_date, label: 原始發表日期, widget: datetime, required: false }
+      - { name: original_path, label: 原始文章路徑（不可變更）, widget: hidden, required: true }
+      - { name: original_date, label: 原始發表日期（保留）, widget: hidden, required: false }
       - { name: edit_status, label: 網站顯示狀態（published 公開／draft 草稿）, widget: select, default: draft, options: [published, draft, reviewed], hint: "只有 published 的修訂內容會在網站部署後取代原文；draft 與 reviewed 保留原文顯示。" }
+      - { name: tags, label: Hashtag／標籤, widget: list, required: false }
+      - { name: category, label: 分類, widget: string, required: false }
+      - { name: cover_image, label: 封面圖片, widget: image, required: false }
+      - { name: gallery_images, label: 追加照片（依順序顯示）, widget: image, multiple: true, required: false }
+      - { name: summary, label: 摘要, widget: text, required: false }
+      - { name: seo_title, label: SEO Title, widget: string, required: false }
+      - { name: seo_description, label: Meta Description, widget: text, required: false }
+      - name: related_archive_paths
+        label: 推薦舊文章路徑
+        widget: list
+        required: false
+        hint: 輸入 post/文章ID/slug，僅顯示存在的文章。
       - { name: edit_note, label: 修訂說明, widget: text, required: false }
       - { name: body, label: 修訂內容（原文請先保留；可以切換視覺／Markdown 編輯）, widget: markdown, required: true, modes: [raw, rich_text], hint: "保留舊文段落、圖片與原始網址，確認無誤再將狀態改成 published。含複雜 HTML 的原文請使用原始 Markdown 模式。" }
 
