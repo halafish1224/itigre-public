@@ -70,6 +70,12 @@ html.itigre-skin body.it-visual-system {
 #knowledge-tree-search-status { min-height:1.5em; font-size:.85rem; color:var(--vs-muted); }
 .it-visual-system .generated-tree summary,.it-visual-system .generated-series summary { min-height:44px; }
 .it-visual-system .generated-branches a { display:inline-block; min-height:32px; }
+/* Use one frame for each homepage thumbnail, including older image-only rows. */
+.it-visual-system main .latest .entry-thumb {
+  box-sizing:border-box;
+  border:6px solid #282321;
+  border-image:var(--itigre-frame-pen-a,url('/styles/media-frame-a.svg')) 16 / 7px / 2px stretch;
+}
 @media(max-width:600px) {
   html.itigre-skin body.it-visual-system { padding:.5rem; }
   .it-visual-system > main { max-width:100%; }
