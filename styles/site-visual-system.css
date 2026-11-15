@@ -67,3 +67,32 @@ html.itigre-skin body.it-visual-system {
 }
 @media(prefers-reduced-motion:reduce) { .it-visual-system * { scroll-behavior:auto!important; } }
 @media print { html.itigre-skin body.it-visual-system { background:#fff!important; padding:0; } .it-visual-system > main { box-shadow:none; } }
+
+/* Required CMS frame contract: real non-zero borders are necessary for Safari
+   as well as Chromium. The wrapper owns cover/gallery frames, not the crop. */
+body.cms-reading.it-visual-system main > article {
+  border:8px solid transparent!important;
+  border-image:var(--itigre-frame-pen-a,url('/styles/media-frame-a.svg')) 16 / 12px / 4px stretch!important;
+  border-radius:0!important; overflow:visible!important;
+}
+body.cms-reading.it-visual-system main article figure.cover,
+body.cms-reading.it-visual-system main article .it-gallery figure {
+  box-sizing:border-box; border:6px solid transparent!important;
+  border-image:var(--itigre-frame-pen-c,url('/styles/media-frame-c.svg')) 16 / 10px / 3px stretch!important;
+  border-radius:0!important; padding:clamp(.25rem,.8vw,.5rem); overflow:visible!important;
+}
+body.cms-reading.it-visual-system main article figure.cover > img,
+body.cms-reading.it-visual-system main article .it-gallery figure img {
+  box-sizing:border-box; border:0!important; border-image:none!important; border-radius:0!important;
+}
+body.cms-reading.it-visual-system main .article-body :is(img:not(.icon,.emoji,[width="0"],[width="1"],[height="0"],[height="1"]),video,iframe[src*="/embed/"]) {
+  box-sizing:border-box; border:6px solid transparent!important;
+  border-image:var(--itigre-frame-pen-a,url('/styles/media-frame-a.svg')) 16 / 10px / 3px stretch!important;
+  border-radius:0!important; max-width:100%;
+}
+body.cms-reading.it-visual-system main article .it-gallery figure:nth-child(even) {
+  border-image-source:var(--itigre-frame-pen-b,url('/styles/media-frame-b.svg'))!important;
+}
+@media(max-width:600px) {
+  body.cms-reading.it-visual-system main > article { border-width:6px!important; border-image-width:9px!important; border-image-outset:2px!important; }
+}
