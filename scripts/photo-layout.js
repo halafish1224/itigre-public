@@ -53,7 +53,7 @@
       const count = gallery.querySelectorAll('figure').length;
       actions.append(link('照片集' + (count ? ' · ' + count + ' 張' : '') + ' ↓', href(gallery)));
     }
-    const related = article.querySelector('.related');
+    const related = article.querySelector('.related') || document.querySelector('.knowledge-related');
     if (related) {
       anchor(related, 'reading-related');
       actions.append(link('延伸閱讀 ↓', href(related)));
@@ -175,4 +175,5 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 })();
+
 

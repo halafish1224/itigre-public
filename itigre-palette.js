@@ -1,1 +1,134 @@
-(()=>{'use strict';const themes=[['shippo','虎橘七寶'],['seigaiha','藍染青海波'],['ichimatsu','銀灰市松'],['yagasuri','松綠矢絣'],['asanoha','赭赤麻葉'],['tatewaku','藤紫立涌'],['shima','墨黑細縞']];let mode='daily',timer;const key='itigre-page-palette-v1';const archiveHref=new URL('archive/',document.currentScript.src).href;try{const v=localStorage.getItem(key);if(v==='daily'||themes.some(t=>t[0]===v))mode=v}catch{}const root=document.documentElement;root.classList.add('itigre-skin');function apply(){const t=themes.find(t=>t[0]===mode)??themes[(new Date().getDay()+6)%7];root.dataset.cloth=t[0];root.dataset.pattern=t[0];const status=document.querySelector('#itigre-palette-status');if(status)status.textContent=(mode==='daily'?'今日配色：':'已選配色：')+t[1]}function schedule(){clearTimeout(timer);const n=new Date(),next=new Date(n);next.setHours(24,0,0,80);timer=setTimeout(()=>{apply();schedule()},Math.max(1000,next-n))}apply();schedule();document.addEventListener('visibilitychange',()=>{if(!document.hidden){apply();schedule()}});function controls(){const main=document.querySelector('main');if(!main||document.querySelector('.itigre-palette'))return;const d=document.createElement('details');d.className='itigre-palette';const summary=document.createElement('summary');summary.textContent='頁面配色';d.append(summary);const panel=document.createElement('div'),label=document.createElement('label'),select=document.createElement('select'),status=document.createElement('p');label.htmlFor='itigre-palette-select';label.textContent='切換配色';select.id='itigre-palette-select';for(const[v,text]of[['daily','每日輪替'],...themes]){const o=document.createElement('option');o.value=v;o.textContent=text;select.append(o)}select.value=mode;status.id='itigre-palette-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');panel.append(label,select,status);d.append(panel);let footer=main.querySelector('.itigre-preferences');if(!footer){footer=document.createElement('footer');footer.className='itigre-preferences';footer.setAttribute('aria-label','頁尾');const tools=document.createElement('div');tools.className='itigre-footer-tools';const archiveLink=document.createElement('a');archiveLink.href=archiveHref;archiveLink.className='itigre-archive-link';archiveLink.textContent='文章典藏';tools.append(archiveLink);const copyright=document.createElement('p');copyright.className='itigre-copyright';copyright.textContent='© 2026 iTigre.com. All rights reserved.';footer.append(tools,copyright);main.append(footer)}footer.querySelector('.itigre-footer-tools').append(d);d.addEventListener('keydown',e=>{if(e.key==='Escape'&&d.open){d.open=false;summary.focus()}});document.addEventListener('click',e=>{if(d.open&&!d.contains(e.target))d.open=false});apply();select.addEventListener('change',()=>{mode=select.value;try{localStorage.setItem(key,mode)}catch{}apply()})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',controls,{once:true});else controls()})();
+/* Daily cloth, matching reading colours, and restrained source-faithful emphasis. */
+(() => {
+  'use strict';
+  if (window.itigreVisualSystem) return;
+  const themes = ['shippo', 'seigaiha', 'ichimatsu', 'yagasuri', 'asanoha', 'tatewaku', 'shima'];
+  const root = document.documentElement;
+  let timer;
+  function day(date = new Date()) {
+    return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).format(date);
+  }
+  function apply(date = new Date()) {
+    const stamp = day(date);
+    const index = Math.floor(Date.parse(stamp + 'T00:00:00Z') / 86400000);
+    const theme = themes[((index % themes.length) + themes.length) % themes.length];
+    root.classList.add('itigre-skin');
+    root.dataset.cloth = theme;
+    root.dataset.pattern = theme;
+    root.dataset.visualDay = stamp;
+    if (document.readyState !== 'loading') requestAnimationFrame(readableContrast);
+    // Always follow the same Taipei calendar day, even after an older manual
+    // preference or with several tabs open. No switch or selector is created.
+    return theme;
+  }
+  function schedule() {
+    clearTimeout(timer);
+    const now = Date.now();
+    const next = Date.parse(day() + 'T00:00:00+08:00') + 86400000 + 80;
+    timer = setTimeout(() => { apply(); schedule(); }, Math.max(1000, next - now));
+  }
+  function readableContrast() {
+    if (!document.body) return;
+    const rgb = value => (value.match(/[\d.]+/gu) || []).slice(0, 3).map(Number);
+    const luminance = values => values.map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }).reduce((sum,v,i) => sum + v * [.2126,.7152,.0722][i], 0);
+    const ratio = (a,b) => (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+    const fixes = [];
+    for (const el of document.querySelectorAll('main :is(h1,h2,h3,h4,p,a,time,span,small,summary,button,figcaption,label,li)')) {
+      if (!el.getClientRects().length || el.closest('[aria-hidden="true"],.hero-mark,svg') || ![...el.childNodes].some(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim())) continue;
+      let at = el, background;
+      while (at) {
+        const value = getComputedStyle(at).backgroundColor;
+        if (value !== 'transparent' && value !== 'rgba(0, 0, 0, 0)') { background = rgb(value); break; }
+        at = at.parentElement;
+      }
+      if (!background) continue;
+      const bg = luminance(background), fg = luminance(rgb(getComputedStyle(el).color));
+      if (ratio(bg,fg) >= 4.5) continue;
+      fixes.push([el,ratio(bg,luminance([255,253,247])) > ratio(bg,luminance([35,46,50])) ? 'light' : 'dark']);
+    }
+    for (const [el,ink] of fixes) el.dataset.readingContrast = ink;
+  }
+  function emphasize() {
+    const containers = document.querySelectorAll('article > .article-body, article > .body, .journal-body, .post-body, .body-text');
+    for (const container of containers) {
+      if (container.dataset.emphasisReady) continue;
+      container.dataset.emphasisReady = 'true';
+      const titleWords = (document.querySelector('h1')?.textContent ?? '').match(/[\p{Script=Han}]{2,}|[a-zA-Z]{3,}/gu) ?? [];
+      const candidates = [];
+      for (const p of container.querySelectorAll('p')) {
+        if (p.closest('nav,aside,footer,blockquote,.knowledge-notes,.it-knowledge-notes,code,pre,figure') || p.querySelector('mark,[data-no-highlight]')) continue;
+        const strong = p.querySelector('strong,b');
+        const walker = document.createTreeWalker(strong || p, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (node.parentElement.closest('a,code,pre,mark,script,style,button')) continue;
+          const raw = node.textContent;
+          const pieces = [...raw.matchAll(/[^。！？!?\n]+[。！？!?]?/gu)];
+          const sentence = pieces.find(s => s[0].trim().length >= 18 && s[0].trim().length <= 100);
+          if (!sentence) continue;
+          const text = sentence[0];
+          // Keep qualifiers in the sentence; never splice a claim out of its
+          // caution, quotation or attribution to manufacture a new assertion.
+          let score = strong ? 8 : 0;
+          if (p.previousElementSibling?.matches('h2,h3')) score += 3;
+          if (p === container.lastElementChild) score += 2;
+          score += titleWords.filter(word => text.includes(word)).length;
+          candidates.push({ node, start: sentence.index, length: text.length, score, p });
+          break;
+        }
+      }
+      const selected = candidates.sort((a, b) => b.score - a.score).slice(0, Math.min(3, Math.max(1, Math.floor(candidates.length / 5))));
+      for (const { node, start, length } of selected) {
+        const range = document.createRange();
+        range.setStart(node, start);
+        range.setEnd(node, start + length);
+        const mark = document.createElement('mark');
+        mark.className = 'it-editorial-highlight';
+        range.surroundContents(mark);
+      }
+    }
+  }
+  function init() {
+    document.body.classList.add('it-visual-system');
+    for (const control of document.querySelectorAll('.itigre-palette')) control.remove();
+    emphasize();
+    for (const paragraph of document.querySelectorAll('.historical-takeaway')) {
+      for (const node of [...paragraph.childNodes]) {
+        if (node.nodeType !== Node.TEXT_NODE || node.textContent.trim().length < 10) continue;
+        const mark = document.createElement('mark');
+        mark.className = 'it-editorial-highlight';
+        node.replaceWith(mark); mark.append(node);
+      }
+    }
+    const search = document.querySelector('#knowledge-tree-search');
+    const tree = document.querySelector('.generated-tree-list');
+    if (search && tree) {
+      const entries = [...tree.querySelectorAll('li')];
+      const initiallyOpen = new Map([...tree.querySelectorAll('details')].map(el => [el, el.open]));
+      search.addEventListener('input', () => {
+        const words = search.value.normalize('NFKC').toLocaleLowerCase().trim().split(/\s+/u).filter(Boolean);
+        let found = 0;
+        for (const entry of entries) {
+          const text = entry.textContent.normalize('NFKC').toLocaleLowerCase();
+          entry.hidden = !words.every(word => text.includes(word));
+          if (!entry.hidden) found++;
+        }
+        for (const branch of tree.querySelectorAll('.generated-branches section')) branch.hidden = ![...branch.querySelectorAll('li')].some(el => !el.hidden);
+        for (const pillar of tree.querySelectorAll('details')) {
+          pillar.hidden = ![...pillar.querySelectorAll('li')].some(el => !el.hidden);
+          pillar.open = words.length ? !pillar.hidden : initiallyOpen.get(pillar);
+        }
+        document.querySelector('#knowledge-tree-search-status').textContent = words.length ? '找到 ' + found.toLocaleString('zh-Hant') + ' 篇文章' : '';
+      });
+    }
+    readableContrast();
+  }
+  window.itigreVisualSystem = { apply, day, emphasize, readableContrast };
+  apply();
+  schedule();
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { apply(); schedule(); } });
+  window.addEventListener('pageshow', () => { apply(); schedule(); });
+  document.addEventListener('toggle', event => { if (event.target instanceof HTMLDetailsElement && event.target.open) requestAnimationFrame(readableContrast); }, true);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
+  else init();
+})();
