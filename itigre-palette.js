@@ -29,24 +29,58 @@
   }
   function readableContrast() {
     if (!document.body) return;
-    const rgb = value => (value.match(/[\d.]+/gu) || []).slice(0, 3).map(Number);
-    const luminance = values => values.map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }).reduce((sum,v,i) => sum + v * [.2126,.7152,.0722][i], 0);
-    const ratio = (a,b) => (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
-    const fixes = [];
-    for (const el of document.querySelectorAll('main :is(h1,h2,h3,h4,p,a,time,span,small,summary,button,figcaption,label,li)')) {
-      if (!el.getClientRects().length || el.closest('[aria-hidden="true"],.hero-mark,svg') || ![...el.childNodes].some(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim())) continue;
-      let at = el, background;
-      while (at) {
-        const value = getComputedStyle(at).backgroundColor;
-        if (value !== 'transparent' && value !== 'rgba(0, 0, 0, 0)') { background = rgb(value); break; }
-        at = at.parentElement;
+    const rgba = value => {
+      const parts = (value.match(/[\d.]+/gu) || []).map(Number);
+      return parts.length >= 3 ? [parts[0], parts[1], parts[2], parts[3] ?? 1] : null;
+    };
+    const luminance = ([r, g, b]) => [r, g, b].reduce((sum, value, index) => {
+      const channel = value / 255;
+      const linear = channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4;
+      return sum + linear * [.2126, .7152, .0722][index];
+    }, 0);
+    const ratio = (a, b) => (Math.max(a, b) + .05) / (Math.min(a, b) + .05);
+    const composite = ([r, g, b, alpha], base) => [r, g, b].map((channel, i) => channel * alpha + base[i] * (1 - alpha));
+    const elements = document.querySelectorAll('main :is(h1,h2,h3,h4,h5,h6,p,a,time,span,small,strong,b,em,i,mark,summary,button,figcaption,label,li,th,td,blockquote)');
+    for (const el of document.querySelectorAll('main [data-reading-contrast]')) delete el.dataset.readingContrast;
+
+    const styles = new WeakMap();
+    const backgrounds = new WeakMap();
+    const styleFor = el => {
+      if (!styles.has(el)) styles.set(el, getComputedStyle(el));
+      return styles.get(el);
+    };
+    const backgroundFor = el => {
+      if (!el) return [255, 255, 255];
+      if (!backgrounds.has(el)) {
+        const fill = rgba(styleFor(el).backgroundColor);
+        const background = fill?.[3] === 1 ? fill.slice(0, 3) : backgroundFor(el.parentElement);
+        backgrounds.set(el, fill && fill[3] < 1 ? composite(fill, background) : background);
       }
-      if (!background) continue;
-      const bg = luminance(background), fg = luminance(rgb(getComputedStyle(el).color));
-      if (ratio(bg,fg) >= 4.5) continue;
-      fixes.push([el,ratio(bg,luminance([255,253,247])) > ratio(bg,luminance([35,46,50])) ? 'light' : 'dark']);
+      return backgrounds.get(el);
+    };
+
+    const fixes = [];
+    for (const el of elements) {
+      if (!el.getClientRects().length || el.closest('[aria-hidden="true"],.hero-mark,svg') ||
+          ![...el.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim())) continue;
+      const background = backgroundFor(el);
+      const foreground = rgba(styleFor(el).color);
+      if (!foreground) continue;
+      const bg = luminance(background);
+      if (ratio(bg, luminance(composite(foreground, background))) >= 4.5) continue;
+      fixes.push([el, ratio(bg, 1) > ratio(bg, 0) ? 'light' : 'dark']);
     }
-    for (const [el,ink] of fixes) el.dataset.readingContrast = ink;
+    for (const [el, ink] of fixes) el.dataset.readingContrast = ink;
+  }
+  function positionLegacyEditLink() {
+    const link = document.querySelector('main .it-legacy-edit-link');
+    const body = document.querySelector('main > article > :is(.article-body,.body)');
+    if (!link || !body) return;
+    const selector = 'p,li,blockquote,h2,h3,h4,h5,h6';
+    const last = [...body.querySelectorAll(selector)].filter(el =>
+      el.textContent.trim() && !el.querySelector(selector) && !el.closest('a,figure,nav,aside,footer')
+    ).at(-1);
+    (last || body).append(link);
   }
   function emphasize() {
     const containers = document.querySelectorAll('article > .article-body, article > .body, .journal-body, .post-body, .body-text');
@@ -91,6 +125,7 @@
   function init() {
     document.body.classList.add('it-visual-system');
     for (const control of document.querySelectorAll('.itigre-palette')) control.remove();
+    positionLegacyEditLink();
     emphasize();
     for (const paragraph of document.querySelectorAll('.historical-takeaway')) {
       for (const node of [...paragraph.childNodes]) {
