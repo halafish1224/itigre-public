@@ -1,0 +1,28 @@
+.knowledge-navigation--static{box-sizing:border-box;max-width:48rem;margin:1rem auto 1.35rem;padding-inline:clamp(.7rem,3vw,1.25rem);color:#332d28;font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif}
+.knowledge-navigation--static .knowledge-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:.42rem .58rem;padding:.72rem .9rem;border:1px solid #d8cbbd;background:#fffaf1;font-size:.84rem}
+.knowledge-navigation--static .knowledge-label{color:#8a3e17;font-size:.67rem;font-weight:800;letter-spacing:.12em}
+.knowledge-navigation--static .knowledge-breadcrumb a{color:#753512;font-weight:750;text-underline-offset:.18em}
+.knowledge-navigation--static .knowledge-series{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.8rem 1.2rem;align-items:center;padding:.9rem;background:#29251f;color:#fff7eb;border-bottom:3px solid #a85a26}
+.knowledge-navigation--static .knowledge-series>div{display:flex;align-items:baseline;flex-wrap:wrap;gap:.35rem .65rem;min-width:0}
+.knowledge-navigation--static .knowledge-series strong{font-family:"Noto Serif TC","PMingLiU",serif}
+.knowledge-navigation--static .knowledge-series>div>span:last-child{color:#ddcfbf;font-size:.8rem}
+.knowledge-navigation--static .knowledge-series nav{display:flex;gap:.5rem}
+.knowledge-navigation--static .knowledge-series nav>a,.knowledge-navigation--static .knowledge-series .is-disabled{display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;min-width:7rem;min-height:44px;padding:.42rem .65rem;border:1px solid #a7907d;color:#fff7eb;font-size:.8rem;text-decoration:none}
+.knowledge-navigation--static .knowledge-series nav>a>span{display:block;max-width:18ch;overflow:hidden;color:#d8cabb;font-size:.67rem;text-overflow:ellipsis;white-space:nowrap}
+.knowledge-navigation--static .knowledge-series .is-disabled{color:#9f9387;border-color:#61584f}
+.knowledge-related--static{box-sizing:border-box;max-width:48rem;margin:2rem auto 1rem;border:1px solid #d9c8b4;background:#fffaf1;overflow:hidden;font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif}
+.knowledge-related--static .knowledge-related-heading{padding:1.15rem 1.3rem;background:#29251f;color:#fff5e8;border-bottom:3px solid #a85a26}
+.knowledge-related--static .knowledge-related-heading>span{font-size:.7rem;letter-spacing:.14em;color:#e6c8a6}
+.knowledge-related--static .knowledge-related-heading h2{margin:.2rem 0;font-size:1.3rem;color:#fff5e8}
+.knowledge-related--static .knowledge-related-heading p{margin:.25rem 0 0;color:#e0d2c2;font-size:.86rem}
+.knowledge-related--static ol{margin:0;padding:.45rem 1.15rem;list-style:none}
+.knowledge-related--static li{display:grid;grid-template-columns:2rem minmax(0,1fr) auto;gap:.65rem;align-items:start;padding:.9rem 0;border-bottom:1px solid #eadfce}
+.knowledge-related--static li:last-child{border-bottom:0}
+.knowledge-related--static .knowledge-related-number{color:#a75220;font:700 .8rem/1.6 Georgia,serif}
+.knowledge-related--static a{color:#71320f;font-weight:700;text-underline-offset:.2em;overflow-wrap:anywhere}
+.knowledge-related--static li p{display:flex;flex-wrap:wrap;gap:.32rem;margin:.45rem 0 0}
+.knowledge-related--static li p span{padding:.16rem .48rem;border:1px solid #d4bd9f;border-radius:999px;background:#f7ecdc;color:#6f4d32;font-size:.7rem;line-height:1.45}
+.knowledge-related--static time{color:#74685c;font-size:.72rem;white-space:nowrap}
+.knowledge-navigation--static a:focus-visible,.knowledge-related--static a:focus-visible{outline:3px solid #356080;outline-offset:3px}
+@media(max-width:680px){.knowledge-navigation--static .knowledge-series{grid-template-columns:minmax(0,1fr)}.knowledge-navigation--static .knowledge-series nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.knowledge-navigation--static .knowledge-series nav>a,.knowledge-navigation--static .knowledge-series .is-disabled{min-width:0}.knowledge-related--static{margin-inline:.7rem}.knowledge-related--static li{grid-template-columns:1.5rem minmax(0,1fr)}.knowledge-related--static time{grid-column:2}}
+
