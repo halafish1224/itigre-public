@@ -32,16 +32,26 @@ html.itigre-skin body.it-visual-system {
 .it-visual-system main :is(.cms-reading-primary,.itg-back-to-top,.tigers-featured-cta) { background:var(--vs-deep)!important; color:#fffdf7!important; border-color:var(--vs-deep)!important; }
 .it-visual-system main .tigers-featured-cta span { color:#fffdf7!important; }
 .it-visual-system main :is(.cms-reading-actions a,.cms-reading-end>a,.site-nav a) { border-color:var(--vs-deep)!important; }
-.it-visual-system main :is(.hero,.tigers-curation,.knowledge-related-heading,.it-related-heading,.knowledge-heading,.knowledge-series) { background:var(--vs-deep)!important; color:#fffdf7!important; }
-.it-visual-system main :is(.hero,.tigers-curation,.knowledge-related-heading,.it-related-heading,.knowledge-heading,.knowledge-series) :is(h1,h2,h3,p,span,a,small,strong,time) { color:#fffdf7!important; }
+.it-visual-system main :is(.hero,.tigers-curation,.knowledge-related-heading,.it-related-heading,.it-knowledge-heading,.knowledge-heading,.knowledge-series) { background:var(--vs-deep)!important; color:#fffdf7!important; }
+.it-visual-system main :is(.hero,.tigers-curation,.knowledge-related-heading,.it-related-heading,.it-knowledge-heading,.knowledge-heading,.knowledge-series) :is(h1,h2,h3,p,span,a,small,strong,time) { color:#fffdf7!important; }
 .it-visual-system main .hero-mark,.it-visual-system main .hero-mark span { color:#ffffff15!important; }
 .it-visual-system main :is(.eyebrow,.kicker,.section-kicker,.knowledge-label,.entry-number,.historical-kicker) { color:var(--vs-deep)!important; }
-.it-visual-system main .hero :is(.eyebrow,.kicker,.section-kicker) { color:#fffdf7!important; }
+.it-visual-system main :is(.hero,.tigers-curation,.knowledge-related-heading,.it-related-heading,.it-knowledge-heading,.knowledge-heading,.knowledge-series) :is(.eyebrow,.kicker,.section-kicker,.knowledge-label,.entry-number,.historical-kicker) { color:inherit!important; }
+.it-visual-system main :is(.hero,.tigers-curation,.knowledge-related-heading,.it-related-heading,.it-knowledge-heading,.knowledge-heading,.knowledge-series) :is(a,button,summary):focus-visible { outline-color:currentColor!important; }
+.it-visual-system main :is(a.site-edit-link,a.it-inline-edit,a.it-legacy-edit-link) {
+  display:inline-block; margin-inline-start:.35em; padding:.05em .35em;
+  border-radius:.2rem; background:#fffdf7!important; color:rgb(37 48 52 / 94%)!important;
+  opacity:1; font-size:6px; line-height:1.6; font-weight:700;
+  text-decoration:underline; vertical-align:baseline; white-space:nowrap;
+}
+.it-visual-system main :is(a.site-edit-link,a.it-inline-edit,a.it-legacy-edit-link):is(:hover,:focus-visible) {
+  color:#171d20!important;
+}
 .it-visual-system main :is(.generated-branches section,.knowledge-related,.related li,.historical-card) { background:var(--vs-paper)!important; border-color:var(--vs-line)!important; }
 .it-visual-system main .generated-branches section { border-top-color:var(--vs-deep)!important; }
 .it-visual-system .itigre-palette { display:none!important; }
-.it-visual-system main [data-reading-contrast="light"] { color:#fffdf7!important; }
-.it-visual-system main [data-reading-contrast="dark"] { color:#232e32!important; }
+.it-visual-system main [data-reading-contrast="light"][data-reading-contrast] { color:#fff!important; }
+.it-visual-system main [data-reading-contrast="dark"][data-reading-contrast] { color:#000!important; }
 .it-editorial-highlight {
   color:inherit!important; background-color:transparent; padding:.06em .12em;
   background-image:linear-gradient(176deg,transparent 0 13%,var(--vs-marker) 14% 89%,transparent 90%);
@@ -95,4 +105,28 @@ body.cms-reading.it-visual-system main article .it-gallery figure:nth-child(even
 }
 @media(max-width:600px) {
   body.cms-reading.it-visual-system main > article { border-width:6px!important; border-image-width:9px!important; border-image-outset:2px!important; }
+}
+
+/* Keep text readable on the Tigers header and roster gradients. */
+.it-visual-system main .tigers-feature > header,
+.it-visual-system main .tigers-roster-entry {
+  background-color: #0b1f36;
+}
+.it-visual-system main .tigers-feature > header :is(h1, .meta span),
+.it-visual-system main .tigers-roster-entry strong {
+  color: #fffdf7 !important;
+}
+.it-visual-system main .tigers-feature > header :is(.summary, .meta, time),
+.it-visual-system main .tigers-roster-entry .roster-note {
+  color: #e1ecf8 !important;
+}
+.it-visual-system main .tigers-feature > header .eyebrow,
+.it-visual-system main .tigers-roster-entry .roster-kicker {
+  color: #f0cf81 !important;
+}
+.it-visual-system main .tigers-roster-entry > a {
+  color: #102b4b !important;
+}
+.it-visual-system main .tigers-roster-entry > a:focus-visible {
+  outline-color: #fffdf7 !important;
 }
