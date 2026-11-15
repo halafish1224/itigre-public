@@ -106,3 +106,27 @@ body.cms-reading.it-visual-system main article .it-gallery figure:nth-child(even
 @media(max-width:600px) {
   body.cms-reading.it-visual-system main > article { border-width:6px!important; border-image-width:9px!important; border-image-outset:2px!important; }
 }
+
+/* Keep text readable on the Tigers header and roster gradients. */
+.it-visual-system main .tigers-feature > header,
+.it-visual-system main .tigers-roster-entry {
+  background-color: #0b1f36;
+}
+.it-visual-system main .tigers-feature > header :is(h1, .meta span),
+.it-visual-system main .tigers-roster-entry strong {
+  color: #fffdf7 !important;
+}
+.it-visual-system main .tigers-feature > header :is(.summary, .meta, time),
+.it-visual-system main .tigers-roster-entry .roster-note {
+  color: #e1ecf8 !important;
+}
+.it-visual-system main .tigers-feature > header .eyebrow,
+.it-visual-system main .tigers-roster-entry .roster-kicker {
+  color: #f0cf81 !important;
+}
+.it-visual-system main .tigers-roster-entry > a {
+  color: #102b4b !important;
+}
+.it-visual-system main .tigers-roster-entry > a:focus-visible {
+  outline-color: #fffdf7 !important;
+}
