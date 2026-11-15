@@ -59,6 +59,16 @@ collections:
         sanitize_preview: true
         hint: 可切換視覺編輯、HTML 與即時預覽。含自訂樣式或嵌入內容時，請用 HTML 模式修改。
       - { name: cover_image, label: 封面圖片, widget: image, required: false }
+      - name: media_embeds
+        label: 影片／相簿連結
+        widget: list
+        required: false
+        collapsed: true
+        summary: '{{url}}'
+        hint: 貼上 YouTube、Vimeo、MP4、WebM、Flickr 或 Google Photos 公開連結。可播放的影片會嵌入文章；不支援直接播放的相簿會保留來源連結。
+        fields:
+          - { name: url, label: 公開媒體網址（HTTPS）, widget: string, required: true }
+          - { name: caption, label: 顯示名稱／說明, widget: string, required: false }
       - name: gallery_images
         label: 文章照片（可一次選取多張）
         widget: image
@@ -125,6 +135,16 @@ collections:
         modes: [raw, rich_text]
         hint: 舊文預設以 Markdown 原始碼開啟。若有自訂 HTML、嵌入內容或原圖屬性，請用原始碼修改並預覽。
       - { name: cover_image, label: 封面圖片, widget: image, required: false }
+      - name: media_embeds
+        label: 影片／相簿連結
+        widget: list
+        required: false
+        collapsed: true
+        summary: '{{url}}'
+        hint: 貼上 YouTube、Vimeo、MP4、WebM、Flickr 或 Google Photos 公開連結。可播放的影片會嵌入文章；不支援直接播放的相簿會保留來源連結。
+        fields:
+          - { name: url, label: 公開媒體網址（HTTPS）, widget: string, required: true }
+          - { name: caption, label: 顯示名稱／說明, widget: string, required: false }
       - name: gallery_images
         label: 文章照片（可一次選取多張）
         widget: image
