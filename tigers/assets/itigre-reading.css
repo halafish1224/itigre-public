@@ -136,6 +136,8 @@ html.itigre-skin body.tigers-reading :is(.hero-bottom>span,.tigers-feature>heade
 html.itigre-skin body.tigers-reading :is(.bottom>span,.facts span,.facts strong,.knowledge-series nav a span) { font-size: 18px !important; line-height: 1.85; }
 html.itigre-skin body.tigers-reading main>header { background: var(--vs-wash) !important; color: var(--vs-ink) !important; }
 html.itigre-skin body.tigers-reading main span:not(h1 span,h2 span,h3 span,h4 span,.metrics strong span,.hero-mark span,.hero-stamp span,.watermark) { font-size: max(18px,1em) !important; }
+html.itigre-skin body.tigers-reading .hero-visual .watermark { color: transparent !important; opacity: .32; }
+body.tigers-reading .hero-bottom { position: static; grid-column: 1/-1; padding-block: 1rem; flex-wrap: wrap; }
 @media(max-width:1050px) {
   body.tigers-reading .archive-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   body.tigers-reading .story-grid { grid-template-columns: minmax(0,1fr); }
