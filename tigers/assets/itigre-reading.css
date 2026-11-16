@@ -57,7 +57,7 @@ body.tigers-reading :is(.hero-copy h1,.hero-copy h1.long-name) { font-size: clam
 body.tigers-reading .hero-copy { padding-left: 30px; min-width: 0; }
 body.tigers-reading .hero-copy h1 span { font-size: clamp(24px,3vw,36px); }
 body.tigers-reading :is(.hero-deck,.nickname) { font-size: 24px; line-height: 1.65; }
-body.tigers-reading :is(.section-heading>p,.hero-years,.nameplate-top,.number-badge,.hero-bottom,.hero-credit,.visual-index,.eyebrow,.kicker,.player-number,.note,.pending,.record-pending,.rail-note,.rail-source,.reference-list li>div,.reference-list li a,.reference-list li p,.profile-facts span,.profile-facts strong,.metrics p,.metrics h3,.ledger-notes,.ledger-notes p,.data-note p,.timeline p,.timeline a,.timeline time,.timeline h4,.timeline-title>p,.timeline-foot p,.verification-tag,.collection-empty p,.collection-types span,.collection-toolbar,#gallery-count,.count span,.source-content,.source-index summary small,.family-note>div>p,.related-card p,figcaption,small) {
+body.tigers-reading :is(.section-heading>p,.hero-years,.nameplate-top,.number-badge,.hero-bottom,.hero-credit,.visual-index,.eyebrow,.kicker,.player-number,.note,.pending,.record-pending,.rail-note,.rail-source,.reference-list li>div,.reference-list li a,.reference-list li p,.profile-facts span,.profile-facts strong,.metrics p,.metrics h3,.ledger-notes,.ledger-notes p,.data-note p,.timeline p,.timeline a,.timeline time,.timeline h4,.timeline-title>p,.timeline-foot p,.verification-tag,.collection-empty p,.collection-types span,.collection-toolbar,.count span,.source-content,.source-index summary small,.family-note>div>p,.related-card p,figcaption,small) {
   font-size: 18px !important; line-height: 1.85 !important; letter-spacing: .015em;
 }
 body.tigers-reading :is(.hero-credit,.visual-index) { font-size: 16px !important; }
@@ -131,11 +131,9 @@ html.itigre-skin body.tigers-reading .season-roster li span { font-size: 18px !i
 /* CMS rebuilds emit raw tables before any optional enhancement runs. */
 body.tigers-reading .article-body>table { display: block; max-width: 100%; overflow-x: auto; }
 html.itigre-skin body.tigers-reading.cms-reading main .article-body :is(figure.tigers-reading-image,figure.tigers-illustration)>img { border: 0 !important; border-image: none !important; opacity: 1; }
-html.itigre-skin body.tigers-reading main a { font-size: max(18px,1em) !important; }
 html.itigre-skin body.tigers-reading :is(.hero-bottom>span,.tigers-feature>header .meta span,.museum-footer>span) { font-size: 18px !important; line-height: 1.85; }
 html.itigre-skin body.tigers-reading :is(.bottom>span,.facts span,.facts strong,.knowledge-series nav a span) { font-size: 18px !important; line-height: 1.85; }
 html.itigre-skin body.tigers-reading main>header { background: var(--vs-wash) !important; color: var(--vs-ink) !important; }
-html.itigre-skin body.tigers-reading main span:not(h1 span,h2 span,h3 span,h4 span,.metrics strong span,.hero-mark span,.hero-stamp span,.watermark) { font-size: max(18px,1em) !important; }
 html.itigre-skin body.tigers-reading .hero-visual .watermark { color: transparent !important; opacity: .32; }
 body.tigers-reading .hero-bottom { position: static; grid-column: 1/-1; padding-block: 1rem; flex-wrap: wrap; }
 @media(max-width:1050px) {
@@ -173,4 +171,208 @@ body.tigers-reading .hero-bottom { position: static; grid-column: 1/-1; padding-
   body.tigers-reading :is(.section-nav,.filters,.flip-toggle) { display: none; }
   body.tigers-reading .card-rotor { display: block; min-height: 0; transform: none !important; }
   body.tigers-reading .card-back { transform: none; display: block; }
+}
+
+/* Editorial rhythm: compact navigation, a browsable roster, measured exhibit pages. */
+html.itigre-skin body.tigers-reading {
+  font-family: "Noto Sans TC",system-ui,-apple-system,sans-serif;
+  font-size: 18px; line-height: 1.85; letter-spacing: .01em;
+}
+html.itigre-skin body.tigers-reading :is(.site-nav,.knowledge-navigation,.knowledge-related,.reading-rail,.section-nav,.masthead,.museum-footer,.topic-links) :is(a,span,p,li,strong,small,time,summary) {
+  font-size: 14px !important; line-height: 1.6 !important; letter-spacing: .015em;
+}
+html.itigre-skin body.tigers-reading :is(.site-nav,.section-nav,.topic-links) {
+  gap: 4px 20px; padding-block: 8px;
+}
+html.itigre-skin body.tigers-reading :is(.site-nav,.section-nav,.topic-links) a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  text-decoration: none; border-bottom: 1px solid transparent;
+}
+html.itigre-skin body.tigers-reading :is(.site-nav,.section-nav,.topic-links) a:hover {
+  border-bottom-color: var(--vs-deep); background: var(--vs-wash);
+}
+html.itigre-skin body.tigers-reading .knowledge-navigation { margin-block: 12px 20px; }
+html.itigre-skin body.tigers-reading .knowledge-breadcrumb { padding: 8px 12px; gap: 6px 12px; }
+html.itigre-skin body.tigers-reading .knowledge-series { padding: 14px 16px; margin-block: 8px; }
+html.itigre-skin body.tigers-reading .knowledge-series>div { gap: 4px 12px; }
+html.itigre-skin body.tigers-reading .knowledge-series nav { gap: 8px 20px; padding-block: 8px 0; }
+html.itigre-skin body.tigers-reading .knowledge-series nav a { padding: 8px 0; min-height: 44px; }
+html.itigre-skin body.tigers-reading .knowledge-series nav a span { font-size: 13px !important; }
+html.itigre-skin body.tigers-reading .knowledge-label { font-size: 11px !important; letter-spacing: .12em; }
+html.itigre-skin body.tigers-reading .knowledge-related { padding: 20px; margin-block: 28px; }
+html.itigre-skin body.tigers-reading .knowledge-related li { padding-block: 12px; gap: 12px; }
+html.itigre-skin body.tigers-reading .knowledge-related li p { margin-top: 4px; }
+html.itigre-skin body.tigers-reading .knowledge-related li p span { font-size: 12px !important; }
+html.itigre-skin body.tigers-reading .knowledge-related :is(h2,h3) { font-size: 22px !important; line-height: 1.4; }
+html.itigre-skin body.tigers-reading .tigers-roster-entry { padding: 20px 24px; gap: 12px 24px; margin-block: 24px; }
+html.itigre-skin body.tigers-reading .tigers-roster-entry .roster-copy span { font-size: 14px !important; line-height: 1.7 !important; }
+html.itigre-skin body.tigers-reading .tigers-roster-entry .roster-copy .roster-kicker { font-size: 11px !important; letter-spacing: .12em; }
+html.itigre-skin body.tigers-reading .tigers-roster-entry .roster-copy strong { font-size: 22px !important; line-height: 1.5; }
+html.itigre-skin body.tigers-reading .tigers-roster-entry>a { font-size: 15px !important; padding: 10px 16px; min-height: 44px; }
+html.itigre-skin body.tigers-reading .tigers-record-strip { margin-block: 20px 28px; padding: 16px; gap: 16px 28px; }
+html.itigre-skin body.tigers-reading .tigers-record-strip span { font-size: 13px !important; }
+
+/* The roster is an index, with two columns even on a narrow phone. */
+html.itigre-skin body.museum.tigers-reading .wrap { max-width: 1400px; padding: 12px clamp(14px,3vw,36px) 40px; }
+html.itigre-skin body.museum.tigers-reading .roster-hero { padding: 22px 24px; gap: 20px; margin-block: 12px; min-height: 0; }
+html.itigre-skin body.museum.tigers-reading .roster-hero .hero-copy { padding: 0; }
+html.itigre-skin body.museum.tigers-reading .roster-hero h1 { font-size: clamp(28px,3.6vw,46px); line-height: 1.35; letter-spacing: .04em; margin: 4px 0 10px; }
+html.itigre-skin body.museum.tigers-reading .roster-hero h1 br { display: none; }
+html.itigre-skin body.museum.tigers-reading .roster-hero h1 span { font-size: inherit !important; display: inline; margin-left: .4em; }
+html.itigre-skin body.museum.tigers-reading .roster-hero .hero-copy>p { font-size: 15px !important; line-height: 1.75 !important; max-width: 58em; margin: 0; }
+html.itigre-skin body.museum.tigers-reading .roster-hero .hero-copy>.eyebrow { font-size: 11px !important; letter-spacing: .13em; }
+html.itigre-skin body.museum.tigers-reading .roster-hero .count { display: flex; align-items: baseline; gap: 10px; margin-top: 10px; }
+html.itigre-skin body.museum.tigers-reading .roster-hero .count strong { font: 600 27px/1.2 Georgia,serif; margin: 0; }
+html.itigre-skin body.museum.tigers-reading .roster-hero .count span { font-size: 12px !important; line-height: 1.5 !important; }
+html.itigre-skin body.museum.tigers-reading .team-badge { width: 94px; padding: 8px; flex: none; border: 0; }
+html.itigre-skin body.museum.tigers-reading .roster-about { border-block: 1px solid var(--vs-line); margin-block: 12px; }
+html.itigre-skin body.museum.tigers-reading .roster-about>summary { font-size: 14px !important; line-height: 1.6; min-height: 44px; padding: 10px 0; cursor: pointer; }
+html.itigre-skin body.museum.tigers-reading .roster-about .intro { margin: 0 0 16px; max-width: 65em; }
+html.itigre-skin body.museum.tigers-reading .roster-about .intro p { font-size: 15px !important; line-height: 1.8 !important; margin: 8px 0; }
+html.itigre-skin body.museum.tigers-reading .wrap>figure.tigers-reading-image { display: none; }
+html.itigre-skin body.museum.tigers-reading .position-counts { margin: 12px 0; gap: 6px 14px; }
+html.itigre-skin body.museum.tigers-reading .position-counts span { font-size: 13px !important; line-height: 1.5 !important; padding: 4px 0; border: 0; }
+html.itigre-skin body.museum.tigers-reading .position-counts strong { margin-left: 5px; font-size: 14px; font-variant-numeric: tabular-nums; }
+html.itigre-skin body.museum.tigers-reading .filters { display: grid; grid-template-columns: 1fr 1fr minmax(160px,2fr) auto; gap: 8px 12px; padding: 12px 0; margin: 12px 0 18px; }
+html.itigre-skin body.museum.tigers-reading .filters label { font-size: 13px !important; line-height: 1.5; gap: 4px; }
+html.itigre-skin body.museum.tigers-reading .filters :is(input,select,button) { font-size: 14px !important; line-height: 1.4; min-height: 44px; padding: 8px 10px; width: 100%; }
+html.itigre-skin body.museum.tigers-reading #filter-count { grid-column: 1/-1; font-size: 12px !important; line-height: 1.5 !important; margin: 0; }
+html.itigre-skin body.museum.tigers-reading .archive-grid { grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; align-items: start; }
+html.itigre-skin body.museum.tigers-reading .archive-card { contain-intrinsic-size: 220px 272px; }
+html.itigre-skin body.museum.tigers-reading .card-rotor { min-height: 0; height: 272px; transition: transform .38s ease; }
+html.itigre-skin body.museum.tigers-reading .archive-card.is-flipped .card-rotor { height: 356px; }
+html.itigre-skin body.museum.tigers-reading :is(.card-front,.card-back) { padding: 14px; height: 100%; min-height: 0; border-width: 1px; border-radius: 5px; box-shadow: 0 2px 8px #29313508; overflow: auto; scrollbar-width: thin; }
+html.itigre-skin body.museum.tigers-reading .card-front { align-items: center; text-align: center; }
+html.itigre-skin body.museum.tigers-reading .card-front :is(.lobby-line-art,img[data-cms-portrait]) { width: 82px !important; height: 82px !important; min-height: 0; object-fit: contain; margin: 3px auto 6px; }
+html.itigre-skin body.museum.tigers-reading .tigers-cms-portrait-link { min-height: 0; }
+html.itigre-skin body.museum.tigers-reading .card-front h2 { font: 650 22px/1.35 "Noto Serif TC","Songti TC",serif; margin: 0 0 5px; }
+html.itigre-skin body.museum.tigers-reading .card-front h2 a { font-size: inherit !important; }
+html.itigre-skin body.museum.tigers-reading .card-back h3 { font-size: 20px !important; margin: 0 0 8px; }
+html.itigre-skin body.museum.tigers-reading :is(.card-front,.card-back) p { font-size: 14px !important; line-height: 1.6 !important; margin: 3px 0; }
+html.itigre-skin body.museum.tigers-reading :is(.card-front,.card-back) .eyebrow { font-size: 11px !important; letter-spacing: .09em; }
+html.itigre-skin body.museum.tigers-reading :is(.card-front,.card-back) :is(button,.read-link) { font-size: 13px !important; line-height: 1.4; min-height: 44px; padding: 8px 10px; }
+html.itigre-skin body.museum.tigers-reading .card-front .flip-toggle { align-self: stretch; margin-top: auto; }
+html.itigre-skin body.museum.tigers-reading .card-back .read-link { margin: 8px 0; }
+html.itigre-skin body.museum.tigers-reading .card-back .flip-toggle { margin-top: auto; }
+
+/* Individual profiles: a restrained masthead, portrait, numbers and reading column. */
+html.itigre-skin body.tigers-reading:not(.museum) .masthead { padding: 16px 5%; gap: 16px; }
+html.itigre-skin body.tigers-reading:not(.museum) .brand { font-size: 24px; letter-spacing: .1em; }
+html.itigre-skin body.tigers-reading:not(.museum) .brand span { font-size: 12px !important; margin-top: 3px; }
+html.itigre-skin body.tigers-reading:not(.museum) .section-nav { justify-content: flex-start; padding-inline: 5%; gap: 2px 24px; }
+html.itigre-skin body.tigers-reading:not(.museum) .portrait-section { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); min-height: 0; gap: 28px; padding-block: 30px; margin-inline: 6%; align-items: center; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-visual { min-height: 0; height: 370px; border-radius: 4px; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-visual .player-role-badge { width: 100%; height: 100%; padding: 42px 18px; inset: 0; transform: none; }
+html.itigre-skin body.tigers-reading:not(.museum) .visual-index { font-size: 11px !important; line-height: 1.6 !important; top: 12px; left: 12px; }
+html.itigre-skin body.tigers-reading:not(.museum) .visual-index b { font-size: inherit; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-credit { font-size: 11px !important; line-height: 1.6 !important; left: 12px; bottom: 10px; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-copy { padding: 0; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-copy>.eyebrow { font-size: 11px !important; line-height: 1.6 !important; letter-spacing: .12em; }
+html.itigre-skin body.tigers-reading:not(.museum) .nameplate-top { margin-top: 14px; gap: 12px; font-size: 13px !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .nameplate-top span { font-size: 13px !important; line-height: 1.5 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .nickname { font-size: 16px !important; line-height: 1.6 !important; letter-spacing: .16em; margin: 14px 0 4px; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-copy :is(h1,h1.long-name) { font-size: clamp(36px,4.2vw,58px); line-height: 1.25; letter-spacing: .07em; margin: 6px 0; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-copy h1 span { font-size: clamp(19px,2vw,25px) !important; margin-top: 8px; line-height: 1.45; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-years { font-size: 15px !important; line-height: 1.5 !important; margin-top: 12px; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-deck { font-size: 20px !important; line-height: 1.65 !important; margin-top: 16px; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-copy .hero-intro { font-size: 17px !important; line-height: 1.8 !important; margin-top: 12px; max-width: 34em; }
+html.itigre-skin body.tigers-reading:not(.museum) .text-link { font-size: 14px !important; min-height: 44px; margin-top: 12px; gap: 24px; padding-block: 8px; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-bottom { padding: 6px 0 0; gap: 10px; }
+html.itigre-skin body.tigers-reading:not(.museum) .hero-bottom span { font-size: 11px !important; line-height: 1.5 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .exhibition { padding-block: clamp(28px,4vw,48px); margin-inline: 6%; }
+html.itigre-skin body.tigers-reading:not(.museum) .section-heading { gap: 12px 28px; margin-bottom: 24px; }
+html.itigre-skin body.tigers-reading:not(.museum) .section-heading .eyebrow { font-size: 11px !important; line-height: 1.6 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .section-heading h2 { font-size: clamp(25px,2.5vw,33px); line-height: 1.5; margin-top: 8px; letter-spacing: .03em; }
+html.itigre-skin body.tigers-reading:not(.museum) .section-heading>p { font-size: 14px !important; line-height: 1.7 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .story-grid { grid-template-columns: minmax(0,1fr) minmax(220px,.42fr); gap: clamp(24px,3vw,40px); }
+html.itigre-skin body.tigers-reading:not(.museum) .narrative { max-width: 38em; }
+html.itigre-skin body.tigers-reading:not(.museum) .narrative :is(p,li),html.itigre-skin body.tigers-reading:not(.museum) .narrative .story :is(p,li) { font-size: 18px !important; line-height: 1.9 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .narrative :is(h3,h4) { font-size: 23px !important; line-height: 1.5; margin: 10px 0 14px; }
+html.itigre-skin body.tigers-reading:not(.museum) :is(.chapter-label,.metric-index,.profile-facts span) { font-size: 12px !important; line-height: 1.6 !important; letter-spacing: .06em; }
+html.itigre-skin body.tigers-reading:not(.museum) :is(.timeline p,.timeline a,.timeline time,.timeline h4,.timeline-title>p,.timeline-foot p,.verification-tag,.ledger-notes p,.reference-list li>div,.reference-list li a,.reference-list li p,.reference-list li>span,.collection-empty p,.collection-types span,.related-card p,.family-note>div>p,.data-note p) { font-size: 15px !important; line-height: 1.8 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) :is(.reading-rail,.timeline-panel,.curator-note,.family-note,.data-note) { padding: 20px; }
+html.itigre-skin body.tigers-reading:not(.museum) .metrics { margin-bottom: 24px; }
+html.itigre-skin body.tigers-reading:not(.museum) .metrics article { padding: 18px; }
+html.itigre-skin body.tigers-reading:not(.museum) .metrics strong { font-size: clamp(35px,4vw,54px); margin: 12px 0 8px; }
+html.itigre-skin body.tigers-reading:not(.museum) .metrics h3 { font-size: 15px !important; line-height: 1.6 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .metrics p { font-size: 14px !important; line-height: 1.7 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .ledger :is(td,th) { font-size: 15px !important; line-height: 1.6 !important; padding: 10px 12px; }
+html.itigre-skin body.tigers-reading:not(.museum) .ledger :is(button,.stat-year-tabs button) { font-size: 13px !important; min-height: 44px; }
+html.itigre-skin body.tigers-reading:not(.museum) .profile-facts { grid-template-columns: repeat(4,minmax(0,1fr)); }
+html.itigre-skin body.tigers-reading:not(.museum) .profile-facts>div { padding: 14px 18px; }
+html.itigre-skin body.tigers-reading:not(.museum) .profile-facts strong { font-size: 17px !important; line-height: 1.6 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .related-card { padding: 20px; }
+html.itigre-skin body.tigers-reading:not(.museum) .related-card h3 { font-size: 22px !important; margin-block: 8px; }
+html.itigre-skin body.tigers-reading:not(.museum) .related-card>span { font-size: 11px !important; line-height: 1.6 !important; }
+html.itigre-skin body.tigers-reading:not(.museum) .source-index summary { min-height: 48px; padding-block: 16px; }
+html.itigre-skin body.tigers-reading:not(.museum) .source-index summary span { font-size: 16px !important; line-height: 1.5 !important; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+  html.itigre-skin body.tigers-reading :is(.related-card,.tigers-roster-entry>a) { transition: transform .2s ease,box-shadow .2s ease; }
+  html.itigre-skin body.tigers-reading .related-card:hover { transform: translateY(-3px); box-shadow: 0 7px 20px #2931350c; }
+}
+@media(max-width:1099px) {
+  html.itigre-skin body.museum.tigers-reading .archive-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+}
+@media(max-width:899px) {
+  html.itigre-skin body.museum.tigers-reading .archive-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  html.itigre-skin body.tigers-reading:not(.museum) .story-grid { grid-template-columns: minmax(0,1fr); }
+  html.itigre-skin body.tigers-reading:not(.museum) .reading-rail { position: static; }
+}
+@media(max-width:600px) {
+  html.itigre-skin body.museum.tigers-reading .archive-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  html.itigre-skin body.museum.tigers-reading .roster-hero { padding: 16px; }
+  html.itigre-skin body.museum.tigers-reading .roster-hero .hero-copy>p:not(.eyebrow) { font-size: 14px !important; }
+  html.itigre-skin body.museum.tigers-reading .roster-hero .count span { font-size: 11px !important; }
+  html.itigre-skin body.museum.tigers-reading .topic-links { gap: 2px 16px; }
+  html.itigre-skin body.museum.tigers-reading .topic-links a { font-size: 13px !important; min-height: 38px; }
+  html.itigre-skin body.museum.tigers-reading .filters { grid-template-columns: 1fr 1fr; }
+  html.itigre-skin body.museum.tigers-reading .filters :is(.search-label,#filter-reset) { min-width: 0; }
+  html.itigre-skin body.museum.tigers-reading :is(.card-front,.card-back) { padding: 11px; }
+  html.itigre-skin body.museum.tigers-reading .card-rotor { height: 258px; }
+  html.itigre-skin body.museum.tigers-reading .card-front h2 { font-size: 20px; }
+  html.itigre-skin body.tigers-reading:not(.museum) .portrait-section { grid-template-columns: minmax(0,1fr); gap: 18px; padding-block: 20px; }
+  html.itigre-skin body.tigers-reading:not(.museum) .hero-visual { height: 220px; }
+  html.itigre-skin body.tigers-reading:not(.museum) .hero-visual .player-role-badge { padding: 26px 12px; }
+  html.itigre-skin body.tigers-reading:not(.museum) .hero-copy { padding: 0; }
+  html.itigre-skin body.tigers-reading:not(.museum) .hero-copy h1 { font-size: 38px; }
+  html.itigre-skin body.tigers-reading:not(.museum) .hero-deck br { display: none; }
+  html.itigre-skin body.tigers-reading:not(.museum) .section-nav { position: static; gap: 0 18px; padding-block: 4px; }
+  html.itigre-skin body.tigers-reading:not(.museum) .section-nav a { font-size: 13px !important; min-height: 40px; }
+  html.itigre-skin body.tigers-reading:not(.museum) .profile-facts { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  html.itigre-skin body.tigers-reading:not(.museum) .metrics article { padding: 14px; }
+  html.itigre-skin body.tigers-reading:not(.museum) .metrics strong { font-size: 38px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html.itigre-skin body.tigers-reading :is(.card-rotor,.related-card,.tigers-roster-entry>a) { transition: none !important; transform: none; }
+  html.itigre-skin body.tigers-reading .is-flipped .card-rotor { transform: rotateY(180deg); }
+}
+
+html.itigre-skin body.tigers-reading #gallery-count { font-size: 14px !important; line-height: 1.6 !important; }
+html.itigre-skin body.museum.tigers-reading .wrap>nav:not(.topic-links) { gap: 2px 16px; padding: 4px 0; }
+html.itigre-skin body.museum.tigers-reading .wrap>nav:not(.topic-links) a { font-size: 14px !important; line-height: 1.5; min-height: 40px; display: inline-flex; align-items: center; }
+
+html.itigre-skin body.museum.tigers-reading .roster-topics { margin-block: 8px; border-bottom: 1px solid var(--vs-line); }
+html.itigre-skin body.museum.tigers-reading .roster-topics>summary { min-height: 44px; padding: 10px 0; font-size: 14px !important; line-height: 1.6; cursor: pointer; }
+
+html.itigre-skin body.tigers-reading main .knowledge-navigation.knowledge-navigation--static :is(span,p,li,strong,small,time,a) { font-size: 14px !important; line-height: 1.6 !important; }
+html.itigre-skin body.tigers-reading main .knowledge-navigation.knowledge-navigation--static .knowledge-label { font-size: 11px !important; letter-spacing: .1em; }
+html.itigre-skin body.tigers-reading .knowledge-breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+html.itigre-skin body.tigers-reading .knowledge-breadcrumb .knowledge-label { flex-basis: 100%; }
+html.itigre-skin body.tigers-reading .knowledge-series>div { display: flex; flex-wrap: wrap; align-items: baseline; }
+html.itigre-skin body.tigers-reading .knowledge-series nav { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+html.itigre-skin body.tigers-reading .knowledge-series nav :is(a,.is-disabled) { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 3px; min-width: 0; min-height: 44px; padding: 8px; }
+html.itigre-skin body.tigers-reading .knowledge-series nav a span { display: block; white-space: normal; overflow-wrap: anywhere; text-overflow: clip; max-width: 100%; }
+html.itigre-skin body.tigers-reading .site-nav a { border: 0 !important; background: transparent !important; box-shadow: none !important; padding: 4px 8px; }
+html.itigre-skin body.tigers-reading .knowledge-breadcrumb { background: transparent !important; border: 0; border-bottom: 1px solid var(--vs-line); padding-inline: 0; }
+html.itigre-skin body.tigers-reading .knowledge-series { background: var(--vs-paper) !important; border: 1px solid var(--vs-line) !important; border-radius: 3px; box-shadow: none; }
+html.itigre-skin body.tigers-reading .knowledge-series nav :is(a,.is-disabled) { border: 0; background: transparent !important; }
+html.itigre-skin body.tigers-reading .knowledge-series nav a span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+html.itigre-skin body.tigers-reading .knowledge-series nav .is-disabled { opacity: .55; }
+html.itigre-skin body.museum.tigers-reading .wrap>nav:not(.topic-links) a,
+html.itigre-skin body.museum.tigers-reading .topic-links a,
+html.itigre-skin body.tigers-reading:not(.museum) .section-nav a { min-height: 44px; }
+@media print {
+  html.itigre-skin body.museum.tigers-reading .card-rotor,
+  html.itigre-skin body.museum.tigers-reading .archive-card.is-flipped .card-rotor { height: auto; }
+  html.itigre-skin body.museum.tigers-reading :is(.card-front,.card-back) { height: auto; overflow: visible; }
 }
