@@ -1,20 +1,19 @@
 /* Pattern stays outside solid reading surfaces; palette pairs are contrast-tested. */
 html.itigre-skin {
-  --vs-cloth:#955636; --vs-deep:#693720; --vs-wash:#f4e8dc; --vs-marker:rgba(224,163,61,.34);
-  --vs-ink:#293135; --vs-muted:#596064; --vs-paper:#fffdf7; --vs-line:#d5d6cc;
-  --motif:#fff8e947; --motif-soft:#fff8e924;
-  --pattern:radial-gradient(circle at 50% 50%,transparent 20px,var(--motif) 20px 21px,transparent 21px),radial-gradient(circle at 0 0,transparent 20px,var(--motif) 20px 21px,transparent 21px);
-  --pattern-size:42px 42px;
+  --vs-cloth:#243f54; --vs-deep:#17364a; --vs-wash:#edf1f2; --vs-marker:rgba(157,186,190,.30);
+  --vs-ink:#263237; --vs-muted:#526064; --vs-paper:#fffdf7; --vs-line:#d1d8d6;
+  --pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f5eedf%22%20stroke-opacity%3D%22.16%22%20stroke-width%3D%22.8%22%3E%3Ccircle%20cx%3D%220%22%20cy%3D%2224%22%20r%3D%2224%22%2F%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%2224%22%20r%3D%2224%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%220%22%20r%3D%2224%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2248%22%20r%3D%2224%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); --pattern-size:48px 48px;
   --cloth:var(--vs-cloth); --cloth-deep:var(--vs-deep); --wash:var(--vs-wash);
   --reading-ink:var(--vs-ink); --reading-muted:var(--vs-muted); --reading-heading:var(--vs-deep); --reading-link:var(--vs-deep);
   --ink:var(--vs-ink); --muted:var(--vs-muted); --line:var(--vs-line); --paper:var(--vs-paper); --white:var(--vs-paper);
 }
-html.itigre-skin[data-cloth="seigaiha"] { --vs-cloth:#46677c; --vs-deep:#294b61; --vs-wash:#e8eff2; --vs-marker:rgba(88,171,203,.29); --pattern:radial-gradient(circle at 50% 100%,transparent 5px,var(--motif) 5px 6px,transparent 6px 11px,var(--motif) 11px 12px,transparent 12px 18px,var(--motif) 18px 19px,transparent 19px); --pattern-size:38px 22px; }
-html.itigre-skin[data-cloth="ichimatsu"] { --vs-cloth:#6c7677; --vs-deep:#3e5053; --vs-wash:#e9eded; --vs-marker:rgba(113,172,158,.31); --pattern:conic-gradient(var(--motif-soft) 25%,transparent 0 50%,var(--motif-soft) 0 75%,transparent 0); --pattern-size:28px 28px; }
-html.itigre-skin[data-cloth="yagasuri"] { --vs-cloth:#596e51; --vs-deep:#354c30; --vs-wash:#eaf0e4; --vs-marker:rgba(158,185,81,.33); --pattern:linear-gradient(135deg,var(--motif) 25%,transparent 25%),linear-gradient(225deg,var(--motif) 25%,transparent 25%),linear-gradient(45deg,var(--motif-soft) 25%,transparent 25%),linear-gradient(315deg,var(--motif-soft) 25%,transparent 25%); --pattern-size:24px 44px; }
-html.itigre-skin[data-cloth="asanoha"] { --vs-cloth:#a05945; --vs-deep:#743c30; --vs-wash:#f5e9e2; --vs-marker:rgba(228,145,114,.32); --pattern:repeating-linear-gradient(60deg,transparent 0 23px,var(--motif) 23px 24px),repeating-linear-gradient(-60deg,transparent 0 23px,var(--motif) 23px 24px),repeating-linear-gradient(0deg,transparent 0 23px,var(--motif) 23px 24px); --pattern-size:48px 28px; }
-html.itigre-skin[data-cloth="tatewaku"] { --vs-cloth:#7d6681; --vs-deep:#59425e; --vs-wash:#f0e9f2; --vs-marker:rgba(181,147,205,.32); --pattern:radial-gradient(ellipse at 0 50%,transparent 14px,var(--motif) 14px 15px,transparent 15px),radial-gradient(ellipse at 100% 0,transparent 14px,var(--motif) 14px 15px,transparent 15px); --pattern-size:38px 42px; }
-html.itigre-skin[data-cloth="shima"] { --vs-cloth:#454d51; --vs-deep:#303e45; --vs-wash:#e9edef; --vs-marker:rgba(119,167,183,.30); --pattern:repeating-linear-gradient(90deg,transparent 0 9px,var(--motif) 9px 10px,transparent 10px 13px,var(--motif-soft) 13px 14px); --pattern-size:28px 28px; }
+html.itigre-skin[data-cloth="shippo"] { --vs-cloth:#243f54; --vs-deep:#17364a; --vs-wash:#edf1f2; --vs-marker:rgba(157,186,190,.30); --pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f5eedf%22%20stroke-opacity%3D%22.16%22%20stroke-width%3D%22.8%22%3E%3Ccircle%20cx%3D%220%22%20cy%3D%2224%22%20r%3D%2224%22%2F%3E%3Ccircle%20cx%3D%2248%22%20cy%3D%2224%22%20r%3D%2224%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%220%22%20r%3D%2224%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2248%22%20r%3D%2224%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); --pattern-size:48px 48px; }
+html.itigre-skin[data-cloth="seigaiha"] { --vs-cloth:#254f64; --vs-deep:#173e52; --vs-wash:#eaf1f3; --vs-marker:rgba(126,180,196,.29); --pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f5eedf%22%20stroke-opacity%3D%22.16%22%20stroke-width%3D%22.8%22%3E%3Cpath%20d%3D%22M0%2032a32%2032%200%200%201%2064%200%22%2F%3E%3Cpath%20d%3D%22M8%2032a24%2024%200%200%201%2048%200%22%2F%3E%3Cpath%20d%3D%22M16%2032a16%2016%200%200%201%2032%200%22%2F%3E%3Cpath%20d%3D%22M24%2032a8%208%200%200%201%2016%200%22%2F%3E%3Cpath%20d%3D%22M-32%2064a32%2032%200%200%201%2064%200%22%2F%3E%3Cpath%20d%3D%22M-24%2064a24%2024%200%200%201%2048%200%22%2F%3E%3Cpath%20d%3D%22M-16%2064a16%2016%200%200%201%2032%200%22%2F%3E%3Cpath%20d%3D%22M-8%2064a8%208%200%200%201%2016%200%22%2F%3E%3Cpath%20d%3D%22M32%2064a32%2032%200%200%201%2064%200%22%2F%3E%3Cpath%20d%3D%22M40%2064a24%2024%200%200%201%2048%200%22%2F%3E%3Cpath%20d%3D%22M48%2064a16%2016%200%200%201%2032%200%22%2F%3E%3Cpath%20d%3D%22M56%2064a8%208%200%200%201%2016%200%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); --pattern-size:64px 64px; }
+html.itigre-skin[data-cloth="ichimatsu"] { --vs-cloth:#40594f; --vs-deep:#2b483d; --vs-wash:#edf2ec; --vs-marker:rgba(158,182,151,.30); --pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%23f5eedf%22%20fill-opacity%3D%22.09%22%20d%3D%22M0%200h16v16H0zM16%2016h16v16H16z%22%2F%3E%3C%2Fsvg%3E"); --pattern-size:32px 32px; }
+html.itigre-skin[data-cloth="yagasuri"] { --vs-cloth:#61516c; --vs-deep:#493751; --vs-wash:#f1edf2; --vs-marker:rgba(184,156,191,.28); --pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2264%22%20viewBox%3D%220%200%2032%2064%22%3E%3Cg%20fill%3D%22%23f5eedf%22%20fill-opacity%3D%22.12%22%3E%3Cpath%20d%3D%22M0%200l16%2010L32%200v12L16%2022%200%2012zM0%2032l16%2010%2016-10v12L16%2054%200%2044z%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M16%200v64%22%20stroke%3D%22%23f5eedf%22%20stroke-opacity%3D%22.13%22%20stroke-width%3D%22.7%22%2F%3E%3C%2Fsvg%3E"); --pattern-size:32px 64px; }
+html.itigre-skin[data-cloth="asanoha"] { --vs-cloth:#793f43; --vs-deep:#5d2c33; --vs-wash:#f5edeb; --vs-marker:rgba(202,157,140,.29); --pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2284%22%20height%3D%2248.497%22%20viewBox%3D%220%200%2084%2048.497%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f5eedf%22%20stroke-opacity%3D%22.16%22%20stroke-width%3D%22.8%22%3E%3Cpath%20d%3D%22M28.00%2024.25L14.00%2048.50L-14.00%2048.50L-28.00%2024.25L-14.00%20-0.00L14.00%20-0.00Z%22%2F%3E%3Cpath%20d%3D%22M0%2024.2487L28.00%2024.25M0%2024.2487L21.00%2036.37%22%2F%3E%3Cpath%20d%3D%22M0%2024.2487L14.00%2048.50M0%2024.2487L0.00%2048.50%22%2F%3E%3Cpath%20d%3D%22M0%2024.2487L-14.00%2048.50M0%2024.2487L-21.00%2036.37%22%2F%3E%3Cpath%20d%3D%22M0%2024.2487L-28.00%2024.25M0%2024.2487L-21.00%2012.12%22%2F%3E%3Cpath%20d%3D%22M0%2024.2487L-14.00%20-0.00M0%2024.2487L-0.00%20-0.00%22%2F%3E%3Cpath%20d%3D%22M0%2024.2487L14.00%20-0.00M0%2024.2487L21.00%2012.12%22%2F%3E%3Cpath%20d%3D%22M70.00%200.00L56.00%2024.25L28.00%2024.25L14.00%200.00L28.00%20-24.25L56.00%20-24.25Z%22%2F%3E%3Cpath%20d%3D%22M42%200L70.00%200.00M42%200L63.00%2012.12%22%2F%3E%3Cpath%20d%3D%22M42%200L56.00%2024.25M42%200L42.00%2024.25%22%2F%3E%3Cpath%20d%3D%22M42%200L28.00%2024.25M42%200L21.00%2012.12%22%2F%3E%3Cpath%20d%3D%22M42%200L14.00%200.00M42%200L21.00%20-12.12%22%2F%3E%3Cpath%20d%3D%22M42%200L28.00%20-24.25M42%200L42.00%20-24.25%22%2F%3E%3Cpath%20d%3D%22M42%200L56.00%20-24.25M42%200L63.00%20-12.12%22%2F%3E%3Cpath%20d%3D%22M70.00%2048.50L56.00%2072.75L28.00%2072.75L14.00%2048.50L28.00%2024.25L56.00%2024.25Z%22%2F%3E%3Cpath%20d%3D%22M42%2048.4974L70.00%2048.50M42%2048.4974L63.00%2060.62%22%2F%3E%3Cpath%20d%3D%22M42%2048.4974L56.00%2072.75M42%2048.4974L42.00%2072.75%22%2F%3E%3Cpath%20d%3D%22M42%2048.4974L28.00%2072.75M42%2048.4974L21.00%2060.62%22%2F%3E%3Cpath%20d%3D%22M42%2048.4974L14.00%2048.50M42%2048.4974L21.00%2036.37%22%2F%3E%3Cpath%20d%3D%22M42%2048.4974L28.00%2024.25M42%2048.4974L42.00%2024.25%22%2F%3E%3Cpath%20d%3D%22M42%2048.4974L56.00%2024.25M42%2048.4974L63.00%2036.37%22%2F%3E%3Cpath%20d%3D%22M112.00%2024.25L98.00%2048.50L70.00%2048.50L56.00%2024.25L70.00%20-0.00L98.00%20-0.00Z%22%2F%3E%3Cpath%20d%3D%22M84%2024.2487L112.00%2024.25M84%2024.2487L105.00%2036.37%22%2F%3E%3Cpath%20d%3D%22M84%2024.2487L98.00%2048.50M84%2024.2487L84.00%2048.50%22%2F%3E%3Cpath%20d%3D%22M84%2024.2487L70.00%2048.50M84%2024.2487L63.00%2036.37%22%2F%3E%3Cpath%20d%3D%22M84%2024.2487L56.00%2024.25M84%2024.2487L63.00%2012.12%22%2F%3E%3Cpath%20d%3D%22M84%2024.2487L70.00%20-0.00M84%2024.2487L84.00%20-0.00%22%2F%3E%3Cpath%20d%3D%22M84%2024.2487L98.00%20-0.00M84%2024.2487L105.00%2012.12%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); --pattern-size:84px 48.497px; }
+html.itigre-skin[data-cloth="tatewaku"] { --vs-cloth:#52686d; --vs-deep:#304b53; --vs-wash:#ecf2f1; --vs-marker:rgba(146,184,174,.28); --pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2296%22%20viewBox%3D%220%200%2048%2096%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f5eedf%22%20stroke-opacity%3D%22.16%22%20stroke-width%3D%22.8%22%3E%3Cpath%20d%3D%22M12%200C4%2016%204%2032%2012%2048S20%2080%2012%2096M36%200C44%2016%2044%2032%2036%2048S28%2080%2036%2096%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); --pattern-size:48px 96px; }
+html.itigre-skin[data-cloth="shima"] { --vs-cloth:#61513f; --vs-deep:#483a29; --vs-wash:#f3efe7; --vs-marker:rgba(190,172,132,.30); --pattern:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2248%22%20viewBox%3D%220%200%2040%2048%22%3E%3Cpath%20d%3D%22M4%200v48M8%200v48M20%200v48M28%200v48%22%20stroke%3D%22%23f5eedf%22%20stroke-opacity%3D%22.14%22%20stroke-width%3D%22.8%22%2F%3E%3C%2Fsvg%3E"); --pattern-size:40px 48px; }
 html.itigre-skin body.it-visual-system {
   margin:0; padding:clamp(.5rem,2vw,1.5rem); background-color:var(--vs-cloth)!important;
   background-image:var(--pattern)!important; background-size:var(--pattern-size)!important;
@@ -118,21 +117,273 @@ body.cms-reading.it-visual-system main article .it-gallery figure:nth-child(even
 .it-visual-system main .tigers-roster-entry {
   background-color: #0b1f36;
 }
-.it-visual-system main .tigers-feature > header :is(h1, .meta span),
-.it-visual-system main .tigers-roster-entry strong {
-  color: #fffdf7 !important;
+
+/* Textile and editorial art direction: geometry outside, quiet paper within. */
+html.itigre-skin body.it-visual-system {
+  background-attachment: fixed; background-position: center top;
+  font-feature-settings: "palt" 1; letter-spacing: .01em;
 }
-.it-visual-system main .tigers-feature > header :is(.summary, .meta, time),
-.it-visual-system main .tigers-roster-entry .roster-note {
-  color: #e1ecf8 !important;
+html.itigre-skin body.it-visual-system>main {
+  box-shadow: 0 8px 32px #13222c16; border-radius: 2px;
 }
-.it-visual-system main .tigers-feature > header .eyebrow,
-.it-visual-system main .tigers-roster-entry .roster-kicker {
-  color: #f0cf81 !important;
+html.itigre-skin body.it-visual-system main :is(h1,h2,h3,h4) {
+  overflow-wrap: anywhere; word-break: normal;
 }
-.it-visual-system main .tigers-roster-entry > a {
-  color: #102b4b !important;
+html.itigre-skin body.it-visual-system main :is(.knowledge-navigation,.knowledge-series,.knowledge-related,.site-nav,.section-nav,.related-grid) { min-width: 0; max-width: 100%; }
+html.itigre-skin body.it-visual-system main :is(.knowledge-series nav,.knowledge-related li,.related-card)>* { min-width: 0; }
+html.itigre-skin body.it-visual-system main :is(.knowledge-series,.knowledge-related,.source-index) :is(a,span,p) { overflow-wrap: anywhere; }
+
+/* The Tigers opening reads like a magazine spread, with its existing artwork. */
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature {
+  display: grid; grid-template-columns: minmax(0,1.25fr) minmax(240px,.75fr);
+  column-gap: clamp(20px,3vw,42px); align-items: start;
+  background: var(--vs-paper) !important; box-shadow: none; overflow: visible;
 }
-.it-visual-system main .tigers-roster-entry > a:focus-visible {
-  outline-color: #fffdf7 !important;
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>* { grid-column: 1/-1; min-width: 0; }
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header {
+  grid-column: 1; grid-row: 1; display: block; min-height: 0 !important;
+  padding: clamp(24px,4vw,48px) 0 24px clamp(20px,4vw,44px);
+  background: var(--vs-paper) !important; border: 0; box-shadow: none !important;
+  isolation: auto; overflow: visible;
 }
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header::before,
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header::after { display: none; }
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header .eyebrow {
+  font: 600 11px/1.6 system-ui,sans-serif !important; letter-spacing: .16em;
+  margin: 0 0 16px; color: var(--vs-deep) !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header h1 {
+  max-width: 13em; margin: 0 0 20px;
+  font: 650 clamp(30px,3.5vw,48px)/1.35 "Noto Serif TC","Songti TC","PMingLiU",serif;
+  letter-spacing: -.025em; text-wrap: balance; color: var(--vs-deep) !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header .summary {
+  font-size: 1rem !important; line-height: 1.85 !important;
+  letter-spacing: .01em; margin: 0; max-width: 35em; color: var(--vs-ink) !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header .meta,
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header .meta :is(time,span) {
+  font-size: 12px !important; line-height: 1.6 !important; color: var(--vs-muted) !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header .meta { margin-top: 20px; gap: 8px 16px; flex-wrap: wrap; }
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>figure.itigre-tigers-cover {
+  grid-column: 2; grid-row: 1; align-self: center; justify-self: center;
+  width: calc(100% - 32px); max-width: 330px;
+  margin: 28px 24px 24px 0; padding: 8px;
+  transform: none; background: var(--vs-paper); box-shadow: none;
+}
+html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>figure.itigre-tigers-cover::before { display: none; }
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-roster-entry {
+  margin: 8px clamp(16px,3vw,36px) 20px; padding: 20px 24px;
+  border: 1px solid var(--vs-line); border-left: 3px solid var(--vs-deep);
+  border-radius: 0; background: var(--vs-wash) !important;
+  display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 18px;
+}
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-roster-entry>a {
+  color: var(--vs-paper) !important; background: var(--vs-deep) !important;
+  border: 1px solid var(--vs-deep); border-radius: 2px; font-size: 14px !important;
+  min-height: 44px; padding: 10px 16px; text-decoration: none;
+}
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-roster-entry>a:is(:hover,:focus-visible) { box-shadow: 0 0 0 3px var(--vs-paper),0 0 0 4px var(--vs-deep); }
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-roster-entry .roster-copy strong { font-size: 21px !important; line-height: 1.5; }
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-roster-entry .roster-copy :is(.roster-note,.roster-kicker) { color: var(--vs-ink) !important; }
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip {
+  display: grid; grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 0; margin: 0 clamp(16px,3vw,36px) 24px; padding: 0;
+  background: var(--vs-paper) !important; border-block: 1px solid var(--vs-line);
+}
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip>div {
+  min-height: 0; padding: 16px 20px; background: transparent; border: 0; border-right: 1px solid var(--vs-line);
+}
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip>div:last-child { border-right: 0; }
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip strong { color: var(--vs-deep) !important; font: 550 30px/1.3 Georgia,serif; }
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip span { color: var(--vs-muted) !important; font-size: 12px !important; line-height: 1.6 !important; }
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-feature>.article-body {
+  width: 100%; max-width: 40em; margin-inline: auto; padding: 8px clamp(18px,3vw,36px) 24px;
+}
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-feature>.article-body :is(p,li) {
+  font-size: 1rem !important; line-height: 1.85 !important; color: var(--vs-ink) !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-feature>.article-body h2 {
+  margin: 42px 0 18px; padding: 0 0 12px; border: 0; border-bottom: 1px solid var(--vs-line);
+  font: 650 clamp(24px,2.4vw,30px)/1.5 "Noto Serif TC","Songti TC",serif; letter-spacing: .025em;
+}
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-feature>.article-body :is(th,td) {
+  font-size: 16px !important; line-height: 1.75 !important; padding: 12px 14px;
+  color: var(--vs-ink) !important; background-color: var(--vs-paper);
+}
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-feature>.article-body th { background: var(--vs-wash); }
+html.itigre-skin body.it-visual-system.tigers-reading .tigers-feature>.article-body a:not(.it-legacy-edit-link,.it-inline-edit) {
+  color: var(--vs-deep) !important; text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: .2em; overflow-wrap: anywhere;
+}
+
+/* The compact roster gets quiet ink rules and a consistent baseline. */
+html.itigre-skin body.it-visual-system.museum.tigers-reading .roster-hero {
+  background: var(--vs-paper) !important; border-block: 1px solid var(--vs-line);
+  border-bottom: 2px solid var(--vs-deep); padding: 24px 0; border-radius: 0;
+}
+html.itigre-skin body.it-visual-system.museum.tigers-reading .roster-hero h1 { font-weight: 600; letter-spacing: .025em; }
+html.itigre-skin body.it-visual-system.museum.tigers-reading .roster-hero .hero-copy>.eyebrow {
+  font-size: 11px !important; color: var(--vs-muted) !important; letter-spacing: .16em;
+}
+html.itigre-skin body.it-visual-system.museum.tigers-reading :is(.roster-about,.roster-topics)>summary {
+  color: var(--vs-ink) !important; font-size: 14px !important; font-weight: 500;
+}
+html.itigre-skin body.it-visual-system.museum.tigers-reading :is(.card-front,.card-back) {
+  border: 1px solid var(--vs-line); border-radius: 3px; box-shadow: none;
+  background: var(--vs-paper) !important; color: var(--vs-ink) !important;
+}
+html.itigre-skin body.it-visual-system.museum.tigers-reading .card-front h2 {
+  font-weight: 650; letter-spacing: .025em; color: var(--vs-deep) !important;
+}
+html.itigre-skin body.it-visual-system.museum.tigers-reading .card-front .eyebrow { color: var(--vs-muted) !important; }
+html.itigre-skin body.it-visual-system.museum.tigers-reading .card-back { background: var(--vs-wash) !important; }
+html.itigre-skin body.it-visual-system.museum.tigers-reading .card-front .flip-toggle {
+  border-color: var(--vs-line); color: var(--vs-deep) !important; background: var(--vs-wash) !important;
+}
+html.itigre-skin body.it-visual-system.museum.tigers-reading .card-front .flip-toggle:hover {
+  color: var(--vs-paper) !important; background: var(--vs-deep) !important;
+}
+html.itigre-skin body.it-visual-system.museum.tigers-reading :is(.card-front,.card-back) :is(p,button) { overflow-wrap: anywhere; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+  html.itigre-skin body.it-visual-system.museum.tigers-reading .archive-card { transition: translate .2s ease; }
+  html.itigre-skin body.it-visual-system.museum.tigers-reading .archive-card:hover { translate: 0 -3px; }
+  html.itigre-skin body.it-visual-system.museum.tigers-reading .archive-card:hover :is(.card-front,.card-back) { border-color: var(--vs-deep); }
+}
+@media(max-width:700px) {
+  html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature { grid-template-columns: minmax(0,1fr); gap: 0; }
+  html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header {
+    grid-column: 1; grid-row: auto; padding: 28px 20px 18px;
+  }
+  html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header h1 { font-size: 31px; line-height: 1.4; margin-bottom: 16px; }
+  html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>header .summary { font-size: 1rem !important; }
+  html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature>figure.itigre-tigers-cover {
+    grid-column: 1; grid-row: auto; width: min(68%,280px); margin: 12px auto 24px;
+  }
+  html.itigre-skin body.it-visual-system.tigers-reading .tigers-roster-entry {
+    grid-template-columns: minmax(0,1fr); padding: 18px; gap: 12px;
+  }
+  html.itigre-skin body.it-visual-system.tigers-reading .tigers-roster-entry>a { justify-self: start; white-space: normal; }
+  html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip>div { padding: 14px 16px; border-bottom: 1px solid var(--vs-line); }
+  html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip>div:nth-child(even) { border-right: 0; }
+  html.itigre-skin body.it-visual-system.tigers-reading .tigers-record-strip>div:nth-last-child(-n+2) { border-bottom: 0; }
+  html.itigre-skin body.it-visual-system.tigers-reading .tigers-feature>.article-body :is(p,li) { font-size: 1rem !important; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html.itigre-skin body.it-visual-system.museum.tigers-reading .archive-card { transition: none; translate: none; }
+}
+@media print {
+  html.itigre-skin body.it-visual-system.tigers-reading article.tigers-feature { display: block; }
+}
+/* Disabled navigation remains legible without suggesting another destination. */
+html.itigre-skin body.it-visual-system.tigers-reading .knowledge-series nav .is-disabled {
+  color: var(--vs-muted) !important; opacity: 1; cursor: default;
+}
+html.itigre-skin body.it-visual-system.tigers-reading :is(h1,h2,h3,.article-body) { line-break: strict; }
+@media(max-width:700px) { html.itigre-skin body.it-visual-system { background-attachment: scroll; } }
+
+
+/* 12pt reading baseline: 1rem equals 16px at the default browser setting.
+   Rem units retain the reader's preferred root size and browser zoom. */
+html.itigre-skin {
+  --it-type-body: 1rem; --it-type-note: .875rem;
+  --it-type-caption: .8125rem; --it-type-label: .6875rem;
+}
+html.itigre-skin body.it-visual-system { font-size: var(--it-type-body); }
+html.itigre-skin body.it-visual-system main :is(.article-body,.body,.journal-body,.post-body,.body-text) :is(p,li) {
+  font-size: var(--it-type-body) !important; line-height: 1.85 !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.article-body,.narrative,.narrative .story,.tigers-cms-additions) :is(p,li) {
+  font-size: var(--it-type-body) !important; line-height: 1.85 !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.article-body,.narrative,.tigers-cms-additions) :is(strong,b,mark) {
+  font-size: inherit !important; font-weight: 700;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.hero-intro,.hero-copy .hero-intro,.tigers-feature>header .summary) {
+  font-size: var(--it-type-body) !important; line-height: 1.85 !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.tigers-feature>header h1,.roster-hero h1,.hero-copy h1,.hero-copy h1.long-name) {
+  font-size: clamp(1.75rem,3.2vw,2.5rem); line-height: 1.4; letter-spacing: .025em;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main .hero-copy h1 span {
+  font-size: 1.125rem !important; line-height: 1.5;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main .roster-hero h1 span { font-size: inherit !important; }
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.article-body h2,.section-heading h2,.tigers-cms-additions h2) {
+  font-size: 1.5rem; line-height: 1.5; letter-spacing: .02em;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.article-body h3,.narrative h3,.narrative h4,.tigers-cms-additions h3) {
+  font-size: 1.125rem !important; line-height: 1.6;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.card-front h2,.card-front h2 a,.card-back h3) {
+  font-size: 1.25rem !important; line-height: 1.4;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.timeline p,.timeline a,.timeline time,.timeline h4,.timeline-title>p,.timeline-foot p,.ledger-notes p,.reference-list li>div,.reference-list li a,.reference-list li p,.reference-list li>span,.collection-empty p,.related-card p,.family-note>div>p,.data-note p) {
+  font-size: var(--it-type-note) !important; line-height: 1.8 !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(.article-body,.ledger,.table-scroll) :is(td,th) {
+  font-size: var(--it-type-body) !important; line-height: 1.7 !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main :is(figcaption,.tigers-cms-credit,.cms-source) {
+  font-size: var(--it-type-caption) !important; line-height: 1.8 !important;
+}
+html.itigre-skin body.it-visual-system.tigers-reading main .hero-deck {
+  font-size: 1.125rem !important; line-height: 1.75 !important;
+}
+@media(max-width:600px) {
+  html.itigre-skin body.it-visual-system.tigers-reading main :is(.tigers-feature>header h1,.hero-copy h1,.hero-copy h1.long-name) { font-size: 1.75rem; }
+}
+
+/* Player reading: one quiet text column, a single destination for link lists. */
+html.itigre-skin body.tigers-reading:has(.portrait-section) .section-nav {
+ position:static!important; flex-wrap:wrap!important; overflow:visible!important;
+ gap:.25rem .875rem!important; padding:.625rem 0!important; background:var(--vs-paper)!important;
+}
+html.itigre-skin body.tigers-reading:has(.portrait-section) .section-nav a {
+ font-size:.875rem!important; padding:.375rem .125rem!important; white-space:normal!important;
+}
+html.itigre-skin body.tigers-reading main :is(.story-layout,.story-grid) {display:block!important;}
+html.itigre-skin body.tigers-reading main .narrative {max-width:46rem;margin-inline:auto;min-width:0;}
+html.itigre-skin body.tigers-reading main .narrative .story {
+ padding:1.5rem 0!important;margin:0!important;border:0!important;border-bottom:1px solid var(--vs-line)!important;
+ background:transparent!important;box-shadow:none!important;border-radius:0!important;
+}
+html.itigre-skin body.tigers-reading main .narrative a {
+ color:var(--vs-ink)!important;text-decoration:underline;text-decoration-color:var(--vs-muted);
+ text-decoration-thickness:1px;text-underline-offset:.22em;background:none!important;padding:0!important;
+}
+html.itigre-skin body.tigers-reading main .narrative a:hover {text-decoration-thickness:2px;}
+html.itigre-skin body.tigers-reading main a[href^="#ref-"] {
+ font-size:.8125rem!important;font-weight:500!important;vertical-align:baseline;letter-spacing:0;
+}
+html.itigre-skin body.tigers-reading main .player-reading-hub {margin:1.25rem 0;}
+html.itigre-skin body.tigers-reading main .player-reading-next {
+ position:relative;padding:1.25rem 1.25rem 1.25rem 3.5rem;border:1px solid var(--vs-line);
+ border-radius:3px 10px 4px 8px;background:var(--vs-paper);box-shadow:2px 3px 0 var(--vs-line);
+}
+html.itigre-skin body.tigers-reading main .player-reading-next::before {
+ content:'⚾';position:absolute;left:1rem;top:1.15rem;font-size:1.375rem;filter:grayscale(1);transform:rotate(-12deg);
+}
+html.itigre-skin body.tigers-reading main .player-reading-next h3 {font-size:1.125rem!important;margin:0 0 .75rem;line-height:1.6;}
+html.itigre-skin body.tigers-reading main .player-reading-next p {font-size:.875rem!important;line-height:1.8;margin:.5rem 0;}
+html.itigre-skin body.tigers-reading main .player-reading-next a {color:var(--vs-ink)!important;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:.2em;}
+html.itigre-skin body.tigers-reading main .player-chapter-index {margin:1rem 0;border-block:1px solid var(--vs-line);}
+html.itigre-skin body.tigers-reading main .player-chapter-index summary {cursor:pointer;font-size:.875rem;font-weight:700;padding:.875rem .25rem;}
+html.itigre-skin body.tigers-reading main .player-chapter-index .reading-rail {position:static!important;width:auto!important;display:block!important;padding:1rem!important;margin:0!important;border:0!important;box-shadow:none!important;background:transparent!important;}
+html.itigre-skin body.tigers-reading main .player-chapter-index .reading-rail a {font-size:.875rem!important;padding:.625rem 0!important;}
+html.itigre-skin body.tigers-reading main .source-index {box-shadow:none!important;border:1px solid var(--vs-line)!important;border-radius:4px!important;}
+html.itigre-skin body.tigers-reading main .reference-list li {padding:.875rem 0!important;background:transparent!important;box-shadow:none!important;border-radius:0!important;}
+html.itigre-skin body.tigers-reading main .source-content {padding:1rem!important;}
+html.itigre-skin body.tigers-reading main .section-heading {margin-bottom:1.25rem!important;}
+html.itigre-skin body.tigers-reading main .exhibition {padding-block:2rem!important;}
+html.itigre-skin body.tigers-reading main :is(p,li,h1,h2,h3,a,figcaption) {overflow-wrap:anywhere;}
+html.itigre-skin body.tigers-reading :is(a,button,summary):focus-visible {outline:2px solid var(--vs-ink);outline-offset:4px;}
+
+html.itigre-skin body.tigers-reading main .reference-list li {font-size:.875rem!important;line-height:1.8!important;}
+
+html.itigre-skin body.tigers-reading main .narrative h2 {font-size:1.5rem!important;line-height:1.5!important;margin:1.5rem 0 .75rem!important;}
+html.itigre-skin body.tigers-reading main .player-chapter-index .reading-rail h3 {font-size:1.125rem!important;line-height:1.6!important;}
+html.itigre-skin body.tigers-reading main .player-chapter-index .reading-rail a {display:grid!important;grid-template-columns:2ch minmax(0,1fr) auto!important;column-gap:.75rem!important;}
+html.itigre-skin body.tigers-reading main .player-chapter-index .reading-rail a span {white-space:nowrap;overflow-wrap:normal;}
