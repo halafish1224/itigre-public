@@ -19,3 +19,5 @@
 .lobby-line-art.player-role-badge{display:block;width:170px;height:170px;max-width:100%;object-fit:contain;filter:drop-shadow(0 8px 14px #0004)}
 .hero-visual .player-role-badge{object-fit:contain;filter:drop-shadow(0 14px 24px #0005)}
 @media(max-width:600px){.hero-mark.team-badge{width:130px;margin:12px auto}.roster-hero{flex-wrap:wrap}.roster-hero .hero-copy{flex-basis:100%}}
+/* The facts panel already labels the player's defensive position. */
+main:has(.profile-facts) .nameplate-top .number-badge + span { display:none; }
