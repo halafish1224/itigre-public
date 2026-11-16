@@ -1,0 +1,2119 @@
+{
+  "task": "tigers-badges-20261116",
+  "owner": "halafish1224 / Codex A / tigers-badges-20261116",
+  "requested_at": "2026-11-16",
+  "rule": {
+    "career_scope": "CPBL first-team regular-season career; do not mix leagues or use a single season for multi-season players",
+    "avg_operator": ">",
+    "avg_threshold": 0.28,
+    "hr_operator": ">",
+    "hr_threshold": 50,
+    "priority": [
+      "pitcher",
+      "catcher",
+      "qualified batting statistic or attacking honor/record",
+      "general fielding or bunt"
+    ],
+    "minimum_at_bats": null,
+    "defensive_awards": "fielding; Gold Glove alone does not imply attacking qualification",
+    "unknown": "neutral fielding/bunt badge, not a weak-hitter claim; batting threshold review pending"
+  },
+  "assets": {
+    "team": {
+      "drive_file_id": "1JyK3_ypsvvsKA8HibM4l6ptw0xRGWHbz",
+      "cloudinary_url": "https://res.cloudinary.com/dshfj9ace/image/upload/v1794806457/itigre/tigers/badges/team-20261116.png",
+      "width": 1254,
+      "height": 1254,
+      "publication_rights": "User explicitly provided these six files for use on their website"
+    },
+    "pitcher": {
+      "drive_file_id": "17QPV4Trd8dVEzK52Su_IrvH01wBYXJk6",
+      "cloudinary_url": "https://res.cloudinary.com/dshfj9ace/image/upload/v1794806473/itigre/tigers/badges/pitcher-20261116.png",
+      "width": 1254,
+      "height": 1254,
+      "publication_rights": "User explicitly provided these six files for use on their website"
+    },
+    "slugger": {
+      "drive_file_id": "1cQNjcd9gA4qPWlK3fKgYtg_kMJwLoFYa",
+      "cloudinary_url": "https://res.cloudinary.com/dshfj9ace/image/upload/v1794806480/itigre/tigers/badges/slugger-20261116.png",
+      "width": 1254,
+      "height": 1254,
+      "publication_rights": "User explicitly provided these six files for use on their website"
+    },
+    "bunt": {
+      "drive_file_id": "1xEXhb3Jo17z0vHd3Nj8UqDhgiznXsuIc",
+      "cloudinary_url": "https://res.cloudinary.com/dshfj9ace/image/upload/v1794806485/itigre/tigers/badges/bunt-20261116.png",
+      "width": 1254,
+      "height": 1254,
+      "publication_rights": "User explicitly provided these six files for use on their website"
+    },
+    "fielding": {
+      "drive_file_id": "1FaAakFpHTpiSglb2wecn-E-5Hdks4S0W",
+      "cloudinary_url": "https://res.cloudinary.com/dshfj9ace/image/upload/v1794806492/itigre/tigers/badges/fielding-20261116.png",
+      "width": 1254,
+      "height": 1254,
+      "publication_rights": "User explicitly provided these six files for use on their website"
+    },
+    "catcher": {
+      "drive_file_id": "1lC8qSLSOUmeL3G6aAIrDX4MM0uvAfUy1",
+      "cloudinary_url": "https://res.cloudinary.com/dshfj9ace/image/upload/v1794806497/itigre/tigers/badges/catcher-20261116.png",
+      "width": 1254,
+      "height": 1254,
+      "publication_rights": "User explicitly provided these six files for use on their website"
+    }
+  },
+  "counts": {
+    "pitcher": 53,
+    "fielding": 35,
+    "catcher": 9,
+    "slugger": 17,
+    "bunt": 5
+  },
+  "players": [
+    {
+      "slug": "a-nuo",
+      "name": "阿諾",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/a-nuo/",
+      "sources": [
+        "https://cpbl.com.tw/team/follow?Acnt=0000003834",
+        "https://www.milb.com/player/aaron-acosta-477358",
+        "https://library.sfo2.cdn.digitaloceanspaces.com/publications/baseball/yearbooks/BTORBMG-2025-toronto-blue-jays-media-guide.pdf",
+        "https://www.mlb.com/bluejays/team/front-office-directory"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "ai-li",
+      "name": "艾力",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ai-li/",
+      "sources": [
+        "https://www.mlb.com/player/alex-sanchez-121657",
+        "https://www.baseball-reference.com/players/s/sanchal02.shtml",
+        "https://www.baseball-reference.com/register/player.fcgi?id=sanche002ale",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1995-plus.html",
+        "https://www.sportsv.net/articles/70701"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "ai-li-sheng",
+      "name": "愛力生",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ai-li-sheng/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003802",
+        "https://cpbl.com.tw/team/hr?Acnt=0000003802",
+        "https://www.baseball-reference.com/bullpen/Emison_Soto",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "ashikaga-yutaka",
+      "name": "足利豐",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ashikaga-yutaka/",
+      "sources": [
+        "https://npb.jp/bis/players/31433883.html",
+        "https://www.baseball-reference.com/register/player.fcgi?id=ashika000yut",
+        "https://www.sportsv.net/articles/97616?page=3"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "bado-alberto-pardo",
+      "name": "霸多",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/bado-alberto-pardo/",
+      "sources": [
+        "https://www.sportsv.net/articles/28814",
+        "https://sports.ltn.com.tw/news/breakingnews/4380671",
+        "https://baseball-time-machine.blogspot.com/2020/03/1992_66.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "bai-chi",
+      "name": "百吉",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/bai-chi/",
+      "sources": [
+        "https://www.mlb.com/player/steve-pegues-120358",
+        "https://www.baseball-reference.com/players/p/peguest01.shtml",
+        "https://www.sportsv.net/articles/70701",
+        "https://www.baseball-reference.com/bullpen/Steve_Pegues"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "bai-ge",
+      "name": "柏格",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/bai-ge/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003831",
+        "https://www.sportsv.net/articles/58890",
+        "https://www.baseball-reference.com/register/player.fcgi?id=burgos001joh",
+        "https://clydes-stalecards.blogspot.com/2012/12/checklist-translations-smart-99-chinese.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "bai-han",
+      "name": "百漢",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/bai-han/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/ec/aa.html",
+        "https://www.sportsv.net/articles/91479",
+        "https://byucougars.com/sports/baseball/roster/player/leon-baham",
+        "https://thebaseballcube.com/content/player/71014/",
+        "https://clydes-stalecards.blogspot.com/2012/10/checklist-translations-1991-chinese.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "ban-gu",
+      "name": "班固",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ban-gu/",
+      "sources": [
+        "https://www.sportsv.net/articles/60856",
+        "https://www.sportsv.net/articles/60856?page=2",
+        "https://www.sportsv.net/articles/106894?page=2"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "bao-li",
+      "name": "寶力",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/bao-li/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/10/checklists-translations-1990-chinese.html",
+        "https://www.baseball-reference.com/register/player.fcgi?id=paula-001jul",
+        "https://www.statscrew.com/minorbaseball/stats/p-4cab3052",
+        "https://www.dominicansummerleague.com/east/sur/rosters/minnesota/",
+        "https://www.baseballamerica.com/teams/2183-dsl-twins/management/?season=2008"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "bao-li-duo",
+      "name": "寶力多",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/bao-li-duo/",
+      "sources": [
+        "https://www.baseball-reference.com/register/player.fcgi?id=pulido001jua",
+        "https://ctinews.com/news/items/q9WPN3zbxm",
+        "https://www.mlb.com/player/carlos-pulido-120800",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "bei-ke",
+      "name": "貝克",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/bei-ke/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003826",
+        "https://baseballsavant.mlb.com/savant-player/brian-grebeck-442356",
+        "https://www.baseball-reference.com/register/player.fcgi?id=grebec001bri",
+        "https://www.latimes.com/archives/la-xpm-1998-jul-29-sp-8292-story.html",
+        "https://www.latimes.com/archives/la-xpm-1998-may-02-sp-45692-story.html",
+        "https://www.mlb.com/player/craig-grebeck-115078"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "bi-ke",
+      "name": "必可",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/bi-ke/",
+      "sources": [
+        "https://cpbl.com.tw/team/hr?Acnt=0000003830",
+        "https://www.baseball-reference.com/register/player.fcgi?id=picota002len",
+        "https://catalog.digitalarchives.tw/item/00/31/fa/9d.html",
+        "https://indiosdelboer.com/lenin-picota-manager-de-los-indios-para-la-profesional-2025-2026/",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1994-chinese.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "chang-chien-hsun",
+      "name": "張建勳",
+      "position": "暫定守位",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chang-chien-hsun/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/fa/6d.html",
+        "https://catalog.digitalarchives.tw/item/00/32/01/dd.html",
+        "https://tw.news.yahoo.com/日職-王貞治-不容許陽耀勳的任性行為-090116415.html",
+        "https://cpbl.com.tw/team/lineuprecord?ClubNo=ABB",
+        "https://sports.ltn.com.tw/news/paper/591009"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "chao-wei",
+      "name": "趙威",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chao-wei/",
+      "sources": [
+        "https://n.yam.com/Article/20140220120085",
+        "https://www.milb.com/news/gcs-106302526",
+        "https://www.mlb.com/news/brewers-name-fred-dabney-pitching-coach-at-triple-a-nashville/c-26291422",
+        "https://baseballsavant.mlb.com/draft?year=1988",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "chen-chang-yang",
+      "name": "陳長陽",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chen-chang-yang/",
+      "sources": [
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132508612135006750",
+        "https://twbsball.dils.tku.edu.tw/index.php?title=三商虎隊/三商虎隊的職棒十年",
+        "https://www.sportsv.net/articles/94826?page=2",
+        "https://www.tcdb.com/Person.cfm/pid/213291/Chang-Yang-Chen"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "chen-cheng-chung",
+      "name": "陳正中（陳勝騏）",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "中職史上第一支滿貫全壘打",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chen-cheng-chung/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/4a/cb.html",
+        "https://www.sportsv.net/articles/74130",
+        "https://sports.ltn.com.tw/news/breakingnews/5035721",
+        "https://www.nownews.com/news/6362500",
+        "https://sports.ltn.com.tw/news/breakingnews/5035765",
+        "https://sport.ftvnews.com.tw/news/detail/2026419J02M1",
+        "https://www.twreporter.org/a/baseball-cpbl-mercuries-tigers-fans-and-weichuan-dragons-fans-30years",
+        "https://player.soundon.fm/p/99f9a86d-92bb-45ac-bf2d-162a74b28c76/episodes/d6aa35fd-e9c2-4df7-a923-4d9a5b707925"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "chen-gai-fa",
+      "name": "陳該發",
+      "position": "外野",
+      "badge": "slugger",
+      "reason": "兩聯盟完全打擊紀錄",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chen-gai-fa/",
+      "sources": [
+        "https://www.ksu.edu.tw/focusNews/detail/14462",
+        "https://www.cna.com.tw/postwrite/chi/374455",
+        "https://udn.com/news/story/6898/8047315",
+        "https://sports.ltn.com.tw/news/paper/1398403",
+        "https://www.sportsv.net/articles/124628?page=4",
+        "https://cpbl.com.tw/team/person?acnt=0000003735"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "chen-kuang-hui",
+      "name": "陳光輝",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chen-kuang-hui/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/11/ca.html",
+        "https://catalog.digitalarchives.tw/item/00/32/11/e7.html",
+        "https://twbsball.dils.tku.edu.tw/index.php?title=三商虎隊/三商虎隊的職棒十年"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "chen-ming-de",
+      "name": "陳明德",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chen-ming-de/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003778",
+        "https://catalog.digitalarchives.tw/item/00/31/f6/52.html",
+        "https://www.sportsv.net/articles/60578",
+        "https://catalog.digitalarchives.tw/item/00/32/0d/45.html",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/e9.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "cheng-hsing-sheng",
+      "name": "鄭幸生",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "開季連續21場安打紀錄",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/cheng-hsing-sheng/",
+      "sources": [
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132508804821187243",
+        "https://news.tvbs.com.tw/sports/652079",
+        "https://news.pts.org.tw/article/322533",
+        "https://www.cna.com.tw/news/aspt/201901260173.aspx",
+        "https://news.tvbs.com.tw/sports/664392",
+        "https://player.soundon.fm/p/99f9a86d-92bb-45ac-bf2d-162a74b28c76/episodes/378cd112-e23b-40ad-a7a0-3d1880158fba"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "cheng-wen-hsien",
+      "name": "鄭文賢",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/cheng-wen-hsien/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?acnt=0000000502",
+        "https://groups.google.com/g/tw.bbs.sports.baseball.tigers/c/lFPA7pytJZo",
+        "https://github.com/ldkrsi/cpbl-opendata/tree/master/CPBL/battings",
+        "https://github.com/ldkrsi/cpbl-opendata/tree/master/CPBL/fieldings",
+        "https://github.com/ldkrsi/cpbl-opendata/blob/master/README.md"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "chiang-kun-sheng",
+      "name": "蔣坤珄",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chiang-kun-sheng/",
+      "sources": [
+        "https://tsna.com/article/126736",
+        "https://sports.ltn.com.tw/news/breakingnews/4497378",
+        "https://groups.google.com/g/tw.bbs.sports.baseball.tigers/c/lFPA7pytJZo",
+        "https://github.com/ldkrsi/cpbl-opendata/tree/master/CPBL/battings",
+        "https://github.com/ldkrsi/cpbl-opendata/tree/master/CPBL/fieldings",
+        "https://github.com/ldkrsi/cpbl-opendata/blob/master/README.md"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "chiang-sheng",
+      "name": "將生",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chiang-sheng/",
+      "sources": [
+        "https://chtime.ikh.tw/?id=lz4imvk41609&pn=vw",
+        "https://news.tvbs.com.tw/sports/581183",
+        "https://www.baseball-reference.com/register/player.fcgi?id=johnso003dan",
+        "https://www.milb.com/omaha/news/manager-patrick-osborn-to-lead-2026-omaha-storm-chasers-coaching-staff"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "chiang-ssu",
+      "name": "強斯",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chiang-ssu/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html",
+        "https://sabr.org/bioproj/person/bob-chance/",
+        "https://www.baseball-reference.com/register/player.fcgi?id=chance002rob"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "chiao-chih",
+      "name": "喬治",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chiao-chih/",
+      "sources": [
+        "https://cpbl.com.tw/team/hr?Acnt=0000000401",
+        "https://www.sportsv.net/articles/74011",
+        "https://catalog.digitalarchives.tw/item/00/32/18/38.html",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "chiao-fu",
+      "name": "巧福",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chiao-fu/",
+      "sources": [
+        "https://sports.ltn.com.tw/news/paper/1273524",
+        "https://www.sportsv.net/articles/64512",
+        "https://time.udn.com/udntime/story/122833/8830197"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "chocolate",
+      "name": "巧克力",
+      "position": "外野",
+      "badge": "slugger",
+      "reason": "中職第3000支全壘打及1993年國聯盜壘王",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chocolate/",
+      "sources": [
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132507769593779062",
+        "https://sports.ltn.com.tw/news/breakingnews/4122785",
+        "https://www.sportsv.net/articles/13788"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "chou-te-hsien",
+      "name": "周德賢",
+      "position": "內野",
+      "badge": "bunt",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/chou-te-hsien/",
+      "sources": [
+        "https://b014.dahan.edu.tw/p/16-1014-6964.php?Lang=zh-tw",
+        "https://ctba.org.tw/team_detail.php?cate=game&game_id=302&team_id=2135&type=1",
+        "https://n.yam.com/Article/20150113810299",
+        "https://cpbl.com.tw/team/apart?Acnt=0000003769",
+        "https://catalog.digitalarchives.tw/item/00/32/04/2d.html",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/74.html",
+        "https://features.ltn.com.tw/english/article/paper/908687",
+        "https://www.sportsv.net/articles/94264"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "da-han",
+      "name": "大漢",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/da-han/",
+      "sources": [
+        "https://www.greatest21days.com/2015/05/interview-part-3-kevin-tahan-his-terms.html",
+        "https://www.greatest21days.com/2015/05/interview-part-4-kevin-tahan-always.html",
+        "https://www.baseball-reference.com/bullpen/Kevin_Tahan",
+        "https://www.baseball-reference.com/register/player.fcgi?id=tahan-002kev",
+        "https://www.ptt.cc/bbs/Baseball/M.1632930800.A.7E6.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "da-te",
+      "name": "達特",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/da-te/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199697-procard.html",
+        "https://www.baseball-reference.com/register/player.fcgi?id=dattol002kev",
+        "https://baseballsavant.mlb.com/savant-player/kevin-dattola-499655",
+        "https://www.baseball-reference.com/bullpen/Kevin_Dattola"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "da-wei-tokheim",
+      "name": "大衛",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/da-wei-tokheim/",
+      "sources": [
+        "https://baseballsavant.mlb.com/savant-player/david-tokheim-441476",
+        "https://uclabruins.com/ucla-single-season-record-book",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html",
+        "https://www.baseball-reference.com/bullpen/Dave_Tokheim",
+        "https://catalog.digitalarchives.tw/item/00/32/11/ca.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "dan-ni",
+      "name": "丹尼",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/dan-ni/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1997-diamond.html",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html",
+        "https://www.mlb.com/player/danny-leon-117681",
+        "https://www.baseball-almanac.com/players/player.php?p=leonda01"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "di-chieh",
+      "name": "帝傑",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/di-chieh/",
+      "sources": [
+        "https://www.baseball-reference.com/players/d/dejesjo01.shtml",
+        "https://www.baseball-almanac.com/players/player.php?p=dejesjo01",
+        "https://www.baseball-reference.com/register/player.fcgi?id=dejesu003jos",
+        "https://catalog.digitalarchives.tw/item/00/32/09/79.html",
+        "https://catalog.digitalarchives.tw/item/00/32/09/d4.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "fa-la-li",
+      "name": "法拉利",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/fa-la-li/",
+      "sources": [
+        "https://byucougars.com/staff/wally-ritchie",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "fei-nan-du",
+      "name": "費南度",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/fei-nan-du/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/0e/45.html",
+        "https://www.sportsv.net/articles/60145?page=3",
+        "https://www.baseball-reference.com/register/player.fcgi?id=figuer002fer",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html",
+        "https://classic-blog.udn.com/taiwanbaseball/2230280"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "feng-shen",
+      "name": "風神",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/feng-shen/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003828",
+        "https://catalog.digitalarchives.tw/item/00/32/1c/b1.html",
+        "https://sports.ltn.com.tw/news/paper/808265",
+        "https://tw.sports.yahoo.com/news/【運動專欄／小記】風神落幕20年-德保拉接棒力拚兄弟王朝-141724884.html",
+        "https://sports.ltn.com.tw/news/paper/501913",
+        "https://www.baseball-reference.com/register/player.fcgi?id=hurst-001jon",
+        "https://www.milb.com/news/gcs-304775064"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "gang-lie",
+      "name": "剛烈",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/gang-lie/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/e6/2e.html",
+        "https://www.sportsv.net/articles/29537"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "ge-ya",
+      "name": "哥雅",
+      "position": "外野",
+      "badge": "slugger",
+      "reason": "1993年聯盟全壘打王",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ge-ya/",
+      "sources": [
+        "https://cpbl.com.tw/team/hr?Acnt=0000003762",
+        "https://news.tvbs.com.tw/sports/660343",
+        "https://catalog.digitalarchives.tw/item/00/31/f7/a2.html",
+        "https://www.sportsv.net/articles/7536"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "hao-shuai",
+      "name": "豪帥",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hao-shuai/",
+      "sources": [
+        "https://gopack.com/sports/baseball/roster/1991",
+        "https://www.mlb.com/player/jeff-pierce-120557",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html",
+        "https://www.baseball-reference.com/register/player.fcgi?id=pierce001jef"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "hao-zhuang",
+      "name": "豪壯",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hao-zhuang/",
+      "sources": [
+        "https://cpbl.com.tw/team/follow?Acnt=0000003823",
+        "https://catalog.digitalarchives.tw/item/00/32/18/38.html",
+        "https://baseballsavant.mlb.com/savant-player/sean-mulligan-119501",
+        "https://www.baseball-reference.com/register/player.fcgi?id=mullig001sea"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "ho-liang-chih",
+      "name": "何良志",
+      "position": "外野",
+      "badge": "bunt",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ho-liang-chih/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003753",
+        "https://news.tvbs.com.tw/sports/680590",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/74.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "hou-ming-kun",
+      "name": "侯明坤",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hou-ming-kun/",
+      "sources": [
+        "https://www.ptt.cc/bbs/Tigers/M.1135010777.A.477.html",
+        "https://cpbl.com.tw/team/person?Acnt=0000003739",
+        "https://oursport.tv/news/adf116",
+        "https://www.ptt.cc/bbs/Tigers/M.1135010698.A.41C.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "hsu-cheng-tang",
+      "name": "徐整當",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hsu-cheng-tang/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/18/38.html",
+        "https://www.mlb.com/glossary/standard-stats/caught-stealing-percentage",
+        "https://groups.google.com/g/tw.bbs.sports.baseball.tigers/c/lFPA7pytJZo",
+        "https://www.sportsv.net/articles/84943?page=2",
+        "https://cpbl.com.tw/team/lineuprecord?ClubNo=ABB"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "hsu-hsi-hua",
+      "name": "許錫華",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hsu-hsi-hua/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003767",
+        "https://catalog.digitalarchives.tw/item/00/31/fa/a1.html",
+        "https://baseball-time-machine.blogspot.com/2020/03/1992_66.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "hsueh-fu-chung",
+      "name": "薛富中",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hsueh-fu-chung/",
+      "sources": [
+        "https://cpbl.com.tw/team/follow?Acnt=0000003818",
+        "https://www.baseball-reference.com/bullpen/Fu-Chung_Hsueh",
+        "https://cpbl.com.tw/team/lineuprecord?ClubNo=ABB"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "hua-li",
+      "name": "華力",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hua-li/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1993-chinese.html",
+        "https://catalog.digitalarchives.tw/item/00/31/f7/a2.html",
+        "https://zxc22.idv.tw/cpbl4/by_holiday.asp?team=1",
+        "https://www.baseball-reference.com/bullpen/Wally_Trice",
+        "https://www.greatest21days.com/2015/05/interview-part-3-kevin-tahan-his-terms.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "hua-si",
+      "name": "華司",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hua-si/",
+      "sources": [
+        "https://www.sportsv.net/articles/91482",
+        "https://zxc22.idv.tw/cpbl6/by_playtime.asp",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1995-plus.html",
+        "https://www.tcdb.com/GalleryP.cfm/pid/72127/Leo-Vasquez"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "huang-shih-ming",
+      "name": "黃世明",
+      "position": "外野",
+      "badge": "slugger",
+      "reason": "中職史上第一支再見全壘打",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/huang-shih-ming/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/e1/cf.html",
+        "https://www.sportsv.net/articles/36212",
+        "https://oursport.tv/news/3a7b3c",
+        "https://cpbl.com.tw/team/person?Acnt=0000000559",
+        "https://github.com/ldkrsi/cpbl-opendata/tree/master/CPBL/battings",
+        "https://github.com/ldkrsi/cpbl-opendata/blob/master/README.md"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "huang-tzu-chiang",
+      "name": "黃自強",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/huang-tzu-chiang/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/05/51.html",
+        "https://catalog.digitalarchives.tw/item/00/32/05/b8.html",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/74.html",
+        "https://tsna.com/article/109133",
+        "https://www.baseball-reference.com/bullpen/Tzu-Chiang_Huang"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "huang-wu-hsiung",
+      "name": "黃武雄",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/huang-wu-hsiung/",
+      "sources": [
+        "https://www.esunfhc.com/zh-tw/news-center/news-center/news/detail?id=BC125620E22941179F4A2D8B99E46B90&p=56D9E07D6A2E46C1B66E32E1F142C43F",
+        "https://www.president.gov.tw/NEWS/14639",
+        "https://www.kmdn.gov.tw/1117/1271/1272/241553/",
+        "https://cpbl.com.tw/team/person?Acnt=0000003758",
+        "https://chtime.ikh.tw/?id=0uw24kea107n&pn=vw",
+        "https://catalog.digitalarchives.tw/item/00/32/0a/9d.html",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/74.html",
+        "https://baseball-time-machine.blogspot.com/2020/03/1992_66.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "hung-pang-cheng",
+      "name": "洪邦政",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/hung-pang-cheng/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/11/ca.html",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "jeff-matulevich",
+      "name": "吉福（Jeff Matulevich）",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/jeff-matulevich/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/1c/b1.html",
+        "https://clydes-stalecards.blogspot.com/2012/12/checklist-translations-smart-99-chinese.html",
+        "https://cpbl.com.tw/team/lineuprecord?ClubNo=ABB"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "ka-nei-chi",
+      "name": "卡內基",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ka-nei-chi/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?acnt=0000003833",
+        "https://cpbl.com.tw/team/teamscore?ClubNo=ABB",
+        "https://www.baseball-reference.com/register/player.fcgi?id=cornel001bri",
+        "https://baseballsavant.mlb.com/savant-player/brian-cornelius-436478"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "kai-li",
+      "name": "凱力",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/kai-li/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/12/checklist-translations-smart-99-chinese.html",
+        "https://www.baseball-reference.com/register/player.fcgi?id=haught001gar",
+        "https://www.mlb.com/player/gary-haught-115614",
+        "https://www.baseball-reference.com/players/h/haughga01.shtml"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "kang-di",
+      "name": "康迪",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/kang-di/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1995-plus.html",
+        "https://www.tcdb.com/GalleryP.cfm/pid/54760/Argenis-Cortes",
+        "https://library.sfo2.cdn.digitaloceanspaces.com/publications/baseball/yearbooks/BCHIWMG-1991-chicago-white-sox-media-guide.pdf",
+        "https://www.baseball-reference.com/bullpen/Argenis_Cortes",
+        "https://www.sportsv.net/articles/13747"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "kang-lei",
+      "name": "康雷",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "1994年聯盟年度打擊王及完全打擊",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/kang-lei/",
+      "sources": [
+        "https://chtime.ikh.tw/?id=8x9024r0p2ql&pn=vw"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "kang-ming-shan",
+      "name": "康明杉",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/kang-ming-shan/",
+      "sources": [
+        "https://hnc-sao.cnu.edu.tw/?.__id=P20210723101939002&.p=HEpZ",
+        "https://www.cna.com.tw/news/aspt/202011130292.aspx",
+        "https://www.cna.com.tw/news/aspt/202102050178.aspx",
+        "https://podcasts.apple.com/tw/podcast/s6e4-%E5%BA%B7%E6%98%8E%E6%9D%89-%E6%88%91%E4%BB%A5%E5%89%8D%E6%98%AF%E4%B8%AD%E5%BF%83%E6%A3%92%E6%AC%A1%E9%87%8D%E7%A0%B2%E6%89%8B/id1529780626?i=1000715634254",
+        "https://www.sportsv.net/articles/84168",
+        "https://www.ssu.org.tw/News/Detail/3af05ed0-0f21-4979-b243-31c69eaf6019",
+        "https://www.cnu.edu.tw/news-single.asp?id=819",
+        "https://www.sportsv.net/articles/7780",
+        "https://www.sportsv.net/articles/108259",
+        "https://sports.ltn.com.tw/amp/news/breakingnews/1423699",
+        "https://www.sportsv.net/articles/62234"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "kao-ming",
+      "name": "高明",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/kao-ming/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1994-chinese.html",
+        "https://www.mlb.com/player/kevin-coffman-112444",
+        "https://www.baseball-reference.com/players/c/coffmke01.shtml",
+        "https://www.baseball-reference.com/register/player.fcgi?id=coffma001kev"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "kao-teng",
+      "name": "高登",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/kao-teng/",
+      "sources": [
+        "https://www.mlb.com/player/keith-gordon-114968",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html",
+        "https://sabr.org/bioproj/person/keith-gordon/",
+        "https://catalog.digitalarchives.tw/item/00/32/10/d1.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "ke-long",
+      "name": "克龍",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ke-long/",
+      "sources": [
+        "https://cpbl.com.tw/team/hr?Acnt=0000000210",
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132507872126772876",
+        "https://www.sportsv.net/articles/109599"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "ko-li",
+      "name": "克力",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ko-li/",
+      "sources": [
+        "https://www.mlb.com/player/steve-curry-112961",
+        "https://sabr.org/bioproj/person/steve-curry/",
+        "https://www.baseball-reference.com/register/player.fcgi?id=curry-001ste",
+        "https://www.baseball-reference.com/players/c/curryst01.shtml"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "lan-wen-cheng",
+      "name": "藍文成",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lan-wen-cheng/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/0c/d1.html",
+        "https://www.baseball-reference.com/bullpen/Wen-Cheng_Lan",
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132509511186247603",
+        "https://esuncup.tw/team/detail.php?ID=TM20120519160100",
+        "https://www.esuncup.tw/competition/detail.php?ID=GN20190602223804&Y=2019",
+        "https://podcasts.apple.com/us/podcast/s6e8-%E8%97%8D%E6%96%87%E6%88%90-%E7%88%B6%E8%A6%AA%E7%9A%84%E7%B2%BE%E7%A5%9E%E5%91%8A%E8%A8%B4%E6%88%91-%E8%A6%81%E5%81%9A%E5%B0%B1%E5%81%9A%E5%88%B0%E6%9C%80%E5%A5%BD/id1529780626?i=1000720131060",
+        "https://catalog.digitalarchives.tw/item/00/32/0a/9d.html",
+        "https://catalog.digitalarchives.tw/item/00/32/24/eb.html",
+        "https://dept.pjhs.tyc.edu.tw/dept/sport/index.aspx?FL_Num=F005_1&FNI_id=14&FN_id=956",
+        "https://www.peopo.org/news/247423",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/74.html",
+        "https://player.soundon.fm/p/99f9a86d-92bb-45ac-bf2d-162a74b28c76/episodes/ef9b8854-a9ab-4d77-9a46-30ba4ee13651"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "li-duo",
+      "name": "利多",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/li-duo/",
+      "sources": [
+        "https://www.sportsv.net/articles/60145",
+        "https://chtime.ikh.tw/?id=1e847z9ru7ul&pn=vw"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "li-ge",
+      "name": "力戈",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/li-ge/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1994-chinese.html",
+        "https://www.greatest21days.com/2013/10/interview-part-1-tim-delgado-bit.html",
+        "https://www.greatest21days.com/2013/10/interview-part-2-tim-delgado.html",
+        "https://www.greatest21days.com/2013/10/interview-part-3-tim-delgado-toughest.html",
+        "https://www.baseball-reference.com/bullpen/Tim_Delgado"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "li-tu-hung",
+      "name": "李杜宏",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/li-tu-hung/",
+      "sources": [
+        "https://www.doe.gov.taipei/News_Content.aspx?n=B3DDF0458F0FFC11&s=6B07655EFFD16403&sms=72544237BBE4C5F6",
+        "https://www.doe.gov.taipei/News_Content.aspx?n=B3DDF0458F0FFC11&s=1E03AD40214CF06D&sms=72544237BBE4C5F6",
+        "https://catalog.digitalarchives.tw/item/00/32/02/b2.html",
+        "https://www.sportsv.net/articles/100305?page=2",
+        "https://www.cna.com.tw/news/aspt/202203280361.aspx",
+        "https://sports.ltn.com.tw/news/paper/329309"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "li-wei",
+      "name": "李偉",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/li-wei/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/e6/2e.html",
+        "https://www.sportsv.net/articles/29537"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "lin-chen-hsien",
+      "name": "林振賢",
+      "position": "外野",
+      "badge": "bunt",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lin-chen-hsien/",
+      "sources": [
+        "https://www.tsghawks.com/台鋼雄鷹添新成員-黃甘霖出任守備教練/",
+        "https://news.pts.org.tw/article/584735",
+        "https://www.cna.com.tw/news/aspt/202401170360.aspx",
+        "https://www.tsghawks.com/台鋼雄鷹2025年教練團/",
+        "https://cpbl.com.tw/team/person?Acnt=0000003733",
+        "https://sports.ltn.com.tw/news/paper/1273823",
+        "https://www.tsghawks.com/coach_list/coach-81/",
+        "https://sports.ltn.com.tw/news/breakingnews/2191975",
+        "https://tsna.com/article/13437",
+        "https://www.cna.com.tw/news/aspt/202601070176.aspx"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "lin-cheng-wei",
+      "name": "林正偉",
+      "position": "內野",
+      "badge": "bunt",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lin-cheng-wei/",
+      "sources": [
+        "https://cpbl.com.tw/team/lineuprecord?ClubNo=ABB",
+        "https://www.sportsv.net/articles/84943"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "lin-chung-chiu",
+      "name": "林仲秋",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "全壘打王、三商虎時期129轟，已超過生涯50轟門檻",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lin-chung-chiu/",
+      "sources": [
+        "https://www.tsghawks.com/4屆全壘打王助陣-林仲秋春訓期間擔任客座教練/",
+        "https://www.cna.com.tw/news/aspt/202512180237.aspx",
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132507503441096880",
+        "https://www.cna.com.tw/news/aspt/201901260173.aspx",
+        "https://catalog.digitalarchives.tw/item/00/31/f1/3f.html",
+        "https://sport.vl.com.tw/newspage.aspx?sno=64770",
+        "https://www.twreporter.org/a/baseball-cpbl-mercuries-tigers-fans-and-weichuan-dragons-fans-30years",
+        "https://www.cna.com.tw/news/aspt/201712160123.aspx"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "lin-kun-han",
+      "name": "林琨瀚",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lin-kun-han/",
+      "sources": [
+        "https://www.nthu.edu.tw/hotNews/content/186",
+        "https://www2.ssu.org.tw/news/news_content.php?key=&nid=3766",
+        "https://www.ssu.org.tw/News/Detail/612498d7-9707-4447-8771-01e747b73460",
+        "https://www.cna.com.tw/news/aspt/202203110361.aspx",
+        "https://udn.com/news/story/7001/9310447",
+        "https://dep-personnel.hccg.gov.tw/ch/home.jsp?dataserno=8a613f29-6ed0-423e-b7db-9e4d062f7d5e&id=28&mcustomize=municipalnews_view.jsp&mserno=201601300196&parentpath=0%2C27&t=MunicipalNews&toolsflag=Y",
+        "https://sports.ltn.com.tw/news/breakingnews/5333362",
+        "https://tw.sports.yahoo.com/news/%E4%B8%AD%E8%8F%AF%E8%81%B7%E6%A3%92-%E8%99%8E%E8%BF%B7%E6%8B%8B%E5%BD%A9%E5%B8%B6-%E6%9E%97%E7%90%A8%E7%80%9A-%E6%88%91%E5%80%91%E6%AC%A0%E4%BB%96%E5%80%91%E7%9A%84-084235821.html",
+        "https://tsna.com/article/75584",
+        "https://www.twreporter.org/a/baseball-cpbl-mercuries-tigers-fans-and-weichuan-dragons-fans-30years"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "lin-li-hsiung",
+      "name": "林禮雄",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lin-li-hsiung/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/11/ca.html",
+        "https://catalog.digitalarchives.tw/item/00/32/11/e7.html",
+        "https://catalog.digitalarchives.tw/item/00/32/43/a5.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "lin-yi-hung",
+      "name": "林怡宏",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lin-yi-hung/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/14/82.html",
+        "https://catalog.digitalarchives.tw/item/00/32/10/bf.html",
+        "https://cpbl.com.tw/team/lineuprecord?ClubNo=ABB",
+        "https://cpbl.com.tw/team/teamscore?ClubNo=ABB"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "lin-yueh-liang",
+      "name": "林岳亮",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lin-yueh-liang/",
+      "sources": [
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132508654240496944",
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132508533381246871",
+        "https://catalog.digitalarchives.tw/item/00/32/28/35.html",
+        "https://cpbl.com.tw/team/person?acnt=0000003795",
+        "https://time.udn.com/udntime/story/122833/8396956",
+        "https://catalog.digitalarchives.tw/item/00/32/20/4f.html",
+        "https://catalog.digitalarchives.tw/item/00/32/25/6e.html",
+        "https://www.baseball-reference.com/bullpen/Yueh-Liang_Lin"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "liu-yi-chuan",
+      "name": "劉義傳",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/liu-yi-chuan/",
+      "sources": [
+        "https://369printing.udngroup.com/ms-1997/assets/ms19970218.pdf",
+        "https://catalog.digitalarchives.tw/item/00/32/11/4c.html",
+        "https://www.hpehs.hlc.edu.tw/modules/tadnews/index.php?nsn=548",
+        "https://www.cna.com.tw/news/aspt/202005290176.aspx",
+        "https://www.esuncup.tw/competition/detail.php?ID=GN20250524101000",
+        "https://www.cna.com.tw/news/aspt/201707090123.aspx",
+        "https://sports.ltn.com.tw/news/paper/904985",
+        "https://www.kmdn.gov.tw/1117/1271/4189/554190/",
+        "https://catalog.digitalarchives.tw/item/00/32/11/62.html",
+        "https://www.cna.com.tw/news/aspt/201712160131.aspx",
+        "https://player.soundon.fm/p/99f9a86d-92bb-45ac-bf2d-162a74b28c76/episodes/99e42e7f-90a5-45f9-b650-a27cc1abaa14"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "lu-chia-ming",
+      "name": "呂嘉明",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/lu-chia-ming/",
+      "sources": [
+        "https://groups.google.com/g/tw.bbs.sports.baseball.tigers/c/lFPA7pytJZo",
+        "https://github.com/ldkrsi/cpbl-opendata/tree/master/CPBL/battings",
+        "https://github.com/ldkrsi/cpbl-opendata/tree/master/CPBL/fieldings"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "luo-fei",
+      "name": "羅飛",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/luo-fei/",
+      "sources": [
+        "https://cpbl.com.tw/team/hr?Acnt=0000000487",
+        "https://www.baseball-reference.com/register/player.fcgi?id=montal001raf",
+        "https://www.sportsv.net/articles/88164?page=3",
+        "https://www.oursportscentral.com/services/releases/release-skeeters-sign-two-players-and-pitching-coach/n-5240096"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "luo-kui",
+      "name": "羅魁",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/luo-kui/",
+      "sources": [
+        "https://chtime.ikh.tw/?id=1e847z9ru7ul&pn=vw",
+        "https://cpbl.com.tw/team/hr?Acnt=0000003740"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "luo-li",
+      "name": "羅利",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/luo-li/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/f6/60.html",
+        "https://zxc22.idv.tw/cpbl4/saygoodbye.asp",
+        "https://www.baseball-reference.com/register/player.fcgi?id=rosari004vic",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1993-chinese.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "luo-wei",
+      "name": "羅維",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/luo-wei/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/10/checklist-translations-1992-chinese.html",
+        "https://www.baseball-almanac.com/players/player.php?p=reyesgi01",
+        "https://www.claydavenport.com/dt/r/reyesgi01.shtml",
+        "https://bravestarrcards.com/gilberto-reyes-ttm-success/"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "ma-ding",
+      "name": "馬丁",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "完整中職生涯1999年18安打／50打數=.360",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ma-ding/",
+      "sources": [
+        "https://cpbl.com.tw/team/follow?Acnt=0000003848",
+        "https://cpbl.com.tw/team/teamscore?ClubNo=ABB",
+        "https://www.baseball-reference.com/register/player.fcgi?id=olmeda002jos",
+        "https://clydes-stalecards.blogspot.com/2012/12/checklist-translations-smart-99-chinese.html"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "ma-ding-ni",
+      "name": "馬丁尼",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "完整中職生涯1999年56安打／177打數=.316",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ma-ding-ni/",
+      "sources": [
+        "https://cpbl.com.tw/team/hr?Acnt=0000003843",
+        "https://cpbl.com.tw/team/teamscore?ClubNo=ABB",
+        "https://www.baseball-reference.com/register/player.fcgi?id=martin001gab",
+        "https://sports.ltn.com.tw/news/breakingnews/5440341",
+        "https://sports.ltn.com.tw/amp/news/breakingnews/5441109",
+        "https://clydes-stalecards.blogspot.com/2012/12/checklist-translations-smart-99-chinese.html"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "mai-da-si",
+      "name": "麥達斯",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/mai-da-si/",
+      "sources": [
+        "https://cpbl.com.tw/team/fighting?Acnt=0000003832",
+        "https://www.milb.com/player/angel-miranda-119183",
+        "https://www.baseball-reference.com/register/player.fcgi?id=mirand001ang",
+        "https://catalog.digitalarchives.tw/item/00/32/18/38.html",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "meng-lei",
+      "name": "孟雷",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/meng-lei/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/e6/2e.html",
+        "https://www.sportsv.net/articles/29537",
+        "https://catalog.digitalarchives.tw/item/00/31/e3/62.html",
+        "https://catalog.digitalarchives.tw/item/00/31/e5/14.html",
+        "https://news.tvbs.com.tw/sports/680590",
+        "https://www.sportsv.net/articles/67050"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "mi-li",
+      "name": "秘力",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/mi-li/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/10/checklist-translations-1992-chinese.html",
+        "https://www.baseball-reference.com/bullpen/John_Miglio",
+        "https://www.thebaseballcube.com/content/player/137117/",
+        "https://www.ktlaneathletics.com/instructors"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "miyashita-daisuke",
+      "name": "宮下大輔",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/miyashita-daisuke/",
+      "sources": [
+        "https://cpbl.com.tw/team/fighting?Acnt=0000003842",
+        "https://www.baseball-reference.com/register/player.fcgi?id=miyash001dai",
+        "https://sports.ltn.com.tw/amp/news/paper/1398398",
+        "https://www.sportsv.net/articles/97616?page=3"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "mo-la",
+      "name": "魔拉",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "三商虎單季37盜隊史紀錄",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/mo-la/",
+      "sources": [
+        "https://ikh.tw/freshweekly/?id=2hui331a3h5n&pn=vw"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "na-po-li",
+      "name": "拿坡里",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/na-po-li/",
+      "sources": [
+        "https://baseballsavant.mlb.com/savant-player/al-osuna-120106",
+        "https://www.sportsv.net/articles/13917",
+        "https://www.baseball-reference.com/register/player.fcgi?id=osuna-001alf",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html",
+        "https://www.mfb.com.tw/portfolio-item/拿坡里披薩‧炸雞/",
+        "https://www.sportsv.net/articles/127963?page=3"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "nakai-nobuyuki",
+      "name": "中井伸之",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/nakai-nobuyuki/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/fa/9d.html",
+        "https://npb.jp/history/register/index_na.html",
+        "https://udn.com/news/story/7001/3657265",
+        "https://www.pttweb.cc/bbs/Baseball/M.1550796380.A.F0A",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1994-chinese.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "pan-chung-hsun",
+      "name": "潘忠勳",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/pan-chung-hsun/",
+      "sources": [
+        "https://www.ctbcfoundation.org/baseball/story/158",
+        "https://oursport.tv/news/0bea37",
+        "https://cpbl.com.tw/team/lineuprecord?ClubNo=ABB",
+        "https://www.baseball-reference.com/bullpen/Chung-Hsun_Pan",
+        "https://catalog.digitalarchives.tw/item/00/32/32/d6.html",
+        "https://www.merit-times.com.tw/NewsPage.aspx?unid=469817"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "quan-chia-fu",
+      "name": "全家福",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/quan-chia-fu/",
+      "sources": [
+        "https://cpbl.com.tw/team/fighting?Acnt=0000003850",
+        "https://www.baseball-reference.com/register/player.fcgi?id=valdez002raf",
+        "https://sports.ltn.com.tw/news/paper/1273524",
+        "https://www.sportsv.net/articles/67271?page=2"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "sha-le",
+      "name": "沙勒（Julio Solano）",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/sha-le/",
+      "sources": [
+        "https://cpbl.com.tw/team/follow?Acnt=0000000469",
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132508654415830401",
+        "https://catalog.digitalarchives.tw/item/00/32/60/2f.html",
+        "https://catalog.digitalarchives.tw/item/00/31/ee/bd.html",
+        "https://catalog.digitalarchives.tw/item/00/31/f1/6f.html",
+        "https://catalog.digitalarchives.tw/item/00/31/f3/4c.html",
+        "https://www.sportsv.net/articles/84646",
+        "https://baseball-time-machine.blogspot.com/2020/03/1992_21.html?m=0"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "shen-chun-chung",
+      "name": "沈俊忠",
+      "position": "外野",
+      "badge": "slugger",
+      "reason": "中職第2000支全壘打",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/shen-chun-chung/",
+      "sources": [
+        "https://cpbl.com.tw/team/follow?Acnt=0000000164",
+        "https://www.cna.com.tw/news/firstnews/202006060228.aspx",
+        "https://www.sportsv.net/articles/7859",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/7c.html"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "sheng-to-shih",
+      "name": "聖多士",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/sheng-to-shih/",
+      "sources": [
+        "https://milb.bamcontent.com/documents/9/5/0/271748950/2018_MH_Guide_Historical_Section.pdf#page=43",
+        "https://www.thebaseballcube.com/content/player/7709/",
+        "https://www.baseballamerica.com/teams/2125-toledo-mud-hens/roster/?season=1995",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "sun-chia-chun",
+      "name": "孫家濬",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/sun-chia-chun/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/10/a5.html",
+        "https://www.baseball-reference.com/bullpen/Chia-Chun_Sun",
+        "https://www.geocities.ws/Colosseum/Track/4754/td.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "tai-long-shui",
+      "name": "戴龍水",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tai-long-shui/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/18/38.html",
+        "https://www.sportsv.net/articles/2560",
+        "https://www.baseball-reference.com/bullpen/Long-Shui_Tai",
+        "https://time.udn.com/udntime/story/122833/8396956"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "teng-yao-hua",
+      "name": "鄧耀華",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/teng-yao-hua/",
+      "sources": [
+        "https://www.baseball-reference.com/bullpen/Yao-Hua_Teng",
+        "https://www.baseball-reference.com/register/player.fcgi?id=deng--000yao",
+        "https://tsna.com/article/53213",
+        "https://catalog.digitalarchives.tw/item/00/32/07/3d.html",
+        "https://catalog.digitalarchives.tw/item/00/32/52/be.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "tian-bao",
+      "name": "天寶",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tian-bao/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003809",
+        "https://www.baseball-reference.com/register/player.fcgi?id=tranbe002mar",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "tsai-chih-chang",
+      "name": "蔡志昌",
+      "position": "暫定守位",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tsai-chih-chang/",
+      "sources": [
+        "https://www.sportsv.net/articles/100305?page=2",
+        "https://www.sportsv.net/articles/17308"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "tsai-feng-an",
+      "name": "蔡豐安",
+      "position": "內野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tsai-feng-an/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/14/82.html",
+        "https://cpbl.com.tw/xmdoc/cont?sid=0L132509391407314912",
+        "https://www.sportsv.net/articles/76385",
+        "https://catalog.digitalarchives.tw/item/00/32/3a/f9.html"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "tsai-sheng-feng",
+      "name": "蔡生豐",
+      "position": "外野",
+      "badge": "bunt",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tsai-sheng-feng/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/0a/9d.html",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/7c.html",
+        "https://www.cna.com.tw/news/firstnews/201809170184.aspx",
+        "https://chtime.ikh.tw/?id=rkvq2wcdis98&pn=vw"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "tsao-ching-lai",
+      "name": "曹清來",
+      "position": "外野",
+      "badge": "slugger",
+      "reason": "完整中職生涯3安打／7打數=.429；依使用者門檻不另增最低打數",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tsao-ching-lai/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/df/60.html",
+        "https://www.baseball-reference.com/register/player.fcgi?id=kao---000qin",
+        "https://www.mirrordaily.news/story/62509"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "tu-chung-nan",
+      "name": "涂忠男",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tu-chung-nan/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/31/f6/5a.html",
+        "https://github.com/ldkrsi/cpbl-opendata/tree/master/CPBL/fieldings",
+        "https://github.com/ldkrsi/cpbl-opendata/blob/master/README.md"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "tu-hong-chin",
+      "name": "涂鴻欽",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tu-hong-chin/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/43/a5.html",
+        "https://tsna.com/article/91178",
+        "https://tsna.com/article/91095",
+        "https://tsna.com/article/91093"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "tu-yung-liang",
+      "name": "塗永樑",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tu-yung-liang/",
+      "sources": [
+        "https://shuj.shu.edu.tw/blog/2017/11/01/臺灣小將闖澳洲圓夢！回國續鋪棒球路/",
+        "https://gameapply.ctsbf.edu.tw/goods-team_view.html?order_id=16319",
+        "https://www.sportsv.net/articles/29537",
+        "https://clydes-stalecards.blogspot.com/2015/03/checklist-translations-1990-1992.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "tung-tsung-hui",
+      "name": "童琮輝",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "後續職涯那魯灣年度MVP；不以金手套作為強打理由",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/tung-tsung-hui/",
+      "sources": [
+        "https://cpbl.com.tw/team/person?Acnt=0000003736",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/06.html",
+        "https://catalog.digitalarchives.tw/item/00/32/0c/e9.html",
+        "https://catalog.digitalarchives.tw/item/00/32/0d/04.html",
+        "https://catalog.digitalarchives.tw/item/00/32/39/f9.html"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "wang-chih-wei",
+      "name": "王志偉",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/wang-chih-wei/",
+      "sources": [
+        "https://taiwanbaseball.pixnet.net/blog/posts/2013487458",
+        "https://cpbl.com.tw/team/lineuprecord?ClubNo=ABB",
+        "https://cpbl.com.tw/team/teamscore?ClubNo=ABB",
+        "https://clydes-stalecards.blogspot.com/2012/12/checklist-translations-smart-99-chinese.html",
+        "https://www.baseball-reference.com/register/player.fcgi?initial=wa"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "wei-en",
+      "name": "偉恩",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "2023年加勒比海大賽名人堂",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/wei-en/",
+      "sources": [
+        "https://www.milb.com/player/luis-raven-452828",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html",
+        "https://editor.lmp.mx/cbpc-da-a-conocer-la-clase-2023-del-salon-de-la-fama-de-las-series-del-caribe/amp/",
+        "https://laverdaddevargas.com/guaireno-luis-raven-exhaltado-al-pabellon-inmortal-del-caribe/"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "wei-lai",
+      "name": "偉來",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/wei-lai/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/18/38.html",
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199899-t-point.html",
+        "https://twbsball.dils.tku.edu.tw/index.php?title=三商虎隊/三商虎隊的職棒十年"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "wei-li",
+      "name": "威利",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/wei-li/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-199697-procard.html",
+        "https://www.baseball-reference.com/register/player.fcgi?id=gonzal001fra",
+        "https://www.baseballamerica.com/players/595251-frank-gonzales/",
+        "https://www.oursportscentral.com/services/releases/freebirds-name-frank-gonzales-manager-for-2026/n-6349383",
+        "https://clubbaseball.org/league/proalums/"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "wei-li-zambrano",
+      "name": "偉力",
+      "position": "外野",
+      "badge": "slugger",
+      "reason": "1993年3A美國協會年度MVP",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/wei-li-zambrano/",
+      "sources": [
+        "https://clydes-stalecards.blogspot.com/2012/11/checklist-translations-1997-diamond.html",
+        "https://www.milb.com/news/gcs-24047948",
+        "https://www.baseball-reference.com/bullpen/Eddie_Zambrano",
+        "https://www.mlb.com/news/rangers-rougned-odor-represents-maracaibo/c-153943328"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "weng-feng-yu",
+      "name": "翁豐堉",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/weng-feng-yu/",
+      "sources": [
+        "https://www.kmdn.gov.tw/1117/1271/1272/241553/",
+        "https://www.cna.com.tw/news/aspt/201501140427.aspx",
+        "https://www.kmdn.gov.tw/1117/1271/1272/256703/",
+        "https://opinion.udn.com/opinion/story/12024/3250350",
+        "https://www.cna.com.tw/news/aspt/202607010273.aspx",
+        "https://www.kmdn.gov.tw/1117/1271/4189/554190/",
+        "https://player.soundon.fm/p/99f9a86d-92bb-45ac-bf2d-162a74b28c76/episodes/8db01449-c90f-4924-bf24-d7e6d04704e1"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "wu-chun-hsien",
+      "name": "吳俊賢",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/wu-chun-hsien/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/32/0c/df.html",
+        "https://www.geocities.ws/Colosseum/Track/4754/td.html",
+        "https://clydes-stalecards.blogspot.com/2014/11/checklist-translations-1998-c-1997.html"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "wu-hou",
+      "name": "武侯",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/wu-hou/",
+      "sources": [
+        "https://www.tcdb.com/Checklist.cfm/sid/75294/1991-CPBL",
+        "https://www.baseball-reference.com/register/player.fcgi?id=araujo001ana",
+        "https://www.thebaseballcube.com/content/player/134182/",
+        "https://www.statscrew.com/minorbaseball/stats/t-ps13687/y-1988",
+        "https://sports.ltn.com.tw/news/breakingnews/1955975"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "wu-shih-hsien",
+      "name": "吳世賢",
+      "position": "投手",
+      "badge": "pitcher",
+      "reason": "名錄主要守位為投手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/wu-shih-hsien/",
+      "sources": [
+        "https://tct.gov.taipei/News_Content.aspx?n=B4C9AF5D5D4BF947&s=28F177D3D6DB1AAB&sms=72544237BBE4C5F6",
+        "https://news.ipcf.org.tw/139105",
+        "https://www.hfjh.tp.edu.tw/news/113學年度-國中棒球運動聯賽軟式組全國賽第二名-2/",
+        "https://cpbl.com.tw/team/person?acnt=0000000502",
+        "https://catalog.digitalarchives.tw/item/00/32/14/82.html",
+        "https://www.baseball-reference.com/bullpen/Shih-Hsien_Wu_%2802%29",
+        "https://tpe.ball.org.tw/Admin/Upload/Bulletin/2024%E7%A7%A9%E5%BA%8F%E5%86%8A1210_pagenumber.pdf"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "yang-fu-chun",
+      "name": "楊福群",
+      "position": "捕手",
+      "badge": "catcher",
+      "reason": "名錄主要守位為捕手",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/yang-fu-chun/",
+      "sources": [
+        "https://gameapply.ctsbf.edu.tw/goods-team_view.html?order_id=14489",
+        "https://catalog.digitalarchives.tw/item/00/32/05/51.html",
+        "https://catalog.digitalarchives.tw/item/00/32/0a/9d.html",
+        "https://catalog.digitalarchives.tw/item/00/32/10/a5.html",
+        "https://tw.sports.yahoo.com/news/%E5%9C%8B%E5%B0%8F%E7%A1%AC%E8%81%AF-%E7%8E%8B%E7%89%8C%E9%BB%83%E6%81%A9%E9%9B%8B%E7%90%83%E9%BD%A1%E9%95%B7-%E9%AB%98%E9%9B%84%E5%BF%A0%E5%AD%9D%E6%96%B0%E6%95%99%E9%A0%AD%E6%9C%89%E6%8C%91%E6%88%B0-040000883.html",
+        "https://www.sportsv.net/articles/61261?page=2"
+      ],
+      "career_threshold_status": "not_required_position"
+    },
+    {
+      "slug": "yang-ge",
+      "name": "揚戈",
+      "position": "外野",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/yang-ge/",
+      "sources": [
+        "https://www.tcdb.com/Checklist.cfm/sid/134862/1991-Chiclets-CPBL",
+        "https://www.baseball-reference.com/register/player.fcgi?id=young-004del",
+        "https://www.baseball-reference.com/bullpen/Delwyn_Young_Sr.",
+        "https://www.milb.com/news/delwyn-young-named-spikes-manager"
+      ],
+      "career_threshold_status": "not_established"
+    },
+    {
+      "slug": "ying-xia",
+      "name": "鷹俠",
+      "position": "內野",
+      "badge": "slugger",
+      "reason": "三商虎七季合計.318、120轟",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/ying-xia/",
+      "sources": [
+        "https://chtime.ikh.tw/?id=325r8q6w0hgz&pn=vw",
+        "https://cpbl.com.tw/team/hr?Acnt=0000000385",
+        "https://www.sportsv.net/articles/9173?page=3",
+        "https://cpbl.com.tw/team/person?acnt=0000003759",
+        "https://www.baseball-reference.com/register/player.fcgi?id=iglesi001lui",
+        "https://369printing.udngroup.com/ms-1997/assets/ms19970218.pdf",
+        "https://player.soundon.fm/p/99f9a86d-92bb-45ac-bf2d-162a74b28c76/episodes/96b11ff4-b301-43cc-87e8-89066d18280c",
+        "https://yunfei.world/teachers/%E6%B8%B8%E7%9A%93%E9%9B%B2%E8%80%81%E5%B8%AB-yolanda-yu/",
+        "https://player.soundon.fm/p/99f9a86d-92bb-45ac-bf2d-162a74b28c76/episodes/d8dfa415-11d2-47e9-a538-a8f0a6bcde50",
+        "https://vocus.cc/article/6424ea91fd897800011f9b3c"
+      ],
+      "career_threshold_status": "qualifies_existing_record"
+    },
+    {
+      "slug": "yu-tsung-lung",
+      "name": "游宗龍",
+      "position": "暫定守位",
+      "badge": "fielding",
+      "reason": "依既有守位與一般野手圖示配置；未確認完整生涯攻擊門檻，不表示打擊較弱",
+      "basis": "existing_published_profile",
+      "profile": "/tigers/players/yu-tsung-lung/",
+      "sources": [
+        "https://catalog.digitalarchives.tw/item/00/25/04/f0.html",
+        "https://oursport.tv/news/91613a",
+        "https://www.hpehs.hlc.edu.tw/modules/tadnews/index.php?nsn=548",
+        "https://catalog.digitalarchives.tw/item/00/31/f1/a7.html",
+        "https://esuncup.tw/team/detail.php?ID=TM20100521130104"
+      ],
+      "career_threshold_status": "not_established"
+    }
+  ],
+  "verification_limit": "CPBL live person endpoints unavailable during this session (404/timeouts). Existing published profile records retained without claiming fresh independent verification. Unestablished career thresholds remain pending.",
+  "asset_download_verification": {
+    "team": {
+      "http_status": 200,
+      "bytes": 1881224,
+      "sha256": "52a2c3bd937425e4324d85573a13f5a63e5540eed5bb93523a607d6c821a6c2d",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "pitcher": {
+      "http_status": 200,
+      "bytes": 3018239,
+      "sha256": "8b51ebc605cb039f05dc49dbdaa6f43df849cc8122d832b787c4ebf3874d7c58",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "slugger": {
+      "http_status": 200,
+      "bytes": 3063032,
+      "sha256": "135cd1585a9ac1dd692d0763b008fd993b3cc8da45e5b045c19525e9d672d3de",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "bunt": {
+      "http_status": 200,
+      "bytes": 3052349,
+      "sha256": "67a71af0b6e186ec7e8b97f3f4c7a7b1906a35986cd854a1fc595c785e75e187",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "fielding": {
+      "http_status": 200,
+      "bytes": 3155797,
+      "sha256": "3c3e40d501c93be13aa50713028cc855e3432c4f0d0591f27ae78e0f88193063",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    "catcher": {
+      "http_status": 200,
+      "bytes": 3121555,
+      "sha256": "02e29071c6d39fb729f19ca514ffcfc6d4bedaf4133004e4bef06d14fc7d3263",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ]
+    }
+  }
+}
