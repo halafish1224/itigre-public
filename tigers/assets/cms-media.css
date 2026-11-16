@@ -1,0 +1,14 @@
+.tigers-cms-portrait-link{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;max-width:100%}
+.tigers-cms-portrait-link:focus-visible,.tigers-cms-additions a:focus-visible{outline:3px solid var(--it-accent,#234c72);outline-offset:5px}
+img[data-cms-portrait]{object-fit:contain!important;width:min(100%,320px)!important;height:auto!important;max-height:420px;border:6px solid transparent;border-image:url('/styles/media-frame-a.svg') 28 stretch;background:var(--it-paper,#fffdf8)}
+.card-front img[data-cms-portrait]{width:170px!important;max-height:200px}
+.hero-visual img[data-cms-portrait]{position:absolute;inset:24px 24px 40px!important;width:calc(100% - 48px)!important;height:calc(100% - 64px)!important;max-height:none;padding:0!important;transform:none!important}
+.collection:has(.tigers-cms-gallery figure) .collection-empty{display:none}
+.tigers-cms-additions{padding:clamp(16px,3vw,32px);margin:24px 0;background:var(--it-paper,#fffdf8);color:var(--it-ink,#202a35);font-size:20px;line-height:1.9;border:8px solid transparent;border-image:url('/styles/media-frame-a.svg') 28 stretch;overflow-wrap:anywhere}
+.tigers-cms-additions h2{font-size:clamp(25px,4vw,34px);line-height:1.4}.tigers-cms-additions h3{font-size:24px;line-height:1.5}
+.tigers-cms-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px;align-items:start}
+.tigers-cms-gallery figure{margin:0;border:6px solid transparent;border-image:url('/styles/media-frame-a.svg') 28 stretch;padding:8px}
+.tigers-cms-gallery img{display:block;width:100%;height:auto;max-width:100%;border:0!important;border-image:none!important;object-fit:contain}
+.tigers-cms-gallery figcaption,.tigers-cms-credit,.cms-source{font-size:18px;line-height:1.8;color:var(--it-ink,#202a35)}
+.tigers-cms-gallery figcaption span{display:block}.tigers-cms-additions a{color:inherit;text-decoration:underline;text-underline-offset:4px}.tigers-cms-credit{margin:16px 0}
+@media(max-width:600px){.tigers-cms-additions{border-width:6px}.tigers-cms-gallery{grid-template-columns:1fr}}
