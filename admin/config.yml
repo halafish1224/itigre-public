@@ -39,6 +39,97 @@ media_libraries:
         height: 1200
 
 collections:
+  - name: tigers_media
+    label: 三商虎球員｜大頭貼與館藏
+    label_singular: 球員影像檔案
+    folder: src/content/tigers-media
+    extension: json
+    format: json
+    create: false
+    delete: false
+    identifier_field: player_name
+    summary: '{{player_name}} · {{slug}}'
+    thumbnail: portrait
+    search_fields: [player_name, slug]
+    preview_path: 'tigers/players/{{slug}}/'
+    fields:
+      - { name: slug, widget: hidden }
+      - { name: player_name, label: 球員姓名（識別用）, widget: string }
+      - name: status
+        label: 影像與補充資料顯示
+        widget: select
+        default: published
+        options: [{label: 公開, value: published}, {label: 暫停顯示（恢復原徽章）, value: draft}]
+      - name: portrait
+        label: 球員大頭貼（列表與個人頁共用）
+        widget: image
+        required: false
+        hint: 從 Cloudinary 上傳或選取照片。留空則沿用現有角色徽章；儲存並發布後同時更新列表與個人頁。不要在此更改球員身分或網址。
+        pattern: ['^https://res[.]cloudinary[.]com/dshfj9ace/image/upload/.+$', 請使用 ITIGRE Cloudinary 圖片]
+      - { name: portrait_alt, label: 大頭貼替代文字（使用照片時必填）, widget: string, required: false }
+      - { name: portrait_credit, label: 大頭貼提供者與權利說明（使用照片時必填）, widget: string, required: false }
+      - name: gallery
+        label: 球員相關照片（可新增、換圖、排序）
+        widget: list
+        required: false
+        collapsed: true
+        thumbnail: image
+        summary: '{{caption}}'
+        fields:
+          - { name: image, label: 照片（Cloudinary）, widget: image, pattern: ['^https://res[.]cloudinary[.]com/dshfj9ace/image/upload/.+$', 請使用 ITIGRE Cloudinary 圖片] }
+          - { name: alt, label: 替代文字, widget: string }
+          - { name: caption, label: 圖說, widget: text, required: false }
+          - { name: credit, label: 提供者與權利說明, widget: string }
+          - { name: source_url, label: 來源網址（HTTPS）, widget: string, required: false }
+      - name: notes
+        label: 球員補充資料（保留既有正文）
+        widget: list
+        required: false
+        collapsed: true
+        summary: '{{title}} · {{status}}'
+        fields:
+          - { name: title, label: 標題, widget: string }
+          - { name: text, label: 內容, widget: text }
+          - { name: source_label, label: 來源名稱, widget: string }
+          - { name: source_url, label: 來源網址（HTTPS）, widget: string }
+          - { name: status, label: 狀態（人工確認來源後才公開）, widget: select, default: draft, options: [{label: 草稿, value: draft}, {label: 已確認並公開, value: published}] }
+
+  - name: tigers_history
+    label: 三商虎隊史｜影像與補充資料
+    files:
+      - name: history_media
+        label: 三商虎十年隊史
+        file: src/content/tigers-history/media.json
+        fields:
+          - { name: title, label: 管理名稱, widget: string }
+          - { name: status, label: 顯示狀態, widget: select, default: published, options: [published, draft] }
+
+          - name: gallery
+            label: 隊史相關照片（可新增、換圖、排序）
+            widget: list
+            required: false
+            collapsed: true
+            thumbnail: image
+            summary: '{{caption}}'
+            fields:
+              - { name: image, label: 照片（Cloudinary）, widget: image, pattern: ['^https://res[.]cloudinary[.]com/dshfj9ace/image/upload/.+$', 請使用 ITIGRE Cloudinary 圖片] }
+              - { name: alt, label: 替代文字, widget: string }
+              - { name: caption, label: 圖說, widget: text, required: false }
+              - { name: credit, label: 提供者與權利說明, widget: string }
+              - { name: source_url, label: 來源網址（HTTPS）, widget: string, required: false }
+          - name: notes
+            label: 隊史補充資料（保留既有正文）
+            widget: list
+            required: false
+            collapsed: true
+            summary: '{{title}} · {{status}}'
+            fields:
+              - { name: title, label: 標題, widget: string }
+              - { name: text, label: 內容, widget: text }
+              - { name: source_label, label: 來源名稱, widget: string }
+              - { name: source_url, label: 來源網址（HTTPS）, widget: string }
+              - { name: status, label: 狀態（人工確認來源後才公開）, widget: select, default: draft, options: [{label: 草稿, value: draft}, {label: 已確認並公開, value: published}] }
+
   - name: posts_html
     label: 寫新文章
     label_singular: 文章
@@ -493,3 +584,4 @@ collections:
               - { name: og_title, label: 首頁社群分享標題, widget: string, required: false }
               - { name: og_description, label: 首頁社群分享摘要, widget: text, required: false }
               - { name: seo_image, label: 首頁社群分享圖片, widget: image, required: false }
+
