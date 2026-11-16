@@ -1,0 +1,63 @@
+{
+  "task": "tigers-reading-20261116",
+  "owner": "halafish1224 / Codex A / tigers-badges-20261116",
+  "source_pr": "https://github.com/halafish1224/itigre-public/pull/242",
+  "assets": [
+    {
+      "drive_file_id": "16Q2UtSxFVikl0yqHmaZRkygIPSe39PwI",
+      "public_id": "itigre/tigers/reading/ribbon-tiger-20261116",
+      "secure_url": "https://res.cloudinary.com/dshfj9ace/image/upload/v1794807148/itigre/tigers/reading/ribbon-tiger-20261116.png",
+      "width": 1774,
+      "height": 887,
+      "bytes": 3058569,
+      "etag": "1118e40c484936d00fd245013d8ff801",
+      "format": "png",
+      "sha256": "be453dc0fbfc18c4e3637d81ed63d2320090d00d6af8bed88bbbb387f8a17538",
+      "authorization": "Author supplied the exact Drive image for placement on Tigers pages",
+      "placements": [
+        "/tigers/players/",
+        "/post/new/mercuries-tigers-ten-years/#飄揚在夜空中的藍絲帶"
+      ]
+    },
+    {
+      "drive_file_id": "1E7pHPxH_cTBJzl8fMyqxFQrn8QwozUDd",
+      "public_id": "itigre/tigers/reading/fan-archive-38917920-20261116",
+      "secure_url": "https://res.cloudinary.com/dshfj9ace/image/upload/v1794807164/itigre/tigers/reading/fan-archive-38917920-20261116.jpg",
+      "width": 750,
+      "height": 564,
+      "bytes": 173147,
+      "etag": "6cbc38e05b14b06a7cfbfca99b296b59",
+      "format": "jpg",
+      "sha256": "567251d1bdf67a3b2b0281dd4cab31ee07b4aff6b10fe77e5f6b51de7bfd6c99",
+      "authorization": "Author supplied the exact Drive image for placement on Tigers pages",
+      "placements": [
+        "/post/new/mercuries-tigers-ten-years/#飄揚在夜空中的藍絲帶"
+      ]
+    }
+  ],
+  "reading": {
+    "html_pages": 138,
+    "body_px": 20,
+    "supporting_text_min_px": 18,
+    "shared_palette": "/itigre-palette.js",
+    "shared_visual_styles": "/styles/site-visual-system.css",
+    "timezone": "Asia/Taipei",
+    "theme_switcher": false,
+    "solid_reading_surface": true,
+    "css": "/tigers/assets/itigre-reading.css",
+    "figure_border_px": 6,
+    "highlight_class": "it-editorial-highlight"
+  },
+  "preserved": [
+    "original public page text",
+    "119-player directory",
+    "filters and flip buttons",
+    "five-zone gallery structure",
+    "data-row-scope attributes",
+    "original article dates, canonical URLs, source links",
+    "existing image/video frames"
+  ],
+  "pending": [
+    "40 career batting criteria from previous badge batch remain unestablished; no new statistics are claimed"
+  ]
+}
