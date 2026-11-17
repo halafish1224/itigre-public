@@ -39,7 +39,7 @@ html.itigre-skin body.person-story .hero-visual img[data-cms-portrait]{
   }
 }
 
-/* Opt-in decorative echo: 25% opacity, 150% scale, angled and cropped. */
+/* Player portrait decorative echo: 25% opacity, 150% scale, stable player-specific angle, cropped. */
 html.itigre-skin body.person-story article.story:has(> img[data-tigers-story-watermark]){
   position:relative!important;isolation:isolate;overflow:hidden!important;
 }
@@ -47,7 +47,7 @@ html.itigre-skin body.person-story article.story > img[data-tigers-story-waterma
   position:absolute!important;display:block!important;top:48px!important;right:-17%!important;
   width:min(52%,420px)!important;height:auto!important;max-width:none!important;
   max-height:500px!important;object-fit:contain!important;
-  opacity:.25!important;transform:rotate(-13deg) scale(1.5)!important;
+  opacity:.25!important;transform:rotate(var(--tigers-story-tilt,-13deg)) scale(1.5)!important;
   transform-origin:50% 30%!important;pointer-events:none!important;z-index:0!important;
   border:0!important;border-image:none!important;background:transparent!important;
   -webkit-mask-image:linear-gradient(to right,transparent 3%,#000 48%,#000 90%);
