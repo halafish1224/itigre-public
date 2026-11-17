@@ -68,6 +68,12 @@ collections:
         pattern: ['^https://res[.]cloudinary[.]com/dshfj9ace/image/upload/.+$', 請使用 ITIGRE Cloudinary 圖片]
       - { name: portrait_alt, label: 大頭貼替代文字（使用照片時必填）, widget: string, required: false }
       - { name: portrait_credit, label: 大頭貼提供者與權利說明（使用照片時必填）, widget: string, required: false }
+      - name: portrait_story_watermark
+        label: 在人物故事中以肖像作為淡化背景
+        widget: boolean
+        default: false
+        required: false
+        hint: 僅在已公開且已上傳大頭照時生效；故事開頭的照片以25%透明度、150%比例、斜角局部呈現，不影響原文閱讀。
       - name: gallery
         label: 球員相關照片（可新增、換圖、排序）
         widget: list
