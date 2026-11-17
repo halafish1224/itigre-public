@@ -12,3 +12,52 @@ img[data-cms-portrait]{object-fit:contain!important;width:min(100%,320px)!import
 .tigers-cms-gallery figcaption,.tigers-cms-credit,.cms-source{font-size:18px;line-height:1.8;color:var(--it-ink,#202a35)}
 .tigers-cms-gallery figcaption span{display:block}.tigers-cms-additions a{color:inherit;text-decoration:underline;text-underline-offset:4px}.tigers-cms-credit{margin:16px 0}
 @media(max-width:600px){.tigers-cms-additions{border-width:6px}.tigers-cms-gallery{grid-template-columns:1fr}}
+
+
+/* On small screens, an uploaded player portrait is an exhibit, not a 100px badge. */
+html.itigre-skin body.person-story .hero-visual img[data-cms-portrait]{
+  position:static!important;inset:auto!important;display:block!important;
+  width:100%!important;max-width:100%!important;height:auto!important;
+  max-height:340px!important;object-fit:contain!important;transform:none!important;
+}
+@media(max-width:760px){
+  html.itigre-skin body.person-story .portrait-section:has(.hero-visual img[data-cms-portrait]){
+    grid-template-columns:minmax(0,1fr)!important;gap:16px!important;
+  }
+  html.itigre-skin body.person-story .portrait-section .hero-visual:has(img[data-cms-portrait]){
+    grid-column:1/-1!important;grid-row:1!important;
+    width:min(84vw,340px)!important;max-width:none!important;
+    margin:0 auto!important;padding:clamp(10px,3vw,18px)!important;
+  }
+  html.itigre-skin body.person-story .portrait-section .hero-visual img[data-cms-portrait]{
+    width:100%!important;max-width:100%!important;
+    height:auto!important;max-height:min(60vh,450px)!important;
+    object-fit:contain!important;
+  }
+  html.itigre-skin body.person-story .portrait-section .hero-copy{
+    grid-column:1/-1!important;grid-row:2!important;
+  }
+}
+
+/* Opt-in decorative echo: 25% opacity, 150% scale, angled and cropped. */
+html.itigre-skin body.person-story article.story:has(> img[data-tigers-story-watermark]){
+  position:relative!important;isolation:isolate;overflow:hidden!important;
+}
+html.itigre-skin body.person-story article.story > img[data-tigers-story-watermark]{
+  position:absolute!important;display:block!important;top:48px!important;right:-17%!important;
+  width:min(52%,420px)!important;height:auto!important;max-width:none!important;
+  max-height:500px!important;object-fit:contain!important;
+  opacity:.25!important;transform:rotate(-13deg) scale(1.5)!important;
+  transform-origin:50% 30%!important;pointer-events:none!important;z-index:0!important;
+  border:0!important;border-image:none!important;background:transparent!important;
+  -webkit-mask-image:linear-gradient(to right,transparent 3%,#000 48%,#000 90%);
+  mask-image:linear-gradient(to right,transparent 3%,#000 48%,#000 90%);
+}
+html.itigre-skin body.person-story article.story:has(> img[data-tigers-story-watermark]) > :not(img[data-tigers-story-watermark]){
+  position:relative;z-index:1;
+}
+@media(max-width:760px){
+  html.itigre-skin body.person-story article.story > img[data-tigers-story-watermark]{
+    top:38px!important;right:-28%!important;width:65%!important;
+  }
+}
