@@ -71,9 +71,9 @@ collections:
       - name: portrait_story_watermark
         label: 在人物故事中以肖像作為淡化背景
         widget: boolean
-        default: false
+        default: true
         required: false
-        hint: 僅在已公開且已上傳大頭照時生效；故事開頭的照片以25%透明度、150%比例、斜角局部呈現，不影響原文閱讀。
+        hint: 球員有公開肖像照時預設啟用；故事開頭以25%不透明度、150%比例、每位球員不同且固定的斜角局部呈現。個別文章可關閉，沒有大頭照則不顯示。
       - name: gallery
         label: 球員相關照片（可新增、換圖、排序）
         widget: list
