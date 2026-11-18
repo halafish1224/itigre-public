@@ -39,6 +39,68 @@ media_libraries:
         height: 1200
 
 collections:
+  - name: tigers_coaches
+    label: 三商虎教練｜名單、大頭貼與館藏
+    label_singular: 教練影像檔案
+    folder: src/content/tigers-coaches
+    extension: json
+    format: json
+    create: false
+    delete: false
+    identifier_field: coach_name
+    summary: '{{coach_name}} · {{slug}}'
+    thumbnail: portrait
+    search_fields: [coach_name, slug]
+    preview_path: 'tigers/coaches/{{slug}}/'
+    fields:
+      - { name: slug, widget: hidden }
+      - { name: coach_name, label: 教練姓名（維持原網址）, widget: string }
+      - name: status
+        label: 教練補充資料顯示狀態
+        widget: select
+        default: published
+        options: [{label: 公開, value: published}, {label: 暫停補充（保留原始教練史料）, value: draft}]
+      - { name: directory_note, label: 教練名錄的任職簡介（留空沿用原文）, widget: text, required: false }
+      - { name: profile_summary, label: 個人頁開頭摘要（留空沿用原文）, widget: text, required: false }
+      - name: portrait
+        label: 教練大頭照（名錄及個人頁共用）
+        widget: image
+        required: false
+        hint: 請選用 ITIGRE Cloudinary 照片。必須同時填妥照片替代文字與真實的提供者／權利說明，否則本張照片不會公開（仍顯示原虎徽），且不影響其他人物更新。公開後名錄與個人頁會同步；移除肖像可恢復虎徽。
+        pattern: ['^https://res[.]cloudinary[.]com/dshfj9ace/image/upload/.+$', 請使用 ITIGRE Cloudinary 圖片]
+      - { name: portrait_alt, label: 大頭照替代文字（有照片時必填）, widget: string, required: false }
+      - { name: portrait_credit, label: 大頭照提供者與權利說明（有照片時必填）, widget: string, required: false, hint: '請依影像原始授權填寫，僅上傳到 Cloudinary 並不能證明擁有著作權；空白時照片不會公開。' }
+      - name: portrait_story_watermark
+        label: 人物正文加上25%透明肖像背景
+        widget: boolean
+        default: true
+        required: false
+      - name: gallery
+        label: 教練相關照片（可新增、換圖、排序）
+        widget: list
+        required: false
+        collapsed: true
+        thumbnail: image
+        summary: '{{caption}}'
+        fields:
+          - { name: image, label: 照片（Cloudinary）, widget: image, pattern: ['^https://res[.]cloudinary[.]com/dshfj9ace/image/upload/.+$', 請使用 ITIGRE Cloudinary 圖片] }
+          - { name: alt, label: 替代文字, widget: string }
+          - { name: caption, label: 圖說, widget: text, required: false }
+          - { name: credit, label: 提供者與權利說明, widget: string }
+          - { name: source_url, label: 來源網址（HTTPS）, widget: string, required: false }
+      - name: notes
+        label: 教練史料補充（不覆蓋原始正文）
+        widget: list
+        required: false
+        collapsed: true
+        summary: '{{title}} · {{status}}'
+        fields:
+          - { name: title, label: 標題, widget: string }
+          - { name: text, label: 內容, widget: text }
+          - { name: source_label, label: 來源名稱, widget: string }
+          - { name: source_url, label: 來源網址（HTTPS）, widget: string }
+          - { name: status, label: 是否經來源核實, widget: select, default: draft, options: [{label: 草稿, value: draft}, {label: 已確認並公開, value: published}] }
+
   - name: tigers_media
     label: 三商虎球員｜大頭貼與館藏
     label_singular: 球員影像檔案
@@ -64,10 +126,10 @@ collections:
         label: 球員大頭貼（列表與個人頁共用）
         widget: image
         required: false
-        hint: 從 Cloudinary 上傳或選取照片。留空則沿用現有角色徽章；儲存並發布後同時更新列表與個人頁。不要在此更改球員身分或網址。
+        hint: 從 Cloudinary 上傳或選取照片，且須填寫替代文字與真實提供者／權利說明。缺少任一欄時圖片暫不公開，繼續顯示角色徽章，不會阻擋其他球員同步。資料完整並發布後，名錄及人物頁在自動 CMS 發布流程完成時同步更新；不要修改球員身分或網址。
         pattern: ['^https://res[.]cloudinary[.]com/dshfj9ace/image/upload/.+$', 請使用 ITIGRE Cloudinary 圖片]
       - { name: portrait_alt, label: 大頭貼替代文字（使用照片時必填）, widget: string, required: false }
-      - { name: portrait_credit, label: 大頭貼提供者與權利說明（使用照片時必填）, widget: string, required: false }
+      - { name: portrait_credit, label: 大頭貼提供者與權利說明（使用照片時必填）, widget: string, required: false, hint: '需確認影像授權；僅由本人上傳至 Cloudinary 不代表具備公開使用權。空白時會保留原徽章。' }
       - name: portrait_story_watermark
         label: 在人物故事中以肖像作為淡化背景
         widget: boolean
