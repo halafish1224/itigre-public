@@ -653,3 +653,31 @@ collections:
               - { name: og_description, label: 首頁社群分享摘要, widget: text, required: false }
               - { name: seo_image, label: 首頁社群分享圖片, widget: image, required: false }
 
+  - name: tokyo_itinerary
+    label: 東京冬日紀行｜行程草稿
+    label_singular: 2026 東京行程
+    files:
+      - name: tokyo_2026
+        label: 2026/12/13–12/26｜每日行程
+        file: src/content/tokyo-itinerary/2026.json
+        format: json
+        fields:
+          - { name: schemaVersion, widget: hidden }
+          - { name: title, label: 行程名稱, widget: string }
+          - name: source
+            label: 同步來源版本（由程式管理）
+            widget: object
+            collapsed: true
+            fields:
+              - { name: repository, widget: hidden }
+              - { name: path, widget: hidden }
+              - { name: blobSha, widget: hidden }
+              - { name: sourceUpdatedAt, widget: hidden }
+              - { name: sheetId, widget: hidden }
+              - { name: sheetTab, widget: hidden }
+              - { name: status, widget: hidden }
+          - name: days
+            label: 14 日行程｜時間軸拖曳與編輯
+            widget: tokyo_timeline
+            hint: 目前為安全草稿。儲存至 CMS 不代表已更新 travel.itigre.com 或 Google Sheet；三端差異審核及同步發布流程尚待驗證完成。
+            required: true
