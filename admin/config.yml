@@ -679,5 +679,5 @@ collections:
           - name: days
             label: 14 日行程｜時間軸拖曳與編輯
             widget: tokyo_timeline
-            hint: 目前為安全草稿。儲存至 CMS 不代表已更新 travel.itigre.com 或 Google Sheet；三端差異審核及同步發布流程尚待驗證完成。
+            hint: 2026/11/18–11/30 以 travel.itigre.com 行程為唯一基準，Google Sheet 只接收網站同步；此處 CMS 仍是安全草稿，按「儲存並發布」不會更新旅遊網站或 Sheet。12/1 起需完成來源版本、衝突及讀回驗證後，才啟用雙向同步。
             required: true
