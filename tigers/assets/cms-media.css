@@ -61,3 +61,50 @@ html.itigre-skin body.person-story article.story:has(> img[data-tigers-story-wat
     top:38px!important;right:-28%!important;width:65%!important;
   }
 }
+
+
+/* Coach CMS overlays. Only coaching profiles are affected; preserve all existing
+   player/image hand-drawn frame settings and the original historical body. */
+html.itigre-skin body.person-story header.hero.tigers-coach-has-portrait{
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(260px,400px)!important;
+  align-items:center!important;gap:clamp(16px,3vw,36px)!important;overflow:visible!important;
+}
+html.itigre-skin body.person-story header.hero.tigers-coach-has-portrait .hero-copy{
+  grid-column:1!important;grid-row:1!important;min-width:0!important;
+}
+html.itigre-skin body.person-story header.hero.tigers-coach-has-portrait .hero-mark{display:none!important}
+html.itigre-skin body.person-story .tigers-coach-portrait{
+  grid-column:2!important;grid-row:1!important;width:100%!important;
+  max-width:400px!important;margin:0 auto!important;
+  position:relative!important;z-index:1!important;text-align:center!important;
+}
+html.itigre-skin body.person-story .tigers-coach-portrait a{display:block}
+html.itigre-skin body.person-story .tigers-coach-portrait img[data-cms-portrait]{
+  display:block!important;position:static!important;max-width:100%!important;
+  width:100%!important;height:auto!important;max-height:480px!important;
+  object-fit:contain!important;transform:none!important;
+}
+html.itigre-skin body.person-story .tigers-coach-portrait figcaption{
+  font-size:clamp(15px,1.2vw,18px)!important;line-height:1.7!important;
+  margin-top:8px!important;overflow-wrap:anywhere!important;
+  color:var(--vs-ink,#202a35)!important;
+}
+.coach-directory li:has(img[data-cms-coach-thumb]){display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.coach-directory img[data-cms-coach-thumb]{
+  display:inline-block;vertical-align:middle;width:86px;height:106px;
+  object-fit:contain;margin:0 8px 0 0;border:0;pointer-events:none;
+}
+@media(max-width:760px){
+  html.itigre-skin body.person-story header.hero.tigers-coach-has-portrait{
+    grid-template-columns:minmax(0,1fr)!important;gap:12px!important;
+  }
+  html.itigre-skin body.person-story header.hero.tigers-coach-has-portrait .tigers-coach-portrait{
+    grid-column:1!important;grid-row:1!important;width:min(88vw,360px)!important;
+  }
+  html.itigre-skin body.person-story header.hero.tigers-coach-has-portrait .hero-copy{
+    grid-column:1!important;grid-row:2!important;
+  }
+  html.itigre-skin body.person-story .tigers-coach-portrait img[data-cms-portrait]{
+    max-height:min(55vh,430px)!important;
+  }
+}
