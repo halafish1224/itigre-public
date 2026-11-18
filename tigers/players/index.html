@@ -13,7 +13,11 @@ html.itigre-skin body main .roster-group .archive-card[hidden]{display:none!impo
 
 /* Portrait watermark: image inside the existing card, without increasing its height. */
 html.itigre-skin body main .roster-group .archive-card{isolation:isolate;position:relative!important;overflow:hidden}
-html.itigre-skin body main .roster-group .archive-card::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:var(--roster-portrait);background-position:center;background-repeat:no-repeat;background-size:contain;opacity:.6}
+html.itigre-skin body main .roster-group .archive-card::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:var(--roster-portrait);background-position:center;background-repeat:no-repeat;background-size:contain;opacity:.6;filter:grayscale(100%);transition:filter .3s ease-in-out}
+/* Only the portrait watermark shifts from monochrome to color; card height and lettering stay unchanged. */
+@media(hover:hover){html.itigre-skin body main .roster-group .archive-card:hover::before{filter:grayscale(0%)}}
+html.itigre-skin body main .roster-group .archive-card:focus-within::before{filter:grayscale(0%)}
+@media(prefers-reduced-motion:reduce){html.itigre-skin body main .roster-group .archive-card::before{transition:none}}
 html.itigre-skin body main .roster-group .archive-card>*{position:relative;z-index:1}
 html.itigre-skin body main .roster-group .archive-card>.tigers-cms-portrait-link{display:none!important}
 html.itigre-skin body main .roster-group .archive-card :is(h2,p,.read-link){text-shadow:0 1px 2px #fffdf7,0 -1px 2px #fffdf7}
